@@ -16,6 +16,7 @@
 		C984607F2799E1F600141F23 /* App_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984607E2799E1F600141F23 /* App_PracticeTests.swift */; };
 		C98460892799E1F600141F23 /* App_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98460882799E1F600141F23 /* App_PracticeUITests.swift */; };
 		C984608B2799E1F600141F23 /* App_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984608A2799E1F600141F23 /* App_PracticeUITestsLaunchTests.swift */; };
+		C98460982799F33200141F23 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98460972799F33200141F23 /* ToDoList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C98460842799E1F600141F23 /* App PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App PracticeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98460882799E1F600141F23 /* App_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_PracticeUITests.swift; sourceTree = "<group>"; };
 		C984608A2799E1F600141F23 /* App_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C98460972799F33200141F23 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C98460702799E1F600141F23 /* Assets.xcassets */,
 				C98460722799E1F600141F23 /* LaunchScreen.storyboard */,
 				C98460752799E1F600141F23 /* Info.plist */,
+				C98460972799F33200141F23 /* ToDoList.swift */,
 			);
 			path = "App Practice";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				C984606C2799E1F500141F23 /* ViewController.swift in Sources */,
 				C98460682799E1F500141F23 /* AppDelegate.swift in Sources */,
 				C984606A2799E1F500141F23 /* SceneDelegate.swift in Sources */,
+				C98460982799F33200141F23 /* ToDoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

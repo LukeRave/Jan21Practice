@@ -23,7 +23,19 @@ class ViewController: UIViewController {
         print("First Name: \(firstName.text ?? "") \nLast Name: \(lastName.text ?? "")")
     }
     
+    @IBOutlet weak var task: UITextField!
     
+
+//    var list:[String]
     
+    @IBAction func addTask(_ sender: Any) {
+        myToDoList.list.append(task.text!)
+    }
+    
+    @IBAction func printList(_ sender: Any) {
+        print(myToDoList)
+    }
+    
+
 }
 

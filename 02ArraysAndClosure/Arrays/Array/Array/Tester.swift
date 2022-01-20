@@ -120,26 +120,20 @@ class Tester {
     
     /// 8. Pig latin but with words separated by spaces
     func pigLatinSentence(sentence: String) -> String {
-        var newArr = sentence
-        let arr = sentence.split(separator: " ")
-        let count = arr.count
-        for i in 0..<count {
-            print(arr[i])
-//            if arr[i].startIndex == "a" || arr[i].startIndex == "e" || arr[i].startIndex == "i" || arr[i].startIndex == "o" || arr[i].startIndex == "u" {
-//                print(arr[i] + "yay")
-//            } else {
-//                let first = arr[i].startIndex
-//                let new = arr[i].dropFirst()
-//                let element = new + "\(first)ay"
-//                newArr.append(element)
-//            }
+        
+        let arr = sentence.components(separatedBy: " ")
+        let newArr: [String] = arr.map { word in
+                if word[word.startIndex] == "a" || word[word.startIndex] == "e" || word[word.startIndex] == "i" || word[word.startIndex] == "o" || word[word.startIndex] == "u" {
+                    return word + "yay"
+                } else {
+                    let first = word[word.startIndex]
+                    let new = word.dropFirst()
+                    return new + "\(first)ay"
+                }
         }
-        return ""
-    
-    }
-    
-    func returnPigLatin(word: String) -> String {
-        return ""
+        let joined = newArr.joined(separator: " ")
+
+        return joined
     }
     
     /**
@@ -147,17 +141,19 @@ class Tester {
         var prices = [7,1,5,3,6,4] -> returns 5  (buy at 1 and sell at 6)
      */
     func maxProfit(array: [Int]) -> Int {
-        var profit: [Int] = []
         let count = array.count
+
+        var maxP = 0
         for i in 0..<count {
-            profit[i] = 0
-            for i in stride(from: count - 1, to: 0, by: -1){
-                
+            for j in i..<count {
+                let diff = array[j]-array[i]
+                if diff > maxP {
+                    maxP = diff
+                }
             }
         }
-        return -1
+        return maxP
     }
-    //https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-twice/
     
     /**
         10. Input: array of integers: [1, 4, 8, 4] with 1 having the highest priority.
