@@ -88,7 +88,7 @@ var myHouse = House(color: "Black")
 
 myHouse.repaint(color: "Black")
 
-
+///ToDoList
 struct ToDoList: Equatable {
     var list:[String]
     

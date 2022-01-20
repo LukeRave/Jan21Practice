@@ -147,15 +147,17 @@ class Tester {
         var prices = [7,1,5,3,6,4] -> returns 5  (buy at 1 and sell at 6)
      */
     func maxProfit(array: [Int]) -> Int {
-        let newArr = array.sorted()
+        var profit: [Int] = []
         let count = array.count
-        var max: Int = newArr[count-1]
-        var min: Int = newArr[0]
         for i in 0..<count {
-            if
+            profit[i] = 0
+            for i in stride(from: count - 1, to: 0, by: -1){
+                
+            }
         }
         return -1
     }
+    //https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-twice/
     
     /**
         10. Input: array of integers: [1, 4, 8, 4] with 1 having the highest priority.
