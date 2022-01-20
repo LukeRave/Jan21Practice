@@ -12,17 +12,33 @@ class Tester {
     
     /// 1. Write a function that takes an array of numbers and returns an array with each of the numbers multiplied by 2
     func multiplyByTwo(numbers original: [Int]) -> [Int]{
-        return []
+        return original.map { $0 * 2 }
     }
 
     /// 2. Write a function to return the last half of the array, not including the median
     func lastHalf(array: [Int]) -> [Int] {
-        return []
+        
+        var halfwayIndex: Int;
+        if(array.count % 2 == 0){
+            halfwayIndex = array.count / 2;
+        }
+        
+        else {
+            let doubleTypeIndex = floor(Double(array.count / 2))
+            halfwayIndex = Int(doubleTypeIndex) + 1;
+        }
+        
+        let lastHalf = Array(array.dropFirst(halfwayIndex))
+        return lastHalf;
     }
 
     /// 3. Write a function that can creates an array populated with integers going from start (input) to end (input)
     func createArray(from start: Int, to end: Int) -> [Int] {
-        return []
+        var resultArray: [Int] = [];
+        for num in start...end {
+            resultArray.append(num)
+        }
+        return resultArray;
     }
 
     /**
@@ -33,18 +49,42 @@ class Tester {
         [7,8,9]]
      */
     func create2DArray(n: Int) -> [[Int]] {
-        return []
+        var matrixArray: [[Int]] = [];
+        var rowArray: [Int] = [];
+        let maxNum = n * n;
+        for num in 1...maxNum {
+            rowArray.append(num)
+            if num % n == 0 {
+                matrixArray.append(rowArray)
+                rowArray.removeAll();
+            }
+        }
+        return matrixArray;
     }
 
     /// 5. Write a function that returns the number of pairs of elements that SUMS up to 0
     /// Input [1,2,3,-1,-2,-4] -> Output 2
     func findPairs(nums: [Int]) -> Int {
-        return -1
+        var doubledResult = 0;
+        
+        for num in nums {
+            if(nums.contains(num * -1)) {
+                doubledResult+=1;
+            }
+        }
+        let result = doubledResult / 2;
+        return result;
     }
     
     /// 6. Returns an array of indexes where the char occurs in input word
     func positionsOf(character: Character, in word: String) -> [Int] {
-        return []
+        var indexArray: [Int] = []
+        for (index, char) in word.enumerated() {
+            if(char == character){
+                indexArray.append(index)
+            }
+        }
+        return indexArray
     }
     
     /**
@@ -58,17 +98,42 @@ class Tester {
             [ I, I, O, I, I, O, O, O] = 3
      */
     func minimumChairs(array: [Character]) -> Int {
-        return -1
+        var neccessaryChairs = 0;
+        for (index, char) in array.enumerated() {
+            switch char {
+            case "I": neccessaryChairs = neccessaryChairs + 1;
+            case "O": if array.dropFirst(index).contains("I") {neccessaryChairs = neccessaryChairs - 1};
+            default: print("Input invalid")
+            }
+        }
+        return neccessaryChairs;
     }
     
     /// 8. Pig latin but with words separated by spaces
     func pigLatinSentence(sentence: String) -> String {
-        return ""
+        var resultArray: [String] = []
+        var arrayOfWords: [String];
+        arrayOfWords = sentence.components(separatedBy: " ")
+        for thisWord in arrayOfWords {
+            resultArray.append(String(returnPigLatin(word: thisWord)))
+            }
+        let result = resultArray.joined(separator: " ")
+        return result;
     
     }
     
     func returnPigLatin(word: String) -> String {
-        return ""
+        let vowels = "aeiou";
+        var result = word;
+        
+        if vowels.contains(result[result.startIndex]){
+            result += "yay"
+        }
+        else {
+            let firstLetter = result.removeFirst()
+            result += String(firstLetter) + "ay"
+        }
+        return result;
     }
     
     /**
@@ -76,7 +141,22 @@ class Tester {
         var prices = [7,1,5,3,6,4] -> returns 5  (buy at 1 and sell at 6)
      */
     func maxProfit(array: [Int]) -> Int {
-        return -1
+        var result = 0;
+        for num in array {
+            for otherNum in array {
+                var absoluteValue = otherNum - num;
+                if absoluteValue < 0 {
+                    absoluteValue = absoluteValue * -1
+                }
+                let maxNum = max(otherNum, num);
+                let minNum = min(otherNum, num);
+                let booleanCheck = array.firstIndex(of: maxNum)! > array.firstIndex(of: minNum)!
+                if absoluteValue > result && booleanCheck {
+                    result = absoluteValue;
+                }
+            }
+        }
+        return result;
     }
     
     /**
@@ -86,6 +166,26 @@ class Tester {
         [20, 15] -> [2, 1]
      */
     func reduceDistanceKeepPriority(array: [Int]) -> [Int] {
-        return []
+        
+        var arrayToSet: Set<Int> = [];
+        for num in array {
+            arrayToSet.insert(num)
+        }
+        var arrayWithoutDuplicates: [Int] = [];
+        for num in arrayToSet {
+            arrayWithoutDuplicates.append(num)
+        }
+        let sortedArrayNoDupes = arrayWithoutDuplicates.sorted()
+        var priorityDict: [Int: Int] = [:]
+        for (index, num) in sortedArrayNoDupes.enumerated(){
+            priorityDict[num] = index + 1
+        }
+        var reducedArray: [Int] = [];
+        for num in array {
+            if let reducedPriority = priorityDict[num] {
+                            reducedArray.append(reducedPriority)
+                        }
+        }
+        return reducedArray;
     }
 }
