@@ -162,6 +162,7 @@ class Tester {
         [20, 15] -> [2, 1]
      */
     func reduceDistanceKeepPriority(array: [Int]) -> [Int] {
+        
         return []
     }
 }

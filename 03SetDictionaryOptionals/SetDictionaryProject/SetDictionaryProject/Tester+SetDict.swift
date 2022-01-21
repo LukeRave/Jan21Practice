@@ -10,14 +10,28 @@ import Foundation
 struct Tester {
     /// Remove an array with the duplicated values removed
     func removeDups(nums: [Int]) -> [Int] {
+        var arr: [Int] = []
+        let count = nums.count
         
-        return []
+        for i in 0..<count{
+            if arr.contains(nums[i]) == false{
+                arr.append(nums[i])
+            }
+        }
+        return arr
     }
     
     /// Find the nums that exist in both arrays
     func findCommonNums(from firstNums: [Int], and secondNums: [Int]) -> [Int] {
+        let count = secondNums.count
+        var arr: [Int] = []
         
-        return []
+        for i in 0..<count{
+            if firstNums.contains(secondNums[i]){
+                arr.append(secondNums[i])
+            }
+        }
+        return arr
     }
     
     /// first: "hello", second: "bye" -> ["e"]
