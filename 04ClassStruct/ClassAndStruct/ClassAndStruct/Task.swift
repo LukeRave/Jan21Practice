@@ -30,6 +30,7 @@ struct Task {
     var isValid: Bool = false
     var isComplete: Bool = false
     
+<<<<<<< HEAD
     mutating func setIsComplete(status: Bool) {
         self.isComplete = status
     }
@@ -40,5 +41,14 @@ struct Task {
     
     mutating func setTimeReq(timeLeft: Int) {
         self.timeReq = timeLeft
+=======
+    func setIsComplete(status: Bool) {
+    }
+    
+    func setIsValid(status: Bool) {
+    }
+    
+    func setTimeReq(timeLeft: Int) {
+>>>>>>> fee029077a6ed55c85633eb75b0f1c17ebe59bfd
     }
 }
