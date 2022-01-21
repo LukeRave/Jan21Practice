@@ -36,7 +36,14 @@ struct Tester {
     
     /// first: "hello", second: "bye" -> ["e"]
     func findMatchingLetters(firstWord: String, secondWord: String) -> [Character] {
-        return []
+        var char: [Character] = []
+        for (_,c) in firstWord.enumerated(){
+            if secondWord.contains(c){
+                char.append(c)
+            }
+        }
+        
+        return char
     }
     
     
