@@ -15,6 +15,5 @@ class ViewController: UIViewController {
         Tester().reduceDistanceKeepPriority(array: [8, 6, 2, 4])
     }
 
-
 }
 

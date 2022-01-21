@@ -10,25 +10,51 @@ import Foundation
 struct Tester {
     /// Remove an array with the duplicated values removed
     func removeDups(nums: [Int]) -> [Int] {
+        var arr: [Int] = []
+        let count = nums.count
         
-        return []
+        for i in 0..<count{
+            if arr.contains(nums[i]) == false{
+                arr.append(nums[i])
+            }
+        }
+        return arr
     }
     
     /// Find the nums that exist in both arrays
     func findCommonNums(from firstNums: [Int], and secondNums: [Int]) -> [Int] {
+        let count = secondNums.count
+        var arr: [Int] = []
         
-        return []
+        for i in 0..<count{
+            if firstNums.contains(secondNums[i]){
+                arr.append(secondNums[i])
+            }
+        }
+        return arr
     }
     
     /// first: "hello", second: "bye" -> ["e"]
     func findMatchingLetters(firstWord: String, secondWord: String) -> [Character] {
-        return []
+        var char: [Character] = []
+        for (_,c) in firstWord.enumerated(){
+            if secondWord.contains(c){
+                char.append(c)
+            }
+        }
+        
+        return char
     }
     
     
     /// Create a dictionary of the counts of the letters, ignoring spaces
     func createCounter(string: String) -> [Character: Int] {
-        return [:]
+        var counts: [Character: Int] = [:];
+        let arr = 
+//        arr.forEach((x) => {
+//          counts[x] = (counts[x] || 0) + 1;
+//        });
+        return counts
     }
     
     /// Find most frequent letter in string: "hello there" -> "e"
