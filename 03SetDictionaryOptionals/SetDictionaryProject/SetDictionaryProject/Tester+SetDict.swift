@@ -49,7 +49,12 @@ struct Tester {
     
     /// Create a dictionary of the counts of the letters, ignoring spaces
     func createCounter(string: String) -> [Character: Int] {
-        return [:]
+        var counts: [Character: Int] = [:];
+        let arr = 
+//        arr.forEach((x) => {
+//          counts[x] = (counts[x] || 0) + 1;
+//        });
+        return counts
     }
     
     /// Find most frequent letter in string: "hello there" -> "e"
