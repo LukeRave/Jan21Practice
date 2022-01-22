@@ -106,10 +106,27 @@ struct Tester {
     /// "121" and a sentence "fire water fire" (returns true)
     /// "1122" and a sentence "fire water fire water" (returns false)
     /// "11221" and a sentence "fire fire water water fire" (returns true)
-    func translateNums(sequence: String, sentence: String) -> Bool {
+        func translateNums(sequence: String, sentence: String) -> Bool {
+            //Create an array out of the sentence to be iterated over and checked
+            let arr2 = sentence.components(separatedBy: " ")
+            //Dictionary used to store the sequence and the index for use in iteration
+            var seq: [Character:String] = [:]
+            
+            ///Iteration:
+            ///
+          for (i, char) in sequence.enumerated() {
+              //Initialize true statement
+                    if let value = seq[char] {
+                        if arr2[i] != value {
+                            return false
+                        }
+                    } else {
+                        seq[char] = arr2[i]
+                }
+            }
+            return true
+        }
 
-        return false
-    }
     
     /// Find number of pairs that SUMS up to 0
     /// O(n) time: don't use nested for loops
