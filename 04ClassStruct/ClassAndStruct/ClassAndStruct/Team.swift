@@ -41,29 +41,58 @@ class Team {
     var taskList: [Task] = []
     
     func add(employee: Employee) {
+        employees.append(employee)
     }
     
     func add(task: Task) {
+        taskList.append(task)
     }
     
     func startWeek() {
+        for taskNum in 0..<taskList.count {
+            validate(taskNum: taskNum)
+        }
     }
     
     func validate(taskNum: Int) {
+        for employee in employees {
+            if (employee.role == taskList[taskNum].roleReq) {
+                taskList[taskNum].isValid = true
+                assign(taskNum: taskNum, to: employee)
+            }
+        }
     }
     
     func assign(taskNum: Int, to employee: Employee) {
+        employee.attempt(task: &taskList[taskNum])
     }
     
     func allTasksCompleted() -> Bool {
-        return false
+        for task in taskList {
+            if task.timeReq != 0 {
+                return false
+            }
+        }
+        return true
     }
     
     func weeksTillComplete() -> Int {
-        return 0
+        var hoursLeftInTasks = 0
+        for task in taskList {
+            hoursLeftInTasks += task.timeReq
+        }
+        var result = Float(hoursLeftInTasks ) / 40.0
+        result.round(.up)
+        let r: Int = Int(result)
+        return r
     }
 
     func printMoney() {
+        if allTasksCompleted() {
+            print("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
+        } else {
+            print("Tasks not completed")
+        }
     }
     
 }
