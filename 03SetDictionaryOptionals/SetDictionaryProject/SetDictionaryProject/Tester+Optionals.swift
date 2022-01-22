@@ -12,20 +12,28 @@ extension Tester {
     /// Unwrap using optional binding: if let
     /// else return 0
     func unwrap(optional: Int?) -> Int {
-        return 0
+        if let num = optional {
+            return num
+        }else{
+            return 0
+        }
+        
     }
     
     /// Unwrap using optional binding: guard let
     /// else return ""
     func unwrap(optional: String?) -> String {
-        return ""
+        guard let string = optional else{
+            return ""
+        }
+        return string
     }
     
     /// Unwrap using nil coalescing
     /// takes optional array, return first value?
     func unwrap(optional: [Int]?) -> Int {
-        
-        return 0
+        let num = optional?.first
+        return (num ?? 0)
     }
     
     /// Create a url from a string address, avoid force unwrapping

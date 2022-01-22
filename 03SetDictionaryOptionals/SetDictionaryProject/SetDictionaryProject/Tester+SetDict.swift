@@ -131,7 +131,10 @@ struct Tester {
     /// Find number of pairs that SUMS up to 0
     /// O(n) time: don't use nested for loops
     func findPairsOfOpposites(nums: [Int]) -> Int {
-        
+        let count = nums.count
+        let arr: [()] = nums.map { num in
+            
+        }
         return 0
     }
     
