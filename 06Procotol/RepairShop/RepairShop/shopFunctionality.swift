@@ -1,6 +1,11 @@
-import UIKit
+//
+//  shopFunctionality.swift
+//  RepairShop
+//
+//  Created by Rave Bizz on 1/21/22.
+//
 
-var greeting = "Hello, playground"
+import Foundation
 
 struct Vehicle {
     var wheels: Int
@@ -12,6 +17,3 @@ struct Vehicle {
     }
 }
 
-let car = Vehicle(wheels: 4, acceleration: 1, braking: 0)
-
-car.wheels
