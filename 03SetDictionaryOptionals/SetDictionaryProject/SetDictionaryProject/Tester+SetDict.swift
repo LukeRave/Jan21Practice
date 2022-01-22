@@ -77,7 +77,28 @@ struct Tester {
     
     /// Find most frequent letter in string: "hello there" -> "e"
     func mostFrequentLetter(string: String) -> Character {
-        return "."
+        //Utilizing the previous function
+        let counter = createCounter(string: string)
+        
+        ///Initialize two variables
+        ///1. To store the count of the variable with the most dup
+        ///2. To store the char of 1. Returning this this element
+        var count: Int = 0
+        var char: Character = "a"
+        
+        //Accessing every "key" element of the key-value pairs in the string
+        for element in counter.keys {
+            //Initialize a true statement with the key's value that you're trying to compare
+            //counter[element] is the value of the "iterated key" that's within the dictionary
+            if let num = counter[element]{
+                if num > count {
+                    count = num
+                    char = element
+                }
+            }
+        }
+        
+        return char
     }
     
     /// Given a string of numbers: "121" and a sentence "fire water fire"
