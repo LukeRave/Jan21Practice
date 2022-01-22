@@ -39,7 +39,14 @@ extension Tester {
     /// Create a url from a string address, avoid force unwrapping
     /// else return the main bundle url
     func createURL(from address: String?) -> URL {
-        
+        //Creating true statement to be tested. Statement being proven true defaults the optional status on the element
+        if let addy = address{
+        let url = URL(string: addy)
+            if let newUrl = url{
+                return newUrl
+            }
+            
+        }
         
         return Bundle.main.bundleURL
     }
