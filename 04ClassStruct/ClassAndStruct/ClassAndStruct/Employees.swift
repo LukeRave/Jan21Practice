@@ -43,8 +43,11 @@ class Employee {
     func attempt(task: inout Task) {
         if self.role == task.roleReq{
             for _ in 1...task.timeReq{
-                if hoursWorked <= 40{
+                if hoursWorked < 40{
                     hoursWorked += 1
+                    task.timeReq -= 1
+                }else{
+                    print("You've worked 40 hours this week. Go home and get some rest.")
                 }
             }
         }
