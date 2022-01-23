@@ -33,8 +33,20 @@ class Employee {
     }
     
     func addToHoursWorked(hours: Int) {
+        for _ in 1...hours{
+            if hoursWorked <= 40{
+                hoursWorked += 1
+            }
+        }
     }
     
     func attempt(task: inout Task) {
+        if self.role == task.roleReq{
+            for _ in 1...task.timeReq{
+                if hoursWorked <= 40{
+                    hoursWorked += 1
+                }
+            }
+        }
     }
 }
