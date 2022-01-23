@@ -78,14 +78,17 @@ class Team {
     
     func weeksTillComplete() -> Int {
         var workHours: Int = 0
+        var weeks: Int = 0
+        
         for task in taskList{
             workHours += task.timeReq
         }
         
-        
-        
-        let weeks = (workHours/40) + 1
-        
+        if workHours == 0{
+            weeks = 0
+        }else if workHours%2 == 0{
+            weeks = (workHours/40) + 1
+        }
         return weeks
     }
     
