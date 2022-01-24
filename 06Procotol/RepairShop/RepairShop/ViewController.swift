@@ -19,7 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var braking: UITextField!
     
     @IBAction func submitData(_ sender: Any) {
-        let car = Vehicle(wheels: wheels.text, acceleration: acceleration.text, braking: braking.text)
+        let wNum: String = wheels.text!
+        let aNum: String = acceleration.text!
+        let bNum: String = braking.text!
+        let car = Vehicle(wheels: Int(wNum) ?? 0, acceleration: Int(aNum) ?? 0, braking: Int(bNum) ?? 0)
+        
+        print(car.wheels, car.acceleration, car.braking)
     }
     
 }
