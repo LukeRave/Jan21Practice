@@ -26,15 +26,24 @@ class Employee {
     var payRate: PayRate
     var role: Role
     var hoursWorked: Int = 0
-        
     init(role: Role, payRate: PayRate) {
         self.role = role
         self.payRate = payRate
     }
-    
     func addToHoursWorked(hours: Int) {
+        self.hoursWorked += hours
     }
     
     func attempt(task: inout Task) {
+        if task.roleReq == self.role {
+            let remainingHours = 40 - self.hoursWorked
+            if task.timeReq > remainingHours {
+                task.timeReq -= remainingHours
+                self.addToHoursWorked(hours: remainingHours)
+            } else {
+                self.addToHoursWorked(hours: task.timeReq)
+                task.timeReq = 0
+            }
+        }
     }
 }
