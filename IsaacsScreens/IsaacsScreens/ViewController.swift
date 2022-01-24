@@ -19,9 +19,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         FTemp.delegate = self;
+        FTemp.centerVerticalText()
+        
     }
     func textViewDidChange(_ textView: UITextView){
-        
+        FTemp.centerVerticalText()
         if let FAsInt = Int(FTemp.text) {
             let FtoCCalculation = ((FAsInt - 32) * 5 / 9)
             CTemp.text = String(FtoCCalculation)
@@ -46,4 +48,14 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
 
 }
+extension UITextView {
 
+    func centerVerticalText() {
+        self.textAlignment = .center
+        let fitSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
+        let size = sizeThatFits(fitSize)
+        let calculate = (bounds.size.height - size.height * zoomScale) / 2
+        let offset = max(1, calculate)
+        contentOffset.y = -offset
+    }
+}

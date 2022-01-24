@@ -11,7 +11,7 @@ extension String {
 }
 
 "asdf".getIntValue()
-let myInt: Int = "10".getIntValue()
+let myInt: Int = "14".getIntValue()
 
 class First {
     func a() {
