@@ -43,6 +43,7 @@ class Employee {
             } else {
                 self.addToHoursWorked(hours: task.timeReq)
                 task.timeReq = 0
+                task.setIsComplete(status: true)
             }
         }
     }

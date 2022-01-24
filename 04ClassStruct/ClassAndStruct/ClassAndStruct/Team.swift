@@ -62,10 +62,10 @@ class Team {
     }
     
     func allTasksCompleted() -> Bool {
-        if taskList.isEmpty {
-            return true
-        }
-        return false
+        var output = true
+        taskList.forEach {!$0.isComplete ? output = false : print("do nothing")}
+        
+        return output
     }
     
     func weeksTillComplete() -> Int {
@@ -73,9 +73,9 @@ class Team {
         var output: Int = 0
         for reqRole in Set(reqRolemap) {
             let requiredHours = taskList.filter {$0.roleReq == reqRole}.reduce(0, {agg, ele in agg + ele.timeReq})
-            let availableHours = employees.filter {$0.role == reqRole}.reduce(0, {agg, ele in agg + (40 - ele.hoursWorked)})
-            if Int((requiredHours - availableHours) / 40) > output {
-                output = Int((requiredHours - availableHours) / 40) + 1
+            let nEmployees = employees.filter {$0.role == reqRole}.count
+            while requiredHours > (40 * nEmployees * output) {
+                output += 1
             }
         }
         return output
