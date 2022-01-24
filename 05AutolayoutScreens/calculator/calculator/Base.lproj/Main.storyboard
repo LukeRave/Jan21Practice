@@ -29,6 +29,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTF-Cu-J6q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck6-e6-pNA">
                                 <rect key="frame" x="0.0" y="452" width="97" height="89"/>
@@ -43,6 +46,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WK9-Cg-SZh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29M-pE-XzT">
                                 <rect key="frame" x="-2" y="549" width="99" height="89"/>
@@ -57,6 +63,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tu3-nX-gIn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLd-jD-ueT">
                                 <rect key="frame" x="-2" y="646" width="99" height="89"/>
@@ -71,6 +80,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gtb-wo-JgF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-X7-Qht">
                                 <rect key="frame" x="0.0" y="743" width="202" height="89"/>
@@ -85,6 +97,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GS4-VF-vdN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Iu-VN-CIq">
                                 <rect key="frame" x="105" y="355" width="97" height="89"/>
@@ -99,6 +114,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kwu-sk-g7W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r1-nC-XCH">
                                 <rect key="frame" x="105" y="452" width="97" height="89"/>
@@ -113,6 +131,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7h-CR-alC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoI-dV-40n">
                                 <rect key="frame" x="105" y="549" width="97" height="89"/>
@@ -127,6 +148,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2tf-XO-xhN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCK-RB-3jP">
                                 <rect key="frame" x="105" y="646" width="97" height="89"/>
@@ -141,6 +165,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIb-Hr-kd8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZa-ld-kcZ">
                                 <rect key="frame" x="212" y="452" width="97" height="89"/>
@@ -155,6 +182,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAl-M1-4bP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjd-lC-Y3y">
                                 <rect key="frame" x="212" y="549" width="97" height="89"/>
@@ -169,6 +199,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kZq-oO-VYa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXq-P5-1fc">
                                 <rect key="frame" x="212" y="646" width="97" height="89"/>
@@ -183,6 +216,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="numFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLH-YE-trd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAT-Au-NbW">
                                 <rect key="frame" x="212" y="743" width="97" height="89"/>
@@ -211,6 +247,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Avn-iM-JMh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdP-ps-kxE">
                                 <rect key="frame" x="317" y="452" width="97" height="89"/>
@@ -225,6 +264,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pR7-4d-Q1H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLv-KV-Lw4">
                                 <rect key="frame" x="317" y="549" width="97" height="89"/>
@@ -239,6 +281,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k3c-Tc-UCK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0c-CM-pQ0">
                                 <rect key="frame" x="317" y="646" width="97" height="89"/>
@@ -253,6 +298,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LsG-Fn-9aG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mx9-8p-2hl">
                                 <rect key="frame" x="317" y="743" width="97" height="89"/>
@@ -267,6 +315,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8B-gU-ZES"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCd-Dv-LNW">
                                 <rect key="frame" x="212" y="355" width="97" height="89"/>
@@ -281,7 +332,20 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="operationFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISK-Hq-kyV"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlB-5h-SdR">
+                                <rect key="frame" x="4" y="279" width="406" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Qch-9f-LzZ"/>
+                                    <constraint firstAttribute="width" constant="406" id="WuG-Ey-kJS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -294,15 +358,18 @@
                             <constraint firstItem="AAT-Au-NbW" firstAttribute="leading" secondItem="OgE-X7-Qht" secondAttribute="trailing" constant="10" id="4Bh-EO-8Eg"/>
                             <constraint firstItem="jCK-RB-3jP" firstAttribute="leading" secondItem="QLd-jD-ueT" secondAttribute="trailing" constant="8" symbolic="YES" id="4sk-23-xTU"/>
                             <constraint firstItem="JGj-hF-b6d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5DM-iB-TRd"/>
+                            <constraint firstItem="JGj-hF-b6d" firstAttribute="top" secondItem="xlB-5h-SdR" secondAttribute="bottom" constant="8" symbolic="YES" id="7pc-rK-ncS"/>
                             <constraint firstItem="QLd-jD-ueT" firstAttribute="top" secondItem="29M-pE-XzT" secondAttribute="bottom" constant="8" symbolic="YES" id="B51-3q-69B"/>
                             <constraint firstItem="JGj-hF-b6d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="311" id="CMj-mE-zkF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OgE-X7-Qht" secondAttribute="bottom" constant="30" id="Dy8-bp-1Oo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xlB-5h-SdR" secondAttribute="trailing" constant="4" id="EvC-KB-QXI"/>
                             <constraint firstItem="YXq-P5-1fc" firstAttribute="leading" secondItem="jCK-RB-3jP" secondAttribute="trailing" constant="10" id="Fcf-lo-uO0"/>
                             <constraint firstItem="bLv-KV-Lw4" firstAttribute="leading" secondItem="xjd-lC-Y3y" secondAttribute="trailing" constant="8" symbolic="YES" id="FjX-Hy-jbu"/>
                             <constraint firstItem="0r1-nC-XCH" firstAttribute="top" secondItem="4Iu-VN-CIq" secondAttribute="bottom" constant="8" symbolic="YES" id="Ini-el-gMb"/>
                             <constraint firstItem="jzD-jv-Vom" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KT1-e7-eF3"/>
                             <constraint firstItem="QdP-ps-kxE" firstAttribute="leading" secondItem="yZa-ld-kcZ" secondAttribute="trailing" constant="8" symbolic="YES" id="LJM-0e-rYi"/>
                             <constraint firstItem="OgE-X7-Qht" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LR5-lm-0mD"/>
+                            <constraint firstItem="xlB-5h-SdR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="LuF-FH-CiX"/>
                             <constraint firstItem="QLd-jD-ueT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-22" id="MqJ-a4-iQR"/>
                             <constraint firstItem="d0c-CM-pQ0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O6d-qs-8QR"/>
                             <constraint firstItem="jzD-jv-Vom" firstAttribute="leading" secondItem="PCd-Dv-LNW" secondAttribute="trailing" constant="8" symbolic="YES" id="PKu-pi-zjc"/>
@@ -312,6 +379,7 @@
                             <constraint firstItem="AAT-Au-NbW" firstAttribute="top" secondItem="YXq-P5-1fc" secondAttribute="bottom" constant="8" symbolic="YES" id="aFy-i2-AmE"/>
                             <constraint firstItem="jzD-jv-Vom" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="311" id="ale-IE-TqY"/>
                             <constraint firstItem="mx9-8p-2hl" firstAttribute="leading" secondItem="AAT-Au-NbW" secondAttribute="trailing" constant="8" symbolic="YES" id="axt-Pb-Gr3"/>
+                            <constraint firstItem="xlB-5h-SdR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="235" id="bCm-25-wrZ"/>
                             <constraint firstItem="QoI-dV-40n" firstAttribute="top" secondItem="0r1-nC-XCH" secondAttribute="bottom" constant="8" symbolic="YES" id="bX2-sB-RwC"/>
                             <constraint firstItem="OgE-X7-Qht" firstAttribute="top" secondItem="jCK-RB-3jP" secondAttribute="bottom" constant="8" symbolic="YES" id="cJZ-eo-5oB"/>
                             <constraint firstItem="d0c-CM-pQ0" firstAttribute="leading" secondItem="YXq-P5-1fc" secondAttribute="trailing" constant="8" symbolic="YES" id="czi-Xr-Nqn"/>
@@ -335,6 +403,9 @@
                             <constraint firstItem="4Iu-VN-CIq" firstAttribute="leading" secondItem="JGj-hF-b6d" secondAttribute="trailing" constant="8" symbolic="YES" id="xMN-hx-7iB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="text" destination="xlB-5h-SdR" id="aTr-eb-Y9f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C925EB51279F3705004F819F /* Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925EB50279F3705004F819F /* Functionality.swift */; };
 		C97C09B4279E333100E9438C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C09B3279E333100E9438C /* AppDelegate.swift */; };
 		C97C09B6279E333100E9438C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C09B5279E333100E9438C /* SceneDelegate.swift */; };
 		C97C09B8279E333100E9438C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C09B7279E333100E9438C /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C925EB50279F3705004F819F /* Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functionality.swift; sourceTree = "<group>"; };
 		C97C09B0279E333100E9438C /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97C09B3279E333100E9438C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97C09B5279E333100E9438C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				C97C09BC279E333200E9438C /* Assets.xcassets */,
 				C97C09BE279E333200E9438C /* LaunchScreen.storyboard */,
 				C97C09C1279E333200E9438C /* Info.plist */,
+				C925EB50279F3705004F819F /* Functionality.swift */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				C97C09B8279E333100E9438C /* ViewController.swift in Sources */,
 				C97C09B4279E333100E9438C /* AppDelegate.swift in Sources */,
 				C97C09B6279E333100E9438C /* SceneDelegate.swift in Sources */,
+				C925EB51279F3705004F819F /* Functionality.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
