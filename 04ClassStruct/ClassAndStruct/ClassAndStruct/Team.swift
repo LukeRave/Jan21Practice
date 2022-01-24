@@ -36,34 +36,57 @@ import Foundation
  */
 
 class Team {
-    
     var employees: [Employee] = []
     var taskList: [Task] = []
-    
     func add(employee: Employee) {
+        employees.append(employee)
     }
-    
     func add(task: Task) {
+        taskList.append(task)
     }
-    
     func startWeek() {
+        for (index, _) in taskList.enumerated() {
+            validate(taskNum: index)
+        }
     }
-    
     func validate(taskNum: Int) {
+        let rolemap = employees.filter {$0.role == taskList[taskNum].roleReq}
+        if !rolemap.isEmpty {
+            taskList[taskNum].setIsValid(status: true)
+            self.assign(taskNum: taskNum, to: rolemap[0])
+        }
     }
     
     func assign(taskNum: Int, to employee: Employee) {
+        employee.attempt(task: &taskList[taskNum])
     }
     
     func allTasksCompleted() -> Bool {
+        if taskList.isEmpty {
+            return true
+        }
         return false
     }
     
     func weeksTillComplete() -> Int {
-        return 0
+        let reqRolemap = taskList.map {$0.roleReq}
+        var output: Int = 0
+        for reqRole in Set(reqRolemap) {
+            let requiredHours = taskList.filter {$0.roleReq == reqRole}.reduce(0, {agg, ele in agg + ele.timeReq})
+            let availableHours = employees.filter {$0.role == reqRole}.reduce(0, {agg, ele in agg + (40 - ele.hoursWorked)})
+            if Int((requiredHours - availableHours) / 40) > output {
+                output = Int((requiredHours - availableHours) / 40) + 1
+            }
+        }
+        return output
     }
 
     func printMoney() {
+        if self.allTasksCompleted() {
+            print("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
+        } else {
+            print("Tasks not completed")
+        }
     }
     
 }
