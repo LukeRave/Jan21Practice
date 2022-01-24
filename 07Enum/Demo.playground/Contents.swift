@@ -1,24 +1,6 @@
 import UIKit
 
 var greeting = "Hello, playground"
-/*
-01Strings
-02ArraysAndClosure
-03SetDictionaryOptionals
-04ClassStruct
-05AutolayoutScreens
-06Procotol
-07Enum
- 
-Cam: 01 - last problem
-Darrion: 06 - manipulating dictionary
-Matthew: 03 - optionals / syntax
-Issac: 04 / 06
-Tim: 06
-*/
-
-
-
 
 enum Furniture {
     case chair
