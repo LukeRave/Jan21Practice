@@ -49,15 +49,15 @@ class ViewController: UIViewController {
             }else if sender.tag == 16 { //When they press =
                 ///Operation
                 if operation == 12{ //Division
-                    text.text = String(prevNum / numOnScreen)
+                    text.text = String(Int(prevNum / numOnScreen))
                 }else if operation == 13{ //Multiplication
-                    text.text = String(prevNum * numOnScreen)
+                    text.text = String(Int(prevNum * numOnScreen))
                 }
                 else if operation == 14{ //Subtraction
-                    text.text = String(prevNum - numOnScreen)
+                    text.text = String(Int(prevNum - numOnScreen))
                 }
                 else if operation == 15{ //Addition
-                    text.text = String(prevNum + numOnScreen)
+                    text.text = String(Int(prevNum + numOnScreen))
                 }
             }else if sender.tag == 11{//Clear button
                 text.text = ""
