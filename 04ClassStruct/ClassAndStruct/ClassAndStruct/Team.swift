@@ -41,29 +41,83 @@ class Team {
     var taskList: [Task] = []
     
     func add(employee: Employee) {
+        employees.append(employee)
     }
     
     func add(task: Task) {
+        taskList.append(task)
     }
     
     func startWeek() {
+        for (index, _) in taskList.enumerated() {
+            validate(taskNum: index)
+        }
     }
     
     func validate(taskNum: Int) {
+        var bestEmployee: Employee;
+        for employee in employees {
+            if employee.role == taskList[taskNum].roleReq {
+                bestEmployee = employee;
+                taskList[taskNum].setIsValid(status: true)
+                self.assign(taskNum: taskNum, to: bestEmployee)
+            }
+        }
     }
     
     func assign(taskNum: Int, to employee: Employee) {
+        var thisTask = taskList[taskNum]
+        employee.attempt(task: &thisTask)
     }
     
     func allTasksCompleted() -> Bool {
-        return false
+        if weeksTillComplete() == 0 {
+            return true
+        }
+        else {return false}
     }
     
     func weeksTillComplete() -> Int {
-        return 0
+        var timeDict: [Role: Int] = [:]
+        var weeksNeeded = 0;
+        for item in taskList {
+            if let taskRoleTime = timeDict[item.roleReq] {
+                timeDict[item.roleReq] = taskRoleTime + item.timeReq;
+            }
+            else {timeDict[item.roleReq] = item.timeReq}
+        }
+        for key in timeDict.keys {
+            var tempWeeksNeeded = 0;
+            let employeesByRole = employees.filter { $0.role == key};
+            var totalTimeThisWeek = 0;
+            employeesByRole.forEach {
+               totalTimeThisWeek += (40 - $0.hoursWorked)
+            }
+            let timeAvailable = employeesByRole.count * 40 - totalTimeThisWeek
+            let thisKey = timeDict[key] ?? -1
+            if timeDict.values.max() == 0 {
+                continue
+            } else if timeAvailable >= thisKey{
+                if weeksNeeded <= 0{
+                    weeksNeeded = 0
+                }
+            }
+            else {
+                tempWeeksNeeded = Int(ceil(Double(thisKey - timeAvailable) / 40.0))
+                if tempWeeksNeeded > weeksNeeded{
+                    weeksNeeded = tempWeeksNeeded
+                }
+                print(timeAvailable, thisKey)
+            }
+        }
+        return weeksNeeded
     }
 
     func printMoney() {
+        if allTasksCompleted(){
+            print("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
+        }
+        else {print("Tasks not completed")}
     }
     
 }
