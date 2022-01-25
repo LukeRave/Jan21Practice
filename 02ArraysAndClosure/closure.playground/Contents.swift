@@ -25,6 +25,7 @@ print(multiplyByTwoClos)
 let addTenClosure: (Int) -> Int = { num in
     return num + 10
 }
+
 func doMath(arr: [Int], mathClosure: (Int) -> Int) -> [Int] {
     var result: [Int] = []
     for num in arr {
@@ -33,6 +34,7 @@ func doMath(arr: [Int], mathClosure: (Int) -> Int) -> [Int] {
     }
     return result
 }
+
 let originalNums = [1,2,3,4,5]
 /// Passing a closure as a parameter into a method
 var modifiedNums = doMath(arr: originalNums, mathClosure: { num in
