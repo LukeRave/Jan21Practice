@@ -37,7 +37,6 @@ extension NSExpression {
     }
 }
 
-let operators = ["÷", "×", "+", "-", "%"]
 class ViewController: UIViewController {
     
     @IBOutlet weak var outputDisplay: UILabel!
@@ -47,16 +46,64 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         warningLabel.text = "";
     }
+    let operators = ["÷", "×", "+", "-", "%"]
+    var remainderOperatorUsed = false;
     var unformattedExpression = ""
     var previousButtonTitle: String?;
-    var negative = false;
+    var firstNum: Int = 0;
+    var secondNumAsString = ""
     @IBAction func buttonPressed(_ sender: UIButton) {
         let buttonTitle = sender.currentTitle ?? "AC";
-        
-        switch buttonTitle{
+        if remainderOperatorUsed {
+            switch buttonTitle {
+            case "÷", "×", "+", "-", "%", "+/-":
+                warningLabel.text = "Only numbers and the equals sign can be used with remainder"
+                Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+            case "AC":
+                unformattedExpression = ""
+                outputDisplay.text = unformattedExpression
+            case "=":
+                guard let secondNum = Int(secondNumAsString) else {
+                    print("You broke it.")
+                    return
+                }
+                if secondNum > firstNum {warningLabel.text = "Second operand must be less than or equal to the first operand."}
+                if secondNum == 0 {warningLabel.text = "Dividing by 0 is dangerous buddy."}
+                if secondNum > firstNum || secondNum == 0 {
+                    Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+                    remainderOperatorUsed = false;
+                    outputDisplay.text = "0"
+                    unformattedExpression = ""
+                    firstNum = 0;
+                    secondNumAsString = ""
+                }
+                else {
+                remainderOperatorUsed = false;
+                previousButtonTitle = nil;
+                
+                let result = firstNum % secondNum;
+                outputDisplay.text = String(result)
+                unformattedExpression = String(result)
+                firstNum = 0;
+                secondNumAsString = "";
+                }
+            default:
+                secondNumAsString += buttonTitle;
+                unformattedExpression += buttonTitle
+                outputDisplay.text = unformattedExpression
+            }
+        }
+        else {switch buttonTitle{
         case "%":
-            warningLabel.text = "This kills the calculator...please don't kill the calculator. :("
-            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+            guard let onlyNums = Int(unformattedExpression) else {
+                warningLabel.text = "Can not use remainder key with other operations.";
+                Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+                return
+            }
+            remainderOperatorUsed = true;
+            firstNum = onlyNums;
+            unformattedExpression += buttonTitle
+            outputDisplay.text = unformattedExpression
         case "÷", "×", "+", "-" /*The problem operator --> ,"%"*/ :
             if operators.contains(previousButtonTitle ?? "") {
                 warningLabel.text = "Next button can not be an operator!"
@@ -87,6 +134,7 @@ class ViewController: UIViewController {
             previousButtonTitle = buttonTitle;
             unformattedExpression += buttonTitle;
             outputDisplay.text = unformattedExpression
+        }
         }
     }
     @objc func update(){
