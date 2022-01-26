@@ -18,14 +18,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func numbers(_ sender: UIButton) {
-        if performingMath == true {
+        if performingMath == true { //if an operand is pressed
             text.text = String(sender.tag-1)
-            numOnScreen = Double(text.text!)!
+            numOnScreen = Double(text.text!)! 
             performingMath = false
         }else {
             text.text = text.text! + String(sender.tag-1)
             numOnScreen = Double(text.text!)!
-            performingMath = true
         }
     }
     

@@ -36,12 +36,12 @@ class ViewController: UIViewController {
         
         var car = Vehicle(wheels: Int(wNum) ?? 0, acceleration: Int(aNum) ?? 0, braking: Int(bNum) ?? 0, id: id, make: carMake, model: carModel)
         
-//        for element in inspectionList{
-//            if element.id == car.id{
-//                car.newId()
-//                inspectionList.append(car)
-//            }
-//        }
+        for element in inspectionList{
+            if element.id == car.id{
+                car.newId()
+                inspectionList.append(car)
+            }
+        }
         
         let bob = Mechanic(name: "Bob");
         
@@ -53,7 +53,44 @@ class ViewController: UIViewController {
         bob.viewList(list: inspectionList)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        var inspectionList: [Vehicle] = []
+//        var cmodel: String = ""
+//        var cmake: String = ""
+//        var cid: Int = 0
+//        var cwNum: Int = 0
+//        var caNum: Int = 0
+//        var cbNum: Int = 0
+        let mechanicVC = segue.destination as? MechanicViewController
+            mechanicVC.myTitle = "Mechanic's ViewPoint"
+//            let iList: [String] = inspectionList.map { vehicle in
+//                    cmake = vehicle.make
+//                    cmodel = vehicle.model
+//                    cid = vehicle.id
+//                    cwNum = vehicle.wheels
+//                    caNum = vehicle.acceleration
+//                    cbNum = vehicle.braking
+//
+//                    return "\nID: \(cid) Make: \(cmake) Model: \(cmodel) Wheels: \(cwNum)"
+//            }
+//            var x = ""
+//            for str in iList{
+//                x += str
+//            }
+//
+//            mechanicVC.inList = x
+//        }
+//        else{
+//            // catch errors
+//            print("Something went wrong")
+//        }
+       
+        
+        
+        
+        
+       
+    }
     
 }
 

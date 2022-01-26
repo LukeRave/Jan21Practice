@@ -9,7 +9,8 @@ import Foundation
 //"Ben Derhover"
 struct Mechanic {
     var name: String
-    
+    var inspectionList: [Vehicle]
+    var repairList: [Vehicle]
     
     
     func viewList(list: [Vehicle]){
