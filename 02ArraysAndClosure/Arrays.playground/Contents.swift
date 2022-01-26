@@ -2,6 +2,8 @@ import UIKit
 
 var greeting = "Hello, playground"
 
+
+/// Notes
 /// Writing a function
 func testing() {
     /// Get a random number from 0 to 10
@@ -87,3 +89,67 @@ let shortHandReduced = intArr.reduce(1) { $0 * $1 }
 print("mapped: ", shortHandMap)
 print("filtered: ", shortHandFilter)
 print("reduced: ", shortHandReduced)
+
+// MARK: -- Class Demo
+//let myVar = "asdf"
+//myVar.append("e")
+
+let constant = 12
+var myVarTwo = "asdf"
+
+
+var strs = ["a", "b"]
+strs.append("10")
+
+var mixedArr: [Any] = [1, "1", "2"]
+
+
+let nums: [Int] = [10, 1, 2, 101, 3, 5]
+//nums.append(10)
+nums.isEmpty
+
+var twice: (Int) -> String = { element in
+    return String(element * 2)
+}
+
+func twicefunc(num: Int) -> Int {
+    return num * 2
+}
+
+let mappedToString = nums.map(twice)
+print(mappedToString)
+
+nums.map({ element in
+    return element + 1
+})
+
+nums.map { element in
+    return element + 1
+}
+
+nums.map { element in element + 1 }
+
+print(strs.map { $0 + "1" })
+
+let sorted = nums.sorted()
+let sortedDown = nums.sorted(by: { $0 > $1 })
+print(sortedDown)
+
+let sortedDown2 = nums.sorted { first, second in
+    return first > second
+}
+
+var doubles = [10.0, 1.1, 40]
+let filtered = doubles.filter { $0 > 5 }
+doubles.forEach {
+    print($0)
+}
+
+class Drink {
+    func consume(grams: Double) {
+        
+    }
+}
+
+let myDrink = Drink()
+myDrink.consume(grams: 1)
