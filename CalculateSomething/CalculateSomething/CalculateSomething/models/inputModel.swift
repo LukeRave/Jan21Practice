@@ -114,5 +114,4 @@ class UserInput {
         }
         return false
     }
-    
 }
