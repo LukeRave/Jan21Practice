@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MechanicViewController: UIViewController {
+class ShopViewController: UIViewController {
 
 
     @IBOutlet weak var inspectList: UILabel!
@@ -18,20 +18,21 @@ class MechanicViewController: UIViewController {
 //    var wNum: Int?
 //    var aNum: Int?
 //    var bNum: Int?
-    var myTitle: String?
-    var inList: String?
     
-    @IBAction func renderInspectList(_ sender: Any) {
-        inspectList.text = "4"
-        print(inList)
+    var inList: [Vehicle]?
     
+
+    @IBAction func updateList(_ sender: UIButton) {
+        update(list: inList!, label: inspectList)
     }
     
 //
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = myTitle
-
+        UINavigationController
+        
+        let bob = Mechanic(name: "Bob");
+        print(inList)
 //        inspectList.text = inList
 //        
 //        let iList: [String] = inspectionList.map { vehicle in
