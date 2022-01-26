@@ -27,8 +27,10 @@ let mathOperations: [String: Operation] = [
 
 func factorial(input: Int) -> Double {
     var result = input
-    while result > 0 {
-        result *= result - 1
+    var count = input
+    while count > 0 {
+        result *= count - 1
+        count -= 1
     }
     return Double(result)
 }

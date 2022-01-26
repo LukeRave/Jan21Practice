@@ -52,7 +52,7 @@ class UserInput {
     }
     func checkOperator() -> Bool {
         if (self.singleOps.contains(self.inputChar) || self.binaryOps.contains(self.inputChar)) {
-            if (!self.currInput.isEmpty) {
+            if (self.currInput.isEmpty) {
                 return false
             }
             self.mathVals.append(Double(self.currInput)!)

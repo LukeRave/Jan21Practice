@@ -6,36 +6,31 @@
 //
 
 import UIKit
-//instantiate the user input class
-var inputInstance = UserInput()
 
 class ViewController: UIViewController {
-    //        Display Label formatting and constraints
+    ///global var declarations for view
     let displayLabel = UILabel()
+    let rowStackView = UIStackView()
+    let buttonArray: [[String]] = [
+        ["ln","log","!","√"],
+        ["+","-","*","/"],
+        ["1","2","3","%"],
+        ["4","5","6","^"],
+        ["7","8","9","π"],
+        ["±","0",".","="]
+    ];
+    ///instantiate the user input class
+    var inputInstance = UserInput()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        General View formatting and View Variables
-        displayLabel.backgroundColor = UIColor.lightGray
         self.view.backgroundColor = UIColor.black
-        let buttonArray: [[String]] = [
-            ["ln","log","!","√"],
-            ["+","-","*","/"],
-            ["1","2","3","%"],
-            ["4","5","6","^"],
-            ["7","8","9","π"],
-            ["±","0",".","="]
-        ];
 //        let edgeOffset = 15
-
-        self.view.addSubview(displayLabel)
-        NSLayoutConstraint.activate([
-            displayLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            displayLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            displayLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            displayLabel.heightAnchor.constraint(equalToConstant: 50)
-        ])
-//        Button grid formatting and constraints
-        let rowStackView = UIStackView()
+        initDisplayLabel()
+        initCalcButtons()
+    }
+    ///initialize button propogation
+    func initCalcButtons() {
         rowStackView.translatesAutoresizingMaskIntoConstraints = false
         for row in buttonArray {
             let buttonStackView = UIStackView()
@@ -64,11 +59,23 @@ class ViewController: UIViewController {
             rowStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
 //            rowStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: edgeOffset)
         ])
-        
     }
+    ///initialize display label for the calculator
+    func initDisplayLabel() {
+        displayLabel.backgroundColor = UIColor.lightGray
+        self.view.addSubview(displayLabel)
+        NSLayoutConstraint.activate([
+            displayLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            displayLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            displayLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            displayLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    ///Generic function to handle button clicks
     @objc func handleButtonClick(button: UIButton) {
         inputInstance.handleInput(userInput: (button.titleLabel?.text)!!)
         displayLabel.text = inputInstance.currInput
+        print(inputInstance.currInput)
     }
 }
 
