@@ -10,6 +10,7 @@ struct WeatherManager {
     
     var delegate: WeatherManagerDelegate?
     
+    
     func fetchWeather(cityName: String, stateName: String?) {
         var urlAsString = "\(weatherURL)&q=\(cityName)"
         if stateName != nil {
@@ -17,6 +18,12 @@ struct WeatherManager {
         }
         performRequest(with: urlAsString)
     }
+    
+    func fetchWeatherWithCoords(lat: String, lon: String){
+        let urlAsString = "\(weatherURL)&lat=\(lat)&lon=\(lon)"
+        performRequest(with: urlAsString)
+    }
+    
     
     func convertStateToAbbrev(nonOptStateName: String) -> String{
         let lowercaseStateName = nonOptStateName.lowercased()

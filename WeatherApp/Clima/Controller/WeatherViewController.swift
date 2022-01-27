@@ -1,14 +1,15 @@
 import UIKit
+import CoreLocation
 
 
-
-class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
     var weatherManager = WeatherManager();
+    var locationManager: CLLocationManager!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         weatherManager.delegate = self;
         searchTextField.delegate = self;
         weatherManager.fetchWeather(cityName: "Maryville", stateName: "TN")
+        
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -68,6 +70,21 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     }
     func didFailWithError(error: Error) {
         print(error)
+    }
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
+        }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        weatherManager.fetchWeatherWithCoords(lat: String(round(locValue.latitude)), lon: String(round(locValue.longitude)))
     }
 }
 extension Collection {
