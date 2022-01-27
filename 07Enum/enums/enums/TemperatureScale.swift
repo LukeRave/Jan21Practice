@@ -13,7 +13,24 @@ import Foundation
  3) Implement tempInFahren property
  */
 
-enum TemperatureScale {
+enum TemperatureScale : TempConvertable {
+    func getTempInFahrenheit() -> Int {
+        switch self {
+        case .fahrenheit(let temp) :
+            return temp
+        case .celcius(let temp) :
+            let farenheit = ((temp * 9)/5) + 32
+            return farenheit
+        case .kelvin(let temp) :
+            let farenheit = (temp - 273) * 9/5 + 32
+            return farenheit
+        }
+    }
+    var tempInFahren: Int {
+        return self.getTempInFahrenheit()
+    }
+    
+    
     case fahrenheit(Int)
     case celcius(Int)
     case kelvin(Int)
