@@ -63,6 +63,7 @@ class ViewController: UIViewController {
     
     /// Show the name of the first episode
     @IBAction func tvShowsPressed(_ sender: UIButton) {
+<<<<<<< HEAD
         guard let url = URL(string: tvShowsStr) else {
             print("no data from network call")
             return
@@ -77,6 +78,9 @@ class ViewController: UIViewController {
         }
         show.resume()
         print("end of handle Tap action")
+=======
+        firstLabel.text = "Testing TVShows button"
+>>>>>>> 93a43820a9f36dd4f52a08338b2706304e43493e
     }
     /// Show the artistName from the first result of the response
     @IBAction func musicPressed(_ sender: UIButton) {
@@ -99,6 +103,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureLabels()
     }
+<<<<<<< HEAD
     
     func decodeJoke(data: Data) {
         do {
@@ -158,10 +163,16 @@ class ViewController: UIViewController {
         }
         
     }
+=======
+>>>>>>> 93a43820a9f36dd4f52a08338b2706304e43493e
 
     func configureLabels() {
         firstLabel.isAccessibilityElement = true
         firstLabel.accessibilityIdentifier = "FirstLabel"
         secondLabel.text = ""
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 93a43820a9f36dd4f52a08338b2706304e43493e
 }
