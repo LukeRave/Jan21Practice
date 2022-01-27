@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="3129" y="-252"/>
         </scene>
-        <!--InpectionList-->
+        <!--InspectionList-->
         <scene sceneID="rmk-kd-em4">
             <objects>
-                <viewController title="InpectionList" id="QAj-b4-NMm" customClass="ShopViewController" customModule="RepairShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="InspectionList" id="QAj-b4-NMm" customClass="ShopViewController" customModule="RepairShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haJ-Ef-nhu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = self.navigationController?.viewControllers.first(where: {
             c in
-            return c.title == "Inspection List"
+            return c.title == "InspectionList"
         })
         vc.inList = inspectionList
     }

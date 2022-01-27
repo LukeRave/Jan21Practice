@@ -18,7 +18,7 @@ class ShopViewController: UIViewController {
 //    var wNum: Int?
 //    var aNum: Int?
 //    var bNum: Int?
-    
+    var myTitle: String?
     var inList: [Vehicle]?
     
 
@@ -29,8 +29,7 @@ class ShopViewController: UIViewController {
 //
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationController
-        
+        title = "Shop"
         let bob = Mechanic(name: "Bob");
         print(inList)
 //        inspectList.text = inList
