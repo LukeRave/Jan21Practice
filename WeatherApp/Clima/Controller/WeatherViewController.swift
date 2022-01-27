@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Clima
-//
-//  Created by Isaac Farr on 01/27/2022.
-//  Copyright © 2019 App Brewery. All rights reserved.
-//
-
 import UIKit
 
 
