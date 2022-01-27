@@ -19,7 +19,7 @@ class apiCallsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         app.buttons["Jokes"].tap()
-        sleep(1)
+        sleep(5)
         let textField = app.staticTexts["FirstLabel"]
         let jokeStr = textField.label
         XCTAssertTrue(jokeStr.contains("Chuck Norris"), "\(jokeStr) should contain Chuck Norris")
@@ -29,7 +29,7 @@ class apiCallsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         app.buttons["Drinks"].tap()
-        sleep(1)
+        sleep(3)
         let textField = app.staticTexts["FirstLabel"]
         let drinkStr = textField.label
         XCTAssert(drinkStr.contains("Long Island"))
@@ -48,7 +48,7 @@ class apiCallsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         app.buttons["Music"].tap()
-        sleep(1)
+        sleep(3)
         let textField = app.staticTexts["FirstLabel"]
         let artistStr = textField.label
         XCTAssert(artistStr.contains("YoungBoy"))
