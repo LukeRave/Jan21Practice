@@ -16,6 +16,7 @@
 		9E3C6B1427A1D5E7005AE75F /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C6B1327A1D5E6005AE75F /* TodoManager.swift */; };
 		9E3C6B1727A1D9C0005AE75F /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C6B1527A1D9C0005AE75F /* TodoCell.swift */; };
 		9E3C6B1827A1D9C0005AE75F /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3C6B1627A1D9C0005AE75F /* TodoCell.xib */; };
+		C9681AF327A2E502008B84FD /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9681AF227A2E502008B84FD /* EditTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9E3C6B1327A1D5E6005AE75F /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		9E3C6B1527A1D9C0005AE75F /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		9E3C6B1627A1D9C0005AE75F /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
+		C9681AF227A2E502008B84FD /* EditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				9E3C6B0327A1D115005AE75F /* ViewController.swift */,
 				9E3C6B1327A1D5E6005AE75F /* TodoManager.swift */,
 				9E3C6B0527A1D115005AE75F /* Main.storyboard */,
+				C9681AF227A2E502008B84FD /* EditTableViewController.swift */,
 				9E3C6B0827A1D117005AE75F /* Assets.xcassets */,
 				9E3C6B0A27A1D117005AE75F /* LaunchScreen.storyboard */,
 				9E3C6B0D27A1D117005AE75F /* Info.plist */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E3C6B0427A1D115005AE75F /* ViewController.swift in Sources */,
+				C9681AF327A2E502008B84FD /* EditTableViewController.swift in Sources */,
 				9E3C6B1427A1D5E7005AE75F /* TodoManager.swift in Sources */,
 				9E3C6B0027A1D115005AE75F /* AppDelegate.swift in Sources */,
 				9E3C6B1727A1D9C0005AE75F /* TodoCell.swift in Sources */,
