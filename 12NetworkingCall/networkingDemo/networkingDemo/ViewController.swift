@@ -21,10 +21,8 @@ class ViewController: UIViewController {
                 print("no data from network call")
                 return
             }
-//            print(data)
             self.decodeMyData(data: data)
         }
-
         task.resume()
         print("end of handle Tap action")
     }
@@ -33,7 +31,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Foo.shared.doSomething()
+//        Foo.shared.doSomething()
     }
     
     func decodeMyData(data: Data) {
@@ -43,13 +41,13 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.topLabel.text = model.title
             }
-            DispatchQueue.global().async {
-                var num = 0
-                for ele in 0...10_000_000 {
-                    num += ele
-                }
-                print("num ==== \(num)")
-            }
+//            DispatchQueue.global().async {
+//                var num = 0
+//                for ele in 0...10_000_000 {
+//                    num += ele
+//                }
+//                print("num ==== \(num)")
+//            }
         } catch {
             // decoding error
             
@@ -61,10 +59,10 @@ class ViewController: UIViewController {
 
 }
 
-class Foo {
-    static let shared = Foo()
-    
-    func doSomething() {
-        
-    }
-}
+//class Foo {
+//    static let shared = Foo()
+//
+//    func doSomething() {
+//
+//    }
+//}
