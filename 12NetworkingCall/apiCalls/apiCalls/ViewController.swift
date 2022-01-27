@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     /// Show the name of the first episode
     @IBAction func tvShowsPressed(_ sender: UIButton) {
         firstLabel.text = "Testing TVShows button"
-        decoding()
 
     }
     /// Show the artistName from the first result of the response
@@ -52,39 +51,4 @@ class ViewController: UIViewController {
         secondLabel.text = ""
     }
     
-    weak var luke: ViewController?
-    
-    func testing() {
-        let ituneOne = iTune(feed: SomeObject(title: "", results: [SomeOtherObject(artistName: "asdf")]))
-        
-        ituneOne.feed.results.first?.artistName
-    }
-    
-    func decoding() {
-        let data = Data()
-        do {
-            let decodedShowsArray = try JSONDecoder().decode([Show].self, from: data)
-        } catch {
-            print(error)
-        }
-    }
-    
-}
-
-struct Show: Decodable {
-    let id: Int?
-    let name: String?
-}
-
-struct iTune: Encodable & Decodable {
-    let feed: SomeObject
-}
-
-struct SomeObject: Codable {
-    let title: String?
-    let results: [SomeOtherObject]
-}
-
-struct SomeOtherObject: Codable {
-    let artistName: String?
 }
