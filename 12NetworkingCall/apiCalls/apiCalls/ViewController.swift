@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     /// Show the name of the first episode
     @IBAction func tvShowsPressed(_ sender: UIButton) {
         firstLabel.text = "Testing TVShows button"
-
     }
     /// Show the artistName from the first result of the response
     @IBAction func musicPressed(_ sender: UIButton) {
