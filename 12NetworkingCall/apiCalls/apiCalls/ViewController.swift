@@ -14,15 +14,11 @@ class ViewController: UIViewController {
     var drinkList: [Drink] = []
     var showFeed: Feed?
     var showList: [Shows] = []
-   
     
     let jokesStr = "https://api.chucknorris.io/jokes/random"
     let drinksStr = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin"
     let tvShowsStr = "https://api.tvmaze.com/shows/431/episodes"
     let musicStr = "https://rss.applemarketingtools.com/api/v2/us/music/most-played/10/albums.json"
-    
-
-
     
     /// Display the joke in firstLabel.text
     /// 1. Make API call to jokes url with URLSession
@@ -47,9 +43,9 @@ class ViewController: UIViewController {
     /// Display the first drink's name
     @IBAction func drinksPressed(_ sender: UIButton) {
         guard let url = URL(string: drinksStr) else {
-        print("no data from network call")
-        return
-    }
+            print("no data from network call")
+            return
+        }
         let drink = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print("no data from network call")
@@ -63,7 +59,6 @@ class ViewController: UIViewController {
     
     /// Show the name of the first episode
     @IBAction func tvShowsPressed(_ sender: UIButton) {
-<<<<<<< HEAD
         guard let url = URL(string: tvShowsStr) else {
             print("no data from network call")
             return
@@ -78,10 +73,8 @@ class ViewController: UIViewController {
         }
         show.resume()
         print("end of handle Tap action")
-=======
-        firstLabel.text = "Testing TVShows button"
->>>>>>> 93a43820a9f36dd4f52a08338b2706304e43493e
     }
+    
     /// Show the artistName from the first result of the response
     @IBAction func musicPressed(_ sender: UIButton) {
         guard let url = URL(string: musicStr) else {
@@ -103,7 +96,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureLabels()
     }
-<<<<<<< HEAD
     
     func decodeJoke(data: Data) {
         do {
@@ -163,16 +155,14 @@ class ViewController: UIViewController {
         }
         
     }
-=======
->>>>>>> 93a43820a9f36dd4f52a08338b2706304e43493e
-
+    
+    
     func configureLabels() {
         firstLabel.isAccessibilityElement = true
         firstLabel.accessibilityIdentifier = "FirstLabel"
         secondLabel.text = ""
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> 93a43820a9f36dd4f52a08338b2706304e43493e
 }
+
+
