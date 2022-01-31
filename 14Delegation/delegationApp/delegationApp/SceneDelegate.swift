@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  PassingData
+//  delegationApp
 //
-//  Created by Luat on 1/28/22.
+//  Created by Luat on 1/31/22.
 //
 
 import UIKit
