@@ -67,16 +67,37 @@ func memoryLeakTest() {
 
 }
 
-memoryLeakTest()
+//memoryLeakTest()
 
 /// Create with memory Leak
 /// Fix memory leak
 class Person {
-    var cc: CreditCard
+    weak var cc: CreditCard?
+    
+    deinit {
+        print("Deinit Person")
+    }
 }
 
 class CreditCard {
-    var owner: Person
+    weak var owner: Person?
+    
+    init (owner: Person) {
+        self.owner = owner
+    }
+    
+    deinit {
+        print("Deinit CreditCard")
+    }
 }
 
+func myMemoryLeakTest() {
+    print("Start memory leak test")
+    let steve = Person()
+    let stevesCC = CreditCard(owner: steve)
+    steve.cc = stevesCC
+    print("End memory leak test")
+}
+
+myMemoryLeakTest()
 
