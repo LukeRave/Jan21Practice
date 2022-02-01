@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tXA-Y6-FJ5">
+            <objects>
+                <navigationController id="Mba-DA-bU3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="avA-k6-Iek">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bn6-0W-LK7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFh-Ho-7sx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="-80"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StoryboardReference" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drl-76-obh">
+                                <rect key="frame" x="168" y="350" width="78" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
+                                <connections>
+                                    <segue destination="6Vn-mB-xBO" kind="show" id="bdV-MC-xzJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbR-fm-ezL">
+                                <rect key="frame" x="177.5" y="432.5" width="59" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Store"/>
+                                <connections>
+                                    <segue destination="ZAF-bA-FZC" kind="show" id="U5o-TL-Ddu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vs-Av-iT5">
+                                <rect key="frame" x="162" y="513" width="90" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Calculator"/>
+                                <connections>
+                                    <segue destination="RgF-Vr-gVm" kind="show" id="wgM-5i-c1f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="drl-76-obh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="168" id="4NX-gK-1iD"/>
+                            <constraint firstItem="3Vs-Av-iT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="162" id="Buo-da-4HM"/>
+                            <constraint firstItem="3Vs-Av-iT5" firstAttribute="top" secondItem="pbR-fm-ezL" secondAttribute="bottom" constant="49.5" id="J6d-pK-Anq"/>
+                            <constraint firstItem="pbR-fm-ezL" firstAttribute="top" secondItem="drl-76-obh" secondAttribute="bottom" constant="51.5" id="RVB-gu-gJJ"/>
+                            <constraint firstItem="pbR-fm-ezL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177.5" id="VO9-ht-khA"/>
+                            <constraint firstItem="drl-76-obh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="262" id="byc-ty-bGW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hir-c9-MGp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="-85"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="wAQ-Sf-9SP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="6Vn-mB-xBO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="z8h-h9-utH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNU-ab-d7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-151"/>
+        </scene>
+        <!--Store-->
+        <scene sceneID="Bay-dT-Zuy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Store" id="ZAF-bA-FZC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="M3j-ZY-ig3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bp-36-6c1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-85"/>
+        </scene>
+        <!--Calculator-->
+        <scene sceneID="o7Z-OR-vXn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calculator" id="RgF-Vr-gVm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XaP-qv-nko"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJp-Nz-CMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911" y="-7"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
