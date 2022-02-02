@@ -10,15 +10,27 @@ import Foundation
 class HexViewModel{
     var model: HexResponse?
     
-    func getColor(){
-        
+    func getData(for hex: String, completion: @escaping () -> Void){
+        if let url = URL(string: "\(Constants.baseUrl)\(hex)") {
+            APIManager.shared.getData(url: url, completion:{
+                model in
+                self.model = model
+                DispatchQueue.main.async {
+                    completion()
+                }
+            })
+        }
     }
     
-    func getName(){
-        
+    func getColor() -> String {
+        model?.hex?.value ?? ""
     }
     
-    func getIsexactMatch(){
-        
+    func getName() -> String {
+        model?.name?.value ?? ""
+    }
+    
+    func getIsExactMatch() -> Bool {
+        model?.name?.isExactMatch ?? false
     }
 }

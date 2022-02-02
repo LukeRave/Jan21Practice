@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -15,13 +15,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6z4-gZ-mpb" userLabel="ColorNameLabel">
+                                <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGH-jb-8o4">
+                                <rect key="frame" x="152" y="639" width="110" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choose color"/>
+                                <connections>
+                                    <segue destination="zKw-ff-Lwq" kind="show" id="nSs-ZC-lXs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6z4-gZ-mpb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EVM-6b-xGF"/>
+                            <constraint firstItem="dGH-jb-8o4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dad-FJ-yGi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGH-jb-8o4" secondAttribute="bottom" constant="192" id="klz-rt-HIe"/>
+                            <constraint firstItem="6z4-gZ-mpb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mRJ-HG-FKW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorNameLabel" destination="6z4-gZ-mpb" id="wIX-6H-mH3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="80"/>
+        </scene>
+        <!--selection-->
+        <scene sceneID="gKM-Ry-2zs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="selection" id="zKw-ff-Lwq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fsz-3f-aon"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3I-ZB-m6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="629" y="128"/>
         </scene>
     </scenes>
     <resources>
