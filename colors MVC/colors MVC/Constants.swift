@@ -8,6 +8,8 @@
 import Foundation
 
 final class Constants {
+    static let shared = Constants()
+    
     ///add the values of red green and blue at the end of the base url seperated by commas
     ///to perform a successful url call
     ///documentation url  ->  https://www.thecolorapi.com/docs
