@@ -22,11 +22,10 @@ class SecondViewController: UIViewController {
     
     func presentThirdVC() {
         if let thirdVC = storyboard?.instantiateViewController(withIdentifier: "ThirdVCID") as? ThirdViewController {
+            thirdVC.myTitle = "Third Page"
             thirdVC.productName = "iPHone"
             navigationController?.pushViewController(thirdVC, animated: true)
         }
-        
-        
     }
 
 
