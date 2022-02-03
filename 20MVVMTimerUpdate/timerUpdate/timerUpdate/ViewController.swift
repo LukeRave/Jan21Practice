@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabel()
-
+        self.viewModel.startGeneratingCodes()
+        self.viewModel.updateView = { model in
+            self.accessCodeLabel.text = model.getCode()
+        }
     }
 
 

@@ -16,7 +16,7 @@ import Foundation
 
 struct NetworkManager {
     func cycleCodeOnRepeat(completion: @escaping (AccessCodeModel) -> Void) {
-        Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { _ in
             let accessCodeModel = Server.generateAccessCodeModel()
             completion(accessCodeModel)
         }

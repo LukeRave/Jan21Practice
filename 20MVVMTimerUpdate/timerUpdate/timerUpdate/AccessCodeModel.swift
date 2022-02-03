@@ -9,11 +9,9 @@ import Foundation
 
 struct AccessCodeModel {
     private var accessCode: String?
-    
     init(accessCode: String) {
-        self.accessCode = accessCode
+        self.accessCode = accessCode + self.generateUserPin()
     }
-    
     private func generateUserPin() -> String {
         let alpha = "0123456789"
         var pin = ""
@@ -24,6 +22,9 @@ struct AccessCodeModel {
         }
         return pin
     }
-    
+    func getCode() -> String {
+        guard let code = self.accessCode else { return ""}
+        return code
+    }
 }
 
