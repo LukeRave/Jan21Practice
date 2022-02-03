@@ -62,10 +62,8 @@
 		9EE256DB27AAE15B00DB4377 /* timerUpdate */ = {
 			isa = PBXGroup;
 			children = (
-				9EE256E027AAE15B00DB4377 /* ViewController.swift */,
-				9EE256F027AAE7A000DB4377 /* AccessCodeViewModel.swift */,
-				9EE256F627AAED8E00DB4377 /* NetworkManager.swift */,
-				9EE256F427AAEC9E00DB4377 /* AccessCodeModel.swift */,
+				C930DB8C27AC317400B82C44 /* NetworkManager */,
+				C930DB8D27AC318600B82C44 /* AccessCodeUpdater */,
 				9EE256F227AAEC7F00DB4377 /* SupportingFiles */,
 				9EE256EA27AAE15D00DB4377 /* Info.plist */,
 			);
@@ -75,13 +73,55 @@
 		9EE256F227AAEC7F00DB4377 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9EE256E227AAE15B00DB4377 /* Main.storyboard */,
+				9EE256E727AAE15D00DB4377 /* LaunchScreen.storyboard */,
 				9EE256DC27AAE15B00DB4377 /* AppDelegate.swift */,
 				9EE256DE27AAE15B00DB4377 /* SceneDelegate.swift */,
-				9EE256E227AAE15B00DB4377 /* Main.storyboard */,
 				9EE256E527AAE15D00DB4377 /* Assets.xcassets */,
-				9EE256E727AAE15D00DB4377 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C930DB8C27AC317400B82C44 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				9EE256F627AAED8E00DB4377 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		C930DB8D27AC318600B82C44 /* AccessCodeUpdater */ = {
+			isa = PBXGroup;
+			children = (
+				C930DB9027AC31BD00B82C44 /* Model */,
+				C930DB8F27AC31AE00B82C44 /* ViewModel */,
+				C930DB8E27AC319E00B82C44 /* Controllers */,
+			);
+			path = AccessCodeUpdater;
+			sourceTree = "<group>";
+		};
+		C930DB8E27AC319E00B82C44 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EE256E027AAE15B00DB4377 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C930DB8F27AC31AE00B82C44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EE256F027AAE7A000DB4377 /* AccessCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C930DB9027AC31BD00B82C44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EE256F427AAEC9E00DB4377 /* AccessCodeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
