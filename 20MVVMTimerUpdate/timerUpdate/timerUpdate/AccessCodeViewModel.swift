@@ -10,8 +10,20 @@ import UIKit
 
 class AccessCodeViewModel {
     
-    private var accessCodeModel: AccessCodeModel?
+    private var accessCodeModel: AccessCodeModel?{
+        didSet{
+            DispatchQueue.main.async{
+                self.updateUI(self.accessCodeModel)
+            }
+        }
+    }
     private var accessCodeNetwork = NetworkManager()
     
+    var updateUI: (AccessCodeModel?) -> Void = { _ in }
     
+    func updateData(){
+        accessCodeNetwork.cycleCodeOnRepeat(completion: { model in
+            self.accessCodeModel = model
+        })
+    }
 }
