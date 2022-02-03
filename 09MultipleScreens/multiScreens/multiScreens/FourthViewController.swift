@@ -8,10 +8,12 @@
 import UIKit
 
 class FourthViewController: UIViewController {
-
+    var myTitle : String?
+    var phone : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "\(myTitle ?? "No Title")"
+        print("arriving to fourth VC with data: \(phone ?? "")")
         // Do any additional setup after loading the view.
     }
     
