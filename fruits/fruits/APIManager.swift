@@ -15,9 +15,7 @@ final class APIManager {
         guard let url = URL(string: "\(URLConstants.shared.urlString)\(fruit)") else{
             return
         }
-        let task = URLSession.shared.dataTask(with: url, completionHandler: {
-            d,r,e in
-            
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { d,r,e in
             if let data = d{
                 do {
                     let model = try JSONDecoder().decode(Fruit.self, from: data)
@@ -25,7 +23,6 @@ final class APIManager {
                 } catch  {
                     print(error.localizedDescription)
                 }
-                
             }
         })
         task.resume()
