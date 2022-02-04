@@ -1,0 +1,17 @@
+Please create an application that contains 2 screens:
+Screen 1
+Please display the results of the API query in a list.
+Choose one of the fields from the API result to display in each list entry to uniquely identify that entry.
+Upon tapping one of the entries, the application should go to a second screen.
+
+Screen 2
+Please show the image linked from the API for this entry.
+Please add a favorite button on this screen.
+When tapping the favorite button, the second screen closes and returns you to the first screen.
+You should also be able to go back from the second screen to the first screen without favoriting the item.
+On the first screen, the list item will be shown as favorited.
+
+Extra:
+ Screen 2: when tapping favorite button again, remove the heart icon on the first screen for that item (un-favorite feature)
+ Save the favorite list so it persists over multiple launches
+ Each photo should only be downloaded once and saved in a temporary cache while app is in use (but not persisted over multiple launch)
