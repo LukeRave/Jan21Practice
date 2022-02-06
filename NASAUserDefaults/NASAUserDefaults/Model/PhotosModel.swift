@@ -8,7 +8,7 @@
 import Foundation
 
 struct PhotosModel: Codable {
-    let photos: [Photo]
+    let photos: [Photo]?
 }
 
 struct Photo: Codable {
