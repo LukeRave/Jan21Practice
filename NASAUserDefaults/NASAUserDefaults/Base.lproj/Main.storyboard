@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zyL-O2-bxx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NASA Stuffs-->
+        <scene sceneID="Y98-PR-HyT">
+            <objects>
+                <tableViewController id="QT4-vr-ES6" customClass="QueryListVC" customModule="NASAUserDefaults" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fY9-Nc-qif">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QueryEntryCell" id="qsV-pT-scl">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="right" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qsV-pT-scl" id="g7S-zA-oUB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QuD-AB-EhU">
+                                            <rect key="frame" x="369" y="0.0" width="40" height="43.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="dmy-JL-7k7"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="QuD-AB-EhU" secondAttribute="trailing" constant="5" id="58v-G2-qdi"/>
+                                        <constraint firstItem="QuD-AB-EhU" firstAttribute="centerY" secondItem="g7S-zA-oUB" secondAttribute="centerY" id="DY5-MQ-ywy"/>
+                                        <constraint firstItem="QuD-AB-EhU" firstAttribute="top" secondItem="g7S-zA-oUB" secondAttribute="top" id="Hy7-YL-560"/>
+                                        <constraint firstAttribute="bottom" secondItem="QuD-AB-EhU" secondAttribute="bottom" id="zsQ-3m-FJO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QT4-vr-ES6" id="Sx9-4F-N2p"/>
+                            <outlet property="delegate" destination="QT4-vr-ES6" id="OlC-fX-Vkz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="NASA Stuffs" id="RzD-3s-nsn"/>
+                    <connections>
+                        <segue destination="74a-Vb-DqN" kind="presentation" identifier="DetailView" id="ky7-Ko-KPd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BnH-gC-nMz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857.9710144927537" y="90.401785714285708"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="RJy-K2-dux">
+            <objects>
+                <viewController id="74a-Vb-DqN" customClass="DetailVC" customModule="NASAUserDefaults" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pav-cc-Tix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dGR-D6-SOt">
+                                <rect key="frame" x="107" y="321" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="3ib-Ym-Bqc"/>
+                                    <constraint firstAttribute="width" constant="200" id="dq2-As-U41"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5M-7l-41f">
+                                <rect key="frame" x="180" y="243" width="54" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LXK-TI-vFm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dGR-D6-SOt" firstAttribute="centerY" secondItem="Pav-cc-Tix" secondAttribute="centerY" id="4fC-Po-28V"/>
+                            <constraint firstItem="dGR-D6-SOt" firstAttribute="top" secondItem="K5M-7l-41f" secondAttribute="bottom" constant="42" id="Nb3-H0-JZa"/>
+                            <constraint firstItem="K5M-7l-41f" firstAttribute="centerX" secondItem="Pav-cc-Tix" secondAttribute="centerX" id="PM6-wr-AdM"/>
+                            <constraint firstItem="dGR-D6-SOt" firstAttribute="centerX" secondItem="Pav-cc-Tix" secondAttribute="centerX" id="UIw-0n-BfS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spaceStuff" destination="dGR-D6-SOt" id="ljO-s1-Ud5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvB-qS-KKU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2683" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JBv-fb-FBE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zyL-O2-bxx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ntR-Lw-kU1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGray2Color"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemBlueColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QT4-vr-ES6" kind="relationship" relationship="rootViewController" id="Sfw-AT-QK3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TW9-Df-ZtJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.82608695652186" y="90.401785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
