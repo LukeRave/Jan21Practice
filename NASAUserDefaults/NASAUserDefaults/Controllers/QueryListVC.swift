@@ -37,21 +37,29 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         loadFavorites()
     }
     
-    func addFavorite(favorite: Favorite){
+    func addFavorite(favoriteId: Int32){
         
-        if !favoritesArray.contains(where: {$0.id == favorite.id}){
-        favoritesArray.append(favorite)
+        
+        if !favoritesArray.contains(where: {$0.id == favoriteId}){
+            
+            let newFavorite = Favorite(context: self.context)
+            newFavorite.id = favoriteId
+            
+            favoritesArray.append(newFavorite)
+            
         } else {
-            favoritesArray = favoritesArray.filter { $0.id != favorite.id }
+            
+            context.delete(favoritesArray.first(where: { $0.id == favoriteId })!)
         }
         
-//        For clearing Favorite Entity in Core Data
-//        for fav in favoritesArray {
-//            context.delete(fav)
-//        }
+        
+        //        For clearing Favorite Entity in Core Data for testing purposes
+//                for fav in favoritesArray {
+//                    context.delete(fav)
+//                }
         saveFavorites()
     }
-
+    
     func decodeData<T: Decodable>(data: Data, type: T.Type) -> T? {
         
         do {
@@ -75,19 +83,19 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
                     print("\(remaining) API calls remaining")
                 }
             }
-
+            
             guard let decodedPhotos = decoded?.photos else { return }
             self.photoArray = decodedPhotos
         }
-            task.resume()
+        task.resume()
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         return photoArray?.count ?? 0
     }
     
@@ -100,10 +108,11 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         guard let entryId = entry?.id else { return cell }
         cell.textLabel?.text = String(entry?.id ?? 0)
         
+        
         guard let safeView = cell.imageView else { return cell }
         
         if favoritesArray.contains(where: {$0.id == entryId}) {
-            safeView.isHidden = !safeView.isHidden
+            safeView.isHidden = false
         } else {
             safeView.isHidden = true
         }
@@ -134,7 +143,10 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         } catch {
             print("Error saving context: \(error)")
         }
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
         print("This is the favorites array: \(favoritesArray) ---------")
     }
     
@@ -146,10 +158,12 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         } catch {
             print("Error fetching data: \(error)")
         }
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
 protocol FavoriteUpdateDelegate {
-    func addFavorite(favorite: Favorite)
+    func addFavorite(favoriteId: Int32)
 }

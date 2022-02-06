@@ -36,9 +36,8 @@ class DetailVC: UIViewController {
     }
     
     @IBAction func favoriteButton(_ sender: UIButton) {
-        let newFavorite = Favorite(context: self.context)
-        newFavorite.id = Int32(newFavoriteId ?? 0)
-        delegate?.addFavorite(favorite: newFavorite)
+        let favoriteId = Int32(newFavoriteId ?? 0)
+        delegate?.addFavorite(favoriteId: favoriteId)
         dismiss(animated: true, completion: nil)
     }
     
