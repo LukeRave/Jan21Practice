@@ -9,14 +9,20 @@ import Foundation
 import UIKit
 
 class NasaPhotosViewModel{
-    var model: PhotosResponse?
-    
-    func getData(completion: @escaping () -> Void){
-        NetworkManagr.shared.getData(completion: { model in
-            self.model = model
+    var model: PhotosResponse? {
+        didSet{
             DispatchQueue.main.async{
-                completion()
+                self.updateUI(self.model)
             }
-        })
+        }
     }
+    
+    var network = NetworkManagr()
+    var updateUI: (PhotosResponse?) -> Void = { _ in }
+    func updateData() {
+        network.getData { model in
+            self.model = model
+        }
+    }
+
 }

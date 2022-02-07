@@ -6,11 +6,8 @@
 //
 
 import UIKit
-protocol PassData {
-    func fetchData()
-}
 
-class ViewController: UIViewController, PassData {
+class ViewController: UIViewController, UITableViewDataSource {
 
     var feed: PhotosResponse? {
         didSet{
@@ -32,6 +29,10 @@ class ViewController: UIViewController, PassData {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.updateData()
+        viewModel.updateUI = { model in
+            self.feed = model
+        }
         
         tableView.dataSource = self
         let nib = UINib(nibName: DataViewCell.identifier, bundle: nil)
@@ -39,19 +40,8 @@ class ViewController: UIViewController, PassData {
         
     }
     
-    func fetchData(){
-        viewModel.getData(completion: { [weak self] in
-            guard let welf = self else {
-                return
-            }
-            
-        })
-    }
     
     
-}
-
-extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photos.count
     }
@@ -60,9 +50,11 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DataViewCell.identifier) as? DataViewCell else {
             return UITableViewCell()
         }
-
+        let model = photos[indexPath.row]
+        cell.idNumber.text = "\(model.id ?? 0)"
+        cell.date.text = String(describing: model.date)
+        
         return cell
     }
-
-
+    
 }

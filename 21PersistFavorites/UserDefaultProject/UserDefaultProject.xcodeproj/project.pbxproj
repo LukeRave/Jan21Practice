@@ -111,9 +111,9 @@
 		C96F048727B05DA300A5D475 /* UserDefaultProject */ = {
 			isa = PBXGroup;
 			children = (
-				C96F04C827B0862200A5D475 /* helpers */,
 				C96F04C527B07A5100A5D475 /* MVVM */,
 				C96F04C427B07A1E00A5D475 /* NetworkManger */,
+				C96F04C827B0862200A5D475 /* helpers */,
 				C96F048827B05DA300A5D475 /* AppDelegate.swift */,
 				C96F048A27B05DA300A5D475 /* SceneDelegate.swift */,
 				C96F048E27B05DA300A5D475 /* Main.storyboard */,

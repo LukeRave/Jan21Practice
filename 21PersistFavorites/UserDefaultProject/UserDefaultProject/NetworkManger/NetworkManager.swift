@@ -9,7 +9,6 @@ import Foundation
 
 struct NetworkManagr{
     static let shared = NetworkManagr()
-    private init(){}
     
     func getData(completion: @escaping (PhotosResponse) -> Void){
         guard let url = URL(string: Constants.baseUrl) else {
