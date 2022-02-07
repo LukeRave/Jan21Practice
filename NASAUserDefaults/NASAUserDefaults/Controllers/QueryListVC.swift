@@ -10,7 +10,7 @@ import CoreData
 
 class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
     
-    var imageUrl: String?
+    var cellPhoto: Photo?
     
     var photoArray: [Photo]? {
         didSet {
@@ -73,7 +73,8 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
     func fetchData(){
         
         guard let safeUrl = URL(string: url) else { return }
-        
+//
+//        if let cachedPhoto
         let task = URLSession.shared.dataTask(with: safeUrl) { data, response, error in
             guard let data = data else { return }
             let decoded = self.decodeData(data: data, type: PhotosModel.self)
@@ -85,6 +86,7 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
             }
             
             guard let decodedPhotos = decoded?.photos else { return }
+            
             self.photoArray = decodedPhotos
         }
         task.resume()
@@ -123,7 +125,7 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         
         let entry = photoArray?[indexPath.row]
         
-        imageUrl = entry?.imgSrc
+        cellPhoto = entry
         favoriteId = entry?.id
         performSegue(withIdentifier: "DetailView", sender: self)
     }
@@ -132,7 +134,7 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         if segue.identifier == "DetailView" {
             let vc: DetailVC = segue.destination as! DetailVC
             vc.delegate = self
-            vc.spaceImage = imageUrl
+            vc.spaceImage = cellPhoto
             vc.newFavoriteId = favoriteId;
         }
     }
@@ -147,7 +149,7 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
             self.tableView.reloadData()
         }
         
-        print("This is the favorites array: \(favoritesArray) ---------")
+        print("Favorites Array Length: \(favoritesArray.count) ---------")
     }
     
     func loadFavorites(with request: NSFetchRequest<Favorite> = Favorite.fetchRequest()) {
