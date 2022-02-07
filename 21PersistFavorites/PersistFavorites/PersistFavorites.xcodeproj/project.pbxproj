@@ -23,7 +23,6 @@
 		C93B7DA927AD8DC50014D15B /* NasaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B7DA727AD8DC50014D15B /* NasaTableViewCell.swift */; };
 		C93B7DAA27AD8DC50014D15B /* NasaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93B7DA827AD8DC50014D15B /* NasaTableViewCell.xib */; };
 		C980F1A427B1615600C07FF7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980F1A327B1615600C07FF7 /* PhotoViewController.swift */; };
-		C980F1A827B16A7000C07FF7 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C980F1A727B16A7000C07FF7 /* Photo.storyboard */; };
 		C980F1AA27B1773F00C07FF7 /* NasaPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980F1A927B1773F00C07FF7 /* NasaPhotoViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 		C93B7DA727AD8DC50014D15B /* NasaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaTableViewCell.swift; sourceTree = "<group>"; };
 		C93B7DA827AD8DC50014D15B /* NasaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NasaTableViewCell.xib; sourceTree = "<group>"; };
 		C980F1A327B1615600C07FF7 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		C980F1A727B16A7000C07FF7 /* Photo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		C980F1A927B1773F00C07FF7 /* NasaPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +170,6 @@
 				C93B7DA727AD8DC50014D15B /* NasaTableViewCell.swift */,
 				C93B7DA827AD8DC50014D15B /* NasaTableViewCell.xib */,
 				C980F1A327B1615600C07FF7 /* PhotoViewController.swift */,
-				C980F1A727B16A7000C07FF7 /* Photo.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,7 +313,6 @@
 			files = (
 				C93B7DAA27AD8DC50014D15B /* NasaTableViewCell.xib in Resources */,
 				C93B7D7527AD82E40014D15B /* LaunchScreen.storyboard in Resources */,
-				C980F1A827B16A7000C07FF7 /* Photo.storyboard in Resources */,
 				C93B7D7227AD82E40014D15B /* Assets.xcassets in Resources */,
 				C93B7D7027AD82E30014D15B /* Main.storyboard in Resources */,
 			);

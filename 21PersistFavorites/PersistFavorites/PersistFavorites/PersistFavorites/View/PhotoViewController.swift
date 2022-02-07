@@ -7,24 +7,26 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    let identifier = "PhotoView"
     @IBOutlet weak var nasaImageView: UIImageView!
     @IBOutlet weak var heart: UIImageView!
     var photos: [Int:UIImage]?
-    var nasaTableDelegate: UpdateFavoritesProtocol?
+    var delegate: UpdateFavoritesProtocol?
     var row: Int?
     var imgSrc: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector(("heartTapped:")))
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(heartTapped(_:)))
+        tapGesture.cancelsTouchesInView = false
         heart.addGestureRecognizer(tapGesture)
         heart.isUserInteractionEnabled = true
     }
-
-    func heartTapped(gesture: UIGestureRecognizer) {
+    
+    @objc func heartTapped(_ gesture: UIGestureRecognizer) {
         print("heart tapped")
     }
 

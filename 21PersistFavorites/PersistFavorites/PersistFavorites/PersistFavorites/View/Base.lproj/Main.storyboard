@@ -38,8 +38,51 @@
             </objects>
             <point key="canvasLocation" x="35" y="98"/>
         </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="gDp-GY-AcG">
+            <objects>
+                <viewController storyboardIdentifier="PhotoView" id="WuU-mg-FtY" customClass="PhotoViewController" customModule="PersistFavorites" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lWJ-FG-dFA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95v-ea-gUO">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="bir-N6-8Mf"/>
+                                    <constraint firstAttribute="height" constant="240" id="xWc-rd-L53"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iEs-8M-H6Q">
+                                <rect key="frame" x="171.5" y="245" width="71" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74.5" id="UCF-0z-AtT"/>
+                                    <constraint firstAttribute="width" constant="71" id="bOe-5h-i2K"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZKM-Te-SAa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="95v-ea-gUO" firstAttribute="centerY" secondItem="lWJ-FG-dFA" secondAttribute="centerY" id="6cS-bE-vT2"/>
+                            <constraint firstItem="95v-ea-gUO" firstAttribute="top" secondItem="iEs-8M-H6Q" secondAttribute="bottom" constant="10" id="8BK-eD-9c1"/>
+                            <constraint firstItem="95v-ea-gUO" firstAttribute="top" secondItem="iEs-8M-H6Q" secondAttribute="bottom" constant="10" id="BSq-LC-UaD"/>
+                            <constraint firstItem="95v-ea-gUO" firstAttribute="centerX" secondItem="lWJ-FG-dFA" secondAttribute="centerX" id="SeY-A4-GQs"/>
+                            <constraint firstItem="iEs-8M-H6Q" firstAttribute="centerX" secondItem="lWJ-FG-dFA" secondAttribute="centerX" id="yx1-XY-faG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="heart" destination="iEs-8M-H6Q" id="RJp-Ay-GpM"/>
+                        <outlet property="nasaImageView" destination="95v-ea-gUO" id="hAx-xD-5TL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pH-nq-TjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.40579710144937" y="97.767857142857139"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

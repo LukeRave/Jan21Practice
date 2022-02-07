@@ -27,10 +27,11 @@ class NasaTableViewController: UIViewController, UpdateFavoritesProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: NasaTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NasaTableViewCell.identifier)
         nasaPhotosViewModel.updateUI = {
-            self.setFavorites()
             self.nasaPhotosModel = self.nasaPhotosViewModel.nasaPhotosModel
+            self.setFavorites()
             self.tableView.reloadData()}
         nasaPhotosViewModel.getData()
     }
@@ -51,8 +52,17 @@ class NasaTableViewController: UIViewController, UpdateFavoritesProtocol {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier)
+        let vc: PhotoViewController = segue.destination as! PhotoViewController
+        vc.delegate = self
+//            vc.spaceImage = cellPhoto
+//            vc.newFavoriteId = favoriteId;
+//        }
+    }
 }
-extension NasaTableViewController: UITableViewDataSource {
+extension NasaTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photos?.count ?? 0
     }
@@ -65,8 +75,7 @@ extension NasaTableViewController: UITableViewDataSource {
         let photo = photos?[indexPath.row]
         cell.mainLabel.text = String(photo?.id ?? 0)
         if favorites.count != 0 {
-            print("count != 0")
-            cell.heartIcon.isHidden = favorites[indexPath.row]
+            cell.heartIcon.isHidden = !favorites[indexPath.row]
         }
         
         return cell
@@ -77,16 +86,16 @@ extension NasaTableViewController: UITableViewDataSource {
             print("Failed to selectPhoto")
             return
         }
-        
-        if let viewController = storyboard?.instantiateViewController(identifier: "PhotoViewController") as? PhotoViewController {
-            viewController.row = indexPath.row
-            guard let url = URL(string: selectedPhoto.img_src!) else {
-                print("failed to load url")
-                return
-            }
-            viewController.imgSrc = url
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+        let strybrd = UIStoryboard(name: "Main", bundle: nil)
+        let photoVC = strybrd.instantiateViewController(withIdentifier: "PhotoView")
+        self.present(photoVC, animated: true, completion: nil)
+//            viewController.row = indexPath.row
+//            guard let url = URL(string: selectedPhoto.img_src!) else {
+//                print("failed to load url")
+//                return
+//            }
+//            viewController.imgSrc = url
+//            navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
