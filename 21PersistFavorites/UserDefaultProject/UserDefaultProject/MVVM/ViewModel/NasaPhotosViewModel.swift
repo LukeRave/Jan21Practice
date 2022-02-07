@@ -19,10 +19,20 @@ class NasaPhotosViewModel{
     
     var network = NetworkManagr()
     var updateUI: (PhotosResponse?) -> Void = { _ in }
+    
     func updateData() {
         network.getData { model in
             self.model = model
         }
     }
-
+    
+    func getData(completion: @escaping () -> Void){
+        NetworkManagr.shared.getData(completion: {
+            model in
+            self.model = model
+            DispatchQueue.main.async{
+                completion()
+            }
+        })
+    }
 }

@@ -8,7 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var feed: PhotosResponse? {
         didSet{
             DispatchQueue.main.async{
@@ -23,19 +25,21 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    
     let viewModel = NasaPhotosViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.updateData()
-        viewModel.updateUI = { model in
-            self.feed = model
-        }
+        viewModel.getData(completion: { [weak self] in
+            guard let welf = self else{
+                return
+            }
+            self?.feed = welf.viewModel.model
+
+        })
         
         tableView.dataSource = self
-        let nib = UINib(nibName: DataViewCell.identifier, bundle: nil)
+        let nib = UINib(nibName: "DataViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DataViewCell.identifier)
         
     }

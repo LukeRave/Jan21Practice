@@ -15,6 +15,7 @@ struct NetworkManagr{
             return
         }
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            if let error = error {print(error.localizedDescription); return}
             if let data = data {
                 do {
                     let model = try JSONDecoder().decode(PhotosResponse.self, from: data)

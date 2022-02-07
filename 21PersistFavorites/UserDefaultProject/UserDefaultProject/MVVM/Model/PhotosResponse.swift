@@ -15,7 +15,7 @@ struct PhotosResponse: Decodable{
 struct Photo: Decodable {
     let imgUrl: String?
     let id: Int?
-    let date: Int?
+    let date: String
     enum CodingKeys: String, CodingKey{
         case imgUrl = "img_src"
         case id
@@ -23,6 +23,3 @@ struct Photo: Decodable {
     }
 }
 
-//struct Rover: Decodable {
-//    let name: String?
-//}

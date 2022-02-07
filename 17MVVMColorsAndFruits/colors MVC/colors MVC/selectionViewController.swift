@@ -17,7 +17,7 @@ class selectionViewController: UIViewController {
     
     
     @IBAction func redSlider(_ sender: UISlider) {
-        redValue.text = String(Int(sender.value))
+        redValue.text = String(Int(sender.`value`))
     }
     
     @IBAction func blueSlider(_ sender: UISlider) {
