@@ -40,11 +40,8 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = self.navigationController?.viewControllers.first(where: {
-            c in
-            return c.title == "InspectionList"
-        })
-        vc.inList = inspectionList
+        let vc = segue.destination as? ShopViewController
+        vc?.inList = inspectionList
     }
     
 }

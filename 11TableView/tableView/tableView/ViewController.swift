@@ -23,12 +23,17 @@ class ViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: cellTableViewCell.identifier)
     }
 
-
+   
+    
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,7 +45,6 @@ extension ViewController: UITableViewDataSource {
         cell.cellTitle.text = listItem.title
         cell.cellDesc.text = listItem.description
         cell.cellStatus.text = listItem.status.rawValue
-        cell.backgroundColor = .black
         
         return cell
     }

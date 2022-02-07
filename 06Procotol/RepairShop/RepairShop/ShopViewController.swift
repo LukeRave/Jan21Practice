@@ -23,7 +23,7 @@ class ShopViewController: UIViewController {
     
 
     @IBAction func updateList(_ sender: UIButton) {
-        update(list: inList!, label: inspectList)
+        update(list: inList ?? [], label: inspectList)
     }
     
 //

@@ -28,21 +28,10 @@ class ViewController: UIViewController {
         }
     }
     
+    
     @IBAction func operationFunc(_ sender: UIButton) {
-            if text.text != "" && sender.tag != 11 && sender.tag != 16{
+            if text.text != "" && sender.tag != 11 && sender.tag != 16 && sender.tag != 17{
                 prevNum = Double(text.text!)!//Set prevNum var to value of numOnScreen before operand was pressed
-                if sender.tag == 12 { //Division
-                    text.text = "/";
-                }
-                if sender.tag == 13 { //Multiplication
-                    text.text = "x";
-                }
-                if sender.tag == 14 { //Subtraction
-                    text.text = "-";
-                }
-                if sender.tag == 15 { //Addition
-                    text.text = "+";
-                }
                 operation = sender.tag //stores operation for computation
                 performingMath = true;
             }else if sender.tag == 16 { //When they press =
@@ -63,14 +52,22 @@ class ViewController: UIViewController {
                 prevNum = 0;
                 numOnScreen = 0;
                 operation = 0;
+            }else if sender.tag == 17{
+                var newNum = numOnScreen
+                if newNum > 0{
+                    newNum -= newNum * 2
+                } else if newNum < 0 {
+                    newNum += newNum * 2
+                }
+                text.text = String(Int(newNum))
             }
+        
+            
         }
     
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view.
         }
-        
-        
     }
     
