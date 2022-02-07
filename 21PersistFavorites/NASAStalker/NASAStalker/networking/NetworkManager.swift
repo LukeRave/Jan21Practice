@@ -9,13 +9,24 @@ import Foundation
 
 final class NetworkManager {
     static let shared = NetworkManager()
-    private var apiEndpoint: String = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?"
-    private var apiKey: String = "api_key=DEMO_KEY"
-    private var apiParams: String = "&sol=2000&page=1"
-    init() {}
-    private func generateURL() -> URL {
-        guard let url = URL(string: apiEndpoint + apiKey + apiParams) else {return URL(string: "https://www.google.com")!}
-        return url
+//http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02000/opgs/edr/fcam/FLB_575055503EDR_F0682626FHAZ00337M_.JPG
+    private var mainComponents = URLComponents()
+    private var imagComponents = URLComponents()
+    init() {
+        mainComponents.scheme = "https"
+        imagComponents.scheme = "https"
+        mainComponents.host = "api.nasa.gov"
+        imagComponents.host = "mars.jpl.nasa.gov"
+        mainComponents.path = "/mars-photos/api/v1/rovers/curiosity/photos"
+        mainComponents.queryItems = [
+            URLQueryItem(name: "api_key", value: "DEMO_KEY"),
+            URLQueryItem(name: "sol", value: "2000"),
+            URLQueryItem(name: "page", value: "1")
+        ]
+    }
+    private func generateImageURL(strURL: String?) {
+        guard let strURL = strURL else { return }
+        imagComponents.path = "/" + strURL.split(separator: "/").dropFirst(2).joined(separator: "/")
     }
     private func parseJSONdata(d: Data?, completion: @escaping (RoverImageFeed) -> Void) {
         if let d = d {
@@ -26,10 +37,21 @@ final class NetworkManager {
         }
     }
     func makeRequest(completion: @escaping (RoverImageFeed) -> Void) -> Void {
-        let task = URLSession.shared.dataTask(with: self.generateURL(), completionHandler: {d,r,e in
+        guard let url = mainComponents.url else { return }
+        let task = URLSession.shared.dataTask(with: url, completionHandler: {d,r,e in
             if let e = e { print(e.localizedDescription) }
             if let r = r as? HTTPURLResponse { if !Array(200..<300).contains(r.statusCode) { print(r.statusCode) } }
             self.parseJSONdata(d: d, completion: { model in completion(model) })
+        })
+        task.resume()
+    }
+    func makeIMGRequest(strURL: String, completion: @escaping (Data) -> Void) {
+        generateImageURL(strURL: strURL)
+        guard let url = imagComponents.url else { return }
+        let task = URLSession.shared.dataTask(with: url, completionHandler: {d,r,e in
+            if let e = e { print(e.localizedDescription)}
+            if let r = r as? HTTPURLResponse { if !Array(100..<300).contains(r.statusCode) { print(r.statusCode) } }
+            if let d = d { completion(d) }
         })
         task.resume()
     }

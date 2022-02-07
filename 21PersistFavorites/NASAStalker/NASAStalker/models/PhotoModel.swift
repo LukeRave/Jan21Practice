@@ -8,7 +8,7 @@
 import Foundation
 
 struct RoverImageFeed: Decodable {
-    let photos: [RoverImageModel?]?
+    let photos: [RoverImageModel]?
 }
 struct RoverImageModel: Decodable {
     let id: Int?
