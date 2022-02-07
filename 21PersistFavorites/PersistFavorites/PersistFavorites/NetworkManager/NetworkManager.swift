@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
@@ -31,17 +32,20 @@ class NetworkManager {
         }
     }
     
-    func getNasaPhoto(url: URL, completion: @escaping (NasaFeed) -> Void) {
+    func getNasaPhoto(url: URL, completion: @escaping (UIImage) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { d, r, e in
             guard let data = d else {
                 print("Failed to load data")
                 return
             }
             do {
-                let model = try JSONDecoder().decode(NasaFeed.self, from: data)
-                completion(model)
+                print(data)
+                if let image = UIImage(data: data) {
+                    print(String(describing: image))
+                    completion(image)
+                }
             } catch {
-                print(error)
+                print("error")
             }
         }
         task.resume()

@@ -8,19 +8,26 @@
 import Foundation
 import UIKit
 
-struct NasaPhotoViewModel {
-    var photos: [UIImage]?
-    var photo: UIImage?
-    
+class NasaPhotoViewModel {
+    var photos: [Int:UIImage?]?
+    var photo: UIImage? {
+        didSet{
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        }
+    }
     private var network = NetworkManager.shared
     
+    var updateUI: () -> Void = { }
+ 
     func getData(url: URL) {
-        network.getNasaPhoto(completion: {
-            [weak self] model in
+        network.getNasaPhoto(url: url, completion: {
+            [weak self] image in
             guard let welf = self else {
                 return
             }
-            welf.photo = model
+            welf.photo = image
         })
     }
 }

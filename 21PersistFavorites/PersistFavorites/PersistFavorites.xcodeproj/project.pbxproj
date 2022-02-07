@@ -24,6 +24,7 @@
 		C93B7DAA27AD8DC50014D15B /* NasaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93B7DA827AD8DC50014D15B /* NasaTableViewCell.xib */; };
 		C980F1A427B1615600C07FF7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980F1A327B1615600C07FF7 /* PhotoViewController.swift */; };
 		C980F1AA27B1773F00C07FF7 /* NasaPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980F1A927B1773F00C07FF7 /* NasaPhotoViewModel.swift */; };
+		C980F1B127B1A8B400C07FF7 /* PhotoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980F1B027B1A8B400C07FF7 /* PhotoCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C93B7DA827AD8DC50014D15B /* NasaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NasaTableViewCell.xib; sourceTree = "<group>"; };
 		C980F1A327B1615600C07FF7 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C980F1A927B1773F00C07FF7 /* NasaPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoViewModel.swift; sourceTree = "<group>"; };
+		C980F1B027B1A8B400C07FF7 /* PhotoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				C93B7DA327AD855F0014D15B /* NasaFeed.swift */,
+				C980F1B027B1A8B400C07FF7 /* PhotoCache.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				C980F1A427B1615600C07FF7 /* PhotoViewController.swift in Sources */,
 				C980F1AA27B1773F00C07FF7 /* NasaPhotoViewModel.swift in Sources */,
 				C93B7D6B27AD82E30014D15B /* SceneDelegate.swift in Sources */,
+				C980F1B127B1A8B400C07FF7 /* PhotoCache.swift in Sources */,
 				C93B7DA427AD855F0014D15B /* NasaFeed.swift in Sources */,
 				C93B7D9F27AD83EB0014D15B /* Constants.swift in Sources */,
 			);
