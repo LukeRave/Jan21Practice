@@ -1,0 +1,2 @@
+https://api.jikan.moe/v3/search/anime?q=naruto
+Add a search bar to allow for searching for specific characters
