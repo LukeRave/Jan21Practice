@@ -29,24 +29,31 @@ class NasaTableViewController: UIViewController, UpdateFavoritesProtocol {
         tableView.dataSource = self
         tableView.register(UINib(nibName: NasaTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NasaTableViewCell.identifier)
         nasaPhotosViewModel.updateUI = {
+            self.setFavorites()
+            self.nasaPhotosModel = self.nasaPhotosViewModel.nasaPhotosModel
             self.tableView.reloadData()}
         nasaPhotosViewModel.getData()
+    }
+    
+    func setFavorites() {
         if let favs = UserDefaults.standard.array(forKey: Constants.UserDefaultKey.favorites) as? [Bool] {
             favorites = favs
         } else {
             var boolArray: [Bool] = []
-            for _ in 0..<(photos?.count ?? 0) {
-                boolArray.append(false)
+            if let cnt = photos?.count, cnt != 0 {
+                for _ in 0..<cnt {
+                    boolArray.append(false)
+                }
+                print(boolArray.count)
+
+                UserDefaults.standard.set(boolArray, forKey: Constants.UserDefaultKey.favorites)
+                favorites = boolArray
             }
-            favorites = boolArray
-            UserDefaults.standard.set(favorites, forKey: Constants.UserDefaultKey.favorites)
         }
     }
-
 }
 extension NasaTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(photos?.count ?? 0)
         return photos?.count ?? 0
     }
     
@@ -57,8 +64,10 @@ extension NasaTableViewController: UITableViewDataSource {
         
         let photo = photos?[indexPath.row]
         cell.mainLabel.text = String(photo?.id ?? 0)
-        print(photo?.id ?? 0)
-        cell.heartIcon.isHidden = favorites[indexPath.row]
+        if favorites.count != 0 {
+            print("count != 0")
+            cell.heartIcon.isHidden = favorites[indexPath.row]
+        }
         
         return cell
     }
