@@ -11,7 +11,23 @@ struct PhotosModel: Codable {
     let photos: [Photo]?
 }
 
-struct Photo: Codable {
+class Photo: Codable, NSDiscardableContent {
+    func beginContentAccess() -> Bool {
+        true
+    }
+    
+    func endContentAccess() {
+    }
+    
+    func discardContentIfPossible() {
+    }
+    
+    func isContentDiscarded() -> Bool {
+        true
+    }
+    
+  
+    
     let id: Int
     let imgSrc: String
 

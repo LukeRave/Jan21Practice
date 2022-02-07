@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 import UIKit
 
 class PhotoCache: NSCache<NSString, UIImage> {

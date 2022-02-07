@@ -11,15 +11,12 @@ import CoreData
 class DetailVC: UIViewController {
     
     
-    @IBOutlet weak var heartImage: UIImageView!
     @IBOutlet weak var spaceStuff: UIImageView!
     
     var spaceImage: Photo?
     var delegate: FavoriteUpdateDelegate?
     
     var newFavoriteId: Int?
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +28,18 @@ class DetailVC: UIViewController {
             
     func fetchImage(){
         let url = URL(string: spaceImage?.imgSrc ?? "")
+        
         if let cachedPhoto = PhotoCache.shared.getPhoto(for: spaceImage?.imgSrc ?? "") {
+    
             print("Photo called from cache")
             spaceStuff.image = cachedPhoto
         } else {
-        guard let data = try? Data(contentsOf: url!) else { return }
-        guard let newCachedImage = UIImage(data: data) else { return }
+            
+            guard let data = try? Data(contentsOf: url!) else { return }
+            guard let newCachedImage = UIImage(data: data) else { return }
+            
             PhotoCache.shared.cache(newCachedImage, for: spaceImage?.imgSrc ?? "")
-        spaceStuff.image = newCachedImage
+            spaceStuff.image = newCachedImage
         }
     }
     

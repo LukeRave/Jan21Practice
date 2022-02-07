@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zyL-O2-bxx">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,14 +18,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QueryEntryCell" id="qsV-pT-scl">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="right" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qsV-pT-scl" id="g7S-zA-oUB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QuD-AB-EhU">
-                                            <rect key="frame" x="369" y="0.0" width="40" height="43.5"/>
+                                            <rect key="frame" x="369" y="0.0" width="40" height="43.666666666666664"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="dmy-JL-7k7"/>
                                             </constraints>
@@ -69,7 +69,7 @@
                                         <rect key="frame" x="107" y="0.0" width="200" height="378"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-xQ-ane">
-                                                <rect key="frame" x="25" y="115.5" width="150" height="147.5"/>
+                                                <rect key="frame" x="25" y="116" width="150" height="147"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="OfV-oE-hEv"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="wZP-y4-WWa"/>
@@ -120,7 +120,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="heartImage" destination="xBv-xQ-ane" id="r6l-xQ-dxW"/>
                         <outlet property="spaceStuff" destination="dGR-D6-SOt" id="ljO-s1-Ud5"/>
                     </connections>
                 </viewController>

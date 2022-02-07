@@ -53,10 +53,11 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
         }
         
         
-        //        For clearing Favorite Entity in Core Data for testing purposes
+//              For clearing Favorite Entity in Core Data for testing purposes
 //                for fav in favoritesArray {
 //                    context.delete(fav)
 //                }
+        
         saveFavorites()
     }
     
@@ -80,6 +81,7 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
             let decoded = self.decodeData(data: data, type: PhotosModel.self)
             // shows how many more API requests can be made on demo key
             if let httpResponse = response as? HTTPURLResponse {
+                
                 if let remaining = httpResponse.allHeaderFields["X-RateLimit-Limit"] as? String {
                     print("\(remaining) API calls remaining")
                 }
