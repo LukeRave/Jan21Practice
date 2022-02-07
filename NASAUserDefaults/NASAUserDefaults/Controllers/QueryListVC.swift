@@ -48,8 +48,8 @@ class QueryListVC: UITableViewController, FavoriteUpdateDelegate {
             favoritesArray.append(newFavorite)
             
         } else {
-            
             context.delete(favoritesArray.first(where: { $0.id == favoriteId })!)
+            favoritesArray.removeAll(where: { $0.id == favoriteId })
         }
         
         
