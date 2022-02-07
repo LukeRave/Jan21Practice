@@ -1,50 +1,49 @@
+import Foundation
 import UIKit
 
-var greeting = "Hello, playground"
-
-
-struct Person: Encodable {
-    let name: String
-    let age: Int
+struct Chart: Encodable {
+    let type: String
+    let data: ChartData
 }
-
-let bob = Person(name: "Bob", age: 100)
-
-let encode = try? JSONEncoder().encode(bob)
-//print(encode)
-
-if let url = URL(string: "example.com") {
-    var request = URLRequest(url: url)
-    
-    request.httpMethod = "POST"
-    request.httpBody = encode
-    
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-        guard let data = data else {
-            return
-        }
-        
+struct ChartData: Encodable {
+    let labels: [Int]
+    let datasets: [ChartDataset]
+}
+struct ChartDataset: Encodable {
+    let label: String
+    let data: [Int]
+}
+struct NetworkManager {
+    static var shared = NetworkManager()
+    private var components = URLComponents()
+    init() {
+        components.scheme = "https"
+        components.host = "quickchart.io"
+        components.path = "/chart"
     }
-    task.resume()
+    private mutating func constructURL(data: Chart) {
+        let encodedChart = try? JSONEncoder().encode(data)
+        guard let encodedChart = encodedChart else { return }
+        let chartQuery = String(data: encodedChart, encoding: .utf8)
+        components.queryItems = [URLQueryItem(name: "c", value: chartQuery)]
+    }
+    mutating func makeRequest(data: Chart, completion: @escaping(Data) -> Void) {
+        constructURL(data: data)
+        guard let url = components.url else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { d, r, e in
+            if let d = d { completion(d) }
+        }
+        task.resume()
+    }
 }
 
+let testChart: Chart = Chart(type: "bar", data: ChartData(labels: Array(2012...2016), datasets: [
+    ChartDataset(label: "Users", data: [120,60,50,180,1200])
+]))
 
-var components = URLComponents()
-
-
-/// https://quickchart.io/chart?c={json}
-/// Go to https://quickchart.io/ for documentation
-
-components.scheme = "https"
-components.host = "quickchart.io"
-components.path = "/chart"
-
-let firstQuery = URLQueryItem(name: "char", value: "naruto")
-components.queryItems = [firstQuery]
-
-print(components.url)
-
-
-//https://quickchart.io/chart?c={type:'bar',data:{labels:[2012,2013,2014,2015,2016],datasets:[{label:'Users',data:[120,60,50,180,1200]}]}}
-
-//https://quickchart.io/chart?c=%7B%22type%22:%22bar%22,%22data%22:%7B%22labels%22:%5B2012,2013,2014,2015,2016%5D,%22datasets%22:%5B%7B%22label%22:%22Users%22,%22data%22:%5B120,60,50,180,120%5D%7D%5D%7D%7D
+NetworkManager.shared.makeRequest(data: testChart, completion: {data in
+    guard let chartImage = UIImage(data: data) else { return }
+    print(chartImage)
+})
