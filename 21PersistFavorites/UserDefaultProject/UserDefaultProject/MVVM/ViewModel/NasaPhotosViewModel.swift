@@ -22,6 +22,7 @@ class NasaPhotosViewModel{
     
     func updateData() {
         network.getData { model in
+            print(model)
             self.model = model
         }
     }

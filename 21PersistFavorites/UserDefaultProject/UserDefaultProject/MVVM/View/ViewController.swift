@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +28,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     let viewModel = NasaPhotosViewModel()
     
     override func viewDidLoad() {
+        tableView.dataSource = self
+        let nib = UINib(nibName: DataViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: DataViewCell.identifier)
+        
         super.viewDidLoad()
         viewModel.updateData()
         viewModel.getData(completion: { [weak self] in
@@ -35,30 +39,6 @@ class ViewController: UIViewController, UITableViewDataSource {
                 return
             }
             self?.feed = welf.viewModel.model
-
         })
-        
-        tableView.dataSource = self
-        let nib = UINib(nibName: "DataViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: DataViewCell.identifier)
-        
     }
-    
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DataViewCell.identifier) as? DataViewCell else {
-            return UITableViewCell()
-        }
-        let model = photos[indexPath.row]
-        cell.idNumber.text = "\(model.id ?? 0)"
-        cell.date.text = String(describing: model.date)
-        
-        return cell
-    }
-    
 }

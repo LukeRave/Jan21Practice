@@ -15,13 +15,14 @@ struct NetworkManagr{
             return
         }
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
-            if let error = error {print(error.localizedDescription); return}
+            if let error = error {print("fetching error Line - 18", error.localizedDescription); return}
             if let data = data {
                 do {
+                    print(data)
                     let model = try JSONDecoder().decode(PhotosResponse.self, from: data)
                     completion(model)
                 }catch{
-                    print(error.localizedDescription)
+                    print("parsing error Line - 24", error.localizedDescription)
                 }
             }
         })
