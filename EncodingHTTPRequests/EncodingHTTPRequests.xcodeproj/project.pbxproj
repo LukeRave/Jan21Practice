@@ -11,7 +11,6 @@
 		F956F71427B1E5D0007AA7FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F71327B1E5D0007AA7FC /* SceneDelegate.swift */; };
 		F956F71627B1E5D0007AA7FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F71527B1E5D0007AA7FC /* ViewController.swift */; };
 		F956F71927B1E5D0007AA7FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F956F71727B1E5D0007AA7FC /* Main.storyboard */; };
-		F956F71C27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F956F71A27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodeld */; };
 		F956F71E27B1E5D1007AA7FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F956F71D27B1E5D1007AA7FC /* Assets.xcassets */; };
 		F956F72127B1E5D1007AA7FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F956F71F27B1E5D1007AA7FC /* LaunchScreen.storyboard */; };
 		F956F72B27B1E661007AA7FC /* BarChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F72A27B1E661007AA7FC /* BarChartModel.swift */; };
@@ -24,7 +23,6 @@
 		F956F71327B1E5D0007AA7FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F956F71527B1E5D0007AA7FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F956F71827B1E5D0007AA7FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F956F71B27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EncodingHTTPRequests.xcdatamodel; sourceTree = "<group>"; };
 		F956F71D27B1E5D1007AA7FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F956F72027B1E5D1007AA7FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F956F72227B1E5D1007AA7FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				F956F71D27B1E5D1007AA7FC /* Assets.xcassets */,
-				F956F71A27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodeld */,
 				F956F71F27B1E5D1007AA7FC /* LaunchScreen.storyboard */,
 				F956F71127B1E5D0007AA7FC /* AppDelegate.swift */,
 				F956F71327B1E5D0007AA7FC /* SceneDelegate.swift */,
@@ -164,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F956F72D27B1E694007AA7FC /* NetworkManager.swift in Sources */,
-				F956F71C27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodeld in Sources */,
 				F956F71627B1E5D0007AA7FC /* ViewController.swift in Sources */,
 				F956F71227B1E5D0007AA7FC /* AppDelegate.swift in Sources */,
 				F956F72B27B1E661007AA7FC /* BarChartModel.swift in Sources */,
@@ -388,19 +384,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F956F71A27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F956F71B27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodel */,
-			);
-			currentVersion = F956F71B27B1E5D0007AA7FC /* EncodingHTTPRequests.xcdatamodel */;
-			path = EncodingHTTPRequests.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F956F70627B1E5D0007AA7FC /* Project object */;
 }

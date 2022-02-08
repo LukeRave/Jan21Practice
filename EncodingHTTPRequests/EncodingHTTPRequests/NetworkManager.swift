@@ -5,6 +5,8 @@
 //  Created by Isaac Farr on 2/7/22.
 //
 
+// Testing via app delegate appDidFinishLaunching method
+
 import Foundation
 import UIKit
 
