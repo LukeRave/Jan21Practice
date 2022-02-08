@@ -15,22 +15,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getTopAlbums()
-        getImage()
     }
     
     func getTopAlbums() {
         let topAlbumRequest = TopAlbumRequest()
         topAlbumRequest.getAlbums { result in
-            print(result)
+            switch(result) {
+            case(.success(let musicItem)):
+                let item = musicItem.first
+                DispatchQueue.main.async {
+                    self.topAlbumLabel.text = item?.name
+                }
+                if let urlStr = item?.artworkUrl100, let url = URL(string: urlStr) {
+                    self.getImage(url: url)
+                }
+            case(.failure(let error)):
+                print(error)
+            }
         }
     }
-
-    let imageURL = URL(string: "https://is5-ssl.mzstatic.com/image/thumb/Music126/v4/ea/ce/2b/eace2b23-3b2d-543c-9adf-23a2c97a03ca/886449863563.jpg/100x100bb.jpg")!
     
-    func getImage() {
-        let imageRequest = ImageRequest(url: imageURL)
+    func getImage(url: URL) {
+        let imageRequest = ImageRequest(url: url)
         imageRequest.startRequest { result in
-
+            DispatchQueue.main.async {
+                self.topAlbumArt.image = result
+            }
         }
     }
 
