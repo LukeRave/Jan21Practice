@@ -28,10 +28,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-kt-gs0">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-kt-gs0">
                         <rect key="frame" x="248" y="7" width="46" height="31"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
+                        <buttonConfiguration key="configuration" style="plain" image="suit.heart.fill" catalog="system" title="">
+                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                        </buttonConfiguration>
                         <connections>
                             <action selector="favPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DNe-z4-Nm3"/>
                         </connections>
@@ -53,10 +55,13 @@
                 <outlet property="fav" destination="qYN-kt-gs0" id="Iuw-zk-h9I"/>
                 <outlet property="idNumber" destination="A7P-s6-FZN" id="ULn-Yb-Z3S"/>
             </connections>
-            <point key="canvasLocation" x="139" y="114"/>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

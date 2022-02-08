@@ -8,7 +8,7 @@
 import UIKit
 
 protocol Favor{
-    func updateFavorite(row: Int)
+    func updateFavorite(indexPath: IndexPath, bool: Bool)
 }
 
 class ViewController: UIViewController {

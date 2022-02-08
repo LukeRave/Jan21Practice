@@ -23,6 +23,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, Favor {
         let model = photos[indexPath.row]
         cell.idNumber.text = "\(model.id ?? 0)"
         cell.date.text = String(describing: model.date)
+        cell.indexPath = indexPath
+        
         return cell
     }
     
@@ -32,6 +34,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, Favor {
         let model = photos[indexPath.row]
         vc?.id = model.id ?? 0
         vc?.delegate = self
+        vc?.indexPath = indexPath
         if let imgUrl = model.imgUrl, let url = URL(string: imgUrl){
             URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
                 guard let data = data else{
@@ -43,14 +46,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, Favor {
                 }
             }).resume()
         }
-        print("cell pressed")
-        //TODO: set property for row in vc
-        vc?.cellId = model.id
         navigationController?.pushViewController(vc ?? ImageViewController(), animated: true)
     }
-    func updateFavorite(row: Int) {
-        let table = self.tableView
-        let cell = table?.cellForRow(at: <#T##IndexPath#>)
+    func updateFavorite(indexPath: IndexPath, bool: Bool) {
+        let tableView = self.tableView
+        let cell = tableView?.cellForRow(at: indexPath) as? DataViewCell
         
+        if bool{
+            cell?.fav.isHidden = false
+        }else{
+            cell?.fav.isHidden = true
+        }
     }
 }

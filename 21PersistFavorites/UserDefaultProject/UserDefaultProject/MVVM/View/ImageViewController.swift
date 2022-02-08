@@ -17,26 +17,26 @@ class ImageViewController: UIViewController {
     
     // create delegate with a protocol for updating the tableview (function paramater is row, favorite status != favoritestatus
     var delegate: Favor?
-    var cellId: Int?
     var image = UIImage()
     var id = 0
-    var button = false
+    var button: Bool?
+    var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let state = defaults.bool(forKey: "buttonState")
+        idNumber.text = String(describing: id)
+        let state = defaults.bool(forKey: "\(self.idNumber.text ?? "")")
+        print(state)
         self.button = state
         self.img.image = image
-        idNumber.text = String(describing: id)
+        setIcon(state: button ?? true)
     }
     
     @IBAction func favPressed(_ sender: UIButton) {
-        updateIcon(state: button)
-        defaults.set(button, forKey: "buttonState")
-        delegate?.updateFavorite(row: <#T##Int#>)
-       
-//        navigationController?.popViewController(animated: true)
-        
+        updateIcon(state: button ?? false)
+        defaults.set(button, forKey: "\(self.idNumber.text ?? "")")
+        navigationController?.popViewController(animated: true)
+        delegate?.updateFavorite(indexPath: indexPath!, bool: button ?? false )
     }
     
     private func updateIcon(state: Bool){
@@ -48,11 +48,11 @@ class ImageViewController: UIViewController {
             button = false
         }
     }
-//    private func setIcon(state: Bool){
-//        if state{
-//            favIcon.setImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
-//        } else {
-//            favIcon.setImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
-//        }
-//    }
+    private func setIcon(state: Bool){
+        if state{
+            favIcon.setImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
+        } else {
+            favIcon.setImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
+        }
+    }
 }
