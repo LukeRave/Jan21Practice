@@ -28,21 +28,35 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-kt-gs0">
+                        <rect key="frame" x="248" y="7" width="46" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
+                        <connections>
+                            <action selector="favPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DNe-z4-Nm3"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="A7P-s6-FZN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="1dZ-bN-QQI"/>
                     <constraint firstAttribute="bottom" secondItem="A7P-s6-FZN" secondAttribute="bottom" constant="12" id="7VY-3I-vmU"/>
                     <constraint firstAttribute="bottom" secondItem="mz6-jo-0qh" secondAttribute="bottom" constant="12" id="JbV-3G-guK"/>
                     <constraint firstItem="A7P-s6-FZN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="L2W-5N-5JI"/>
+                    <constraint firstItem="qYN-kt-gs0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="248" id="OG8-vr-mLV"/>
+                    <constraint firstItem="qYN-kt-gs0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="YDB-R9-Hhq"/>
                     <constraint firstItem="mz6-jo-0qh" firstAttribute="leading" secondItem="A7P-s6-FZN" secondAttribute="trailing" constant="61" id="z3o-fo-jq4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="date" destination="mz6-jo-0qh" id="XgX-iJ-THE"/>
+                <outlet property="fav" destination="qYN-kt-gs0" id="Iuw-zk-h9I"/>
                 <outlet property="idNumber" destination="A7P-s6-FZN" id="ULn-Yb-Z3S"/>
             </connections>
             <point key="canvasLocation" x="139" y="114"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
 </document>

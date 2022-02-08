@@ -18,7 +18,6 @@ struct NetworkManagr{
             if let error = error {print("fetching error Line - 18", error.localizedDescription); return}
             if let data = data {
                 do {
-                    print(data)
                     let model = try JSONDecoder().decode(PhotosResponse.self, from: data)
                     completion(model)
                 }catch{

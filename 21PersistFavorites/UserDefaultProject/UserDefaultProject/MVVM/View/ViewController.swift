@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol Favor{
+    func updateFavorite(row: Int)
+}
+
 class ViewController: UIViewController {
+    
+    // Create updateFavorite(row: Int)
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +34,7 @@ class ViewController: UIViewController {
     let viewModel = NasaPhotosViewModel()
     
     override func viewDidLoad() {
+        tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: DataViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DataViewCell.identifier)

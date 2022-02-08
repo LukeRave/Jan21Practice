@@ -166,9 +166,9 @@
 		C96F051527B1791E00A5D475 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				C96F051E27B17A9500A5D475 /* ViewModel */,
 				C96F051B27B17A5E00A5D475 /* Model */,
 				C96F051627B1792600A5D475 /* View */,
+				C96F051E27B17A9500A5D475 /* ViewModel */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";

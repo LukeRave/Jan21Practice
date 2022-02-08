@@ -10,5 +10,5 @@ import Foundation
 final class Constants {
     static let shared = Constants()
     
-    static let baseUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=DEMO_KEY&sol=2000&page=1"
+    static let baseUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=02kwIdJ7fAajmrzsBNfY45De9DiFvoSvU1N9m4on&sol=2000&page=1"
 }
