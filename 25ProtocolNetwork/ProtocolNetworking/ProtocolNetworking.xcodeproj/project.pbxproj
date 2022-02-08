@@ -22,6 +22,10 @@
 		9E3FEDEA27B184C9006CC2E8 /* TopAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3FEDE927B184C9006CC2E8 /* TopAlbums.swift */; };
 		9EFD970327B1E7A8000CB98A /* TopAlbumResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD970227B1E7A8000CB98A /* TopAlbumResource.swift */; };
 		9EFD970727B2AA81000CB98A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD970627B2AA80000CB98A /* NetworkError.swift */; };
+		F956F73627B2C415007AA7FC /* ThaAlcyholsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F73527B2C415007AA7FC /* ThaAlcyholsRequest.swift */; };
+		F956F73827B2C45A007AA7FC /* ThaAlcyholsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F73727B2C45A007AA7FC /* ThaAlcyholsResource.swift */; };
+		F956F73C27B2C4A1007AA7FC /* FeatureTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F73B27B2C4A1007AA7FC /* FeatureTwoVC.swift */; };
+		F956F73E27B2C4B4007AA7FC /* ThaAlcyholsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956F73D27B2C4B4007AA7FC /* ThaAlcyholsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		9EFD970227B1E7A8000CB98A /* TopAlbumResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumResource.swift; sourceTree = "<group>"; };
 		9EFD970627B2AA80000CB98A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9EFD970827B2B1A4000CB98A /* Assignment.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Assignment.md; sourceTree = "<group>"; };
+		F956F73527B2C415007AA7FC /* ThaAlcyholsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaAlcyholsRequest.swift; sourceTree = "<group>"; };
+		F956F73727B2C45A007AA7FC /* ThaAlcyholsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaAlcyholsResource.swift; sourceTree = "<group>"; };
+		F956F73B27B2C4A1007AA7FC /* FeatureTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTwoVC.swift; sourceTree = SOURCE_ROOT; };
+		F956F73D27B2C4B4007AA7FC /* ThaAlcyholsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaAlcyholsModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,8 @@
 		9E3FEDE627B184A8006CC2E8 /* FeatureTwo */ = {
 			isa = PBXGroup;
 			children = (
+				F956F73A27B2C471007AA7FC /* Controller */,
+				F956F73927B2C46A007AA7FC /* Model */,
 			);
 			path = FeatureTwo;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 		9EFD96FE27B1E501000CB98A /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				F956F73427B2C3E1007AA7FC /* ThaAlcyhols */,
 				9EFD96FF27B1E50F000CB98A /* TopAlbums */,
 			);
 			path = Requests;
@@ -166,6 +177,31 @@
 				9E3FEDDB27B18453006CC2E8 /* ImageCache.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F956F73427B2C3E1007AA7FC /* ThaAlcyhols */ = {
+			isa = PBXGroup;
+			children = (
+				F956F73727B2C45A007AA7FC /* ThaAlcyholsResource.swift */,
+				F956F73527B2C415007AA7FC /* ThaAlcyholsRequest.swift */,
+			);
+			path = ThaAlcyhols;
+			sourceTree = "<group>";
+		};
+		F956F73927B2C46A007AA7FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F956F73D27B2C4B4007AA7FC /* ThaAlcyholsModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F956F73A27B2C471007AA7FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F956F73B27B2C4A1007AA7FC /* FeatureTwoVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +283,12 @@
 				9E3FEDC627B18421006CC2E8 /* ViewController.swift in Sources */,
 				9E3FEDDF27B18453006CC2E8 /* TopAlbumRequest.swift in Sources */,
 				9E3FEDC227B18421006CC2E8 /* AppDelegate.swift in Sources */,
+				F956F73E27B2C4B4007AA7FC /* ThaAlcyholsModel.swift in Sources */,
+				F956F73627B2C415007AA7FC /* ThaAlcyholsRequest.swift in Sources */,
 				9E3FEDEA27B184C9006CC2E8 /* TopAlbums.swift in Sources */,
+				F956F73827B2C45A007AA7FC /* ThaAlcyholsResource.swift in Sources */,
 				9EFD970727B2AA81000CB98A /* NetworkError.swift in Sources */,
+				F956F73C27B2C4A1007AA7FC /* FeatureTwoVC.swift in Sources */,
 				9E3FEDE227B18453006CC2E8 /* ImageRequest.swift in Sources */,
 				9E3FEDC427B18421006CC2E8 /* SceneDelegate.swift in Sources */,
 			);

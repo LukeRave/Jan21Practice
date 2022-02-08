@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     func getTopAlbums() {
         let topAlbumRequest = TopAlbumRequest()
         topAlbumRequest.getAlbums { result in
-            print(result)
+            
         }
     }
 

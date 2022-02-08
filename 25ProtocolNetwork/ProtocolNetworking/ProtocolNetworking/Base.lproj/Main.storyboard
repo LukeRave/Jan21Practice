@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vto-Eb-ejA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Get Boozy-->
+        <scene sceneID="Aan-RL-B60">
+            <objects>
+                <viewController id="EkA-hc-3ot" customClass="FeatureTwoVC" customModule="ProtocolNetworking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rUr-UH-uKV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kO7-2s-gQE" userLabel="Alcyhol Art">
+                                <rect key="frame" x="20.5" y="179" width="373" height="538"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjR-HB-kJm" userLabel="Alychol Label">
+                                <rect key="frame" x="20" y="64" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GA6-kh-EL8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UjR-HB-kJm" firstAttribute="leading" secondItem="GA6-kh-EL8" secondAttribute="leading" constant="20" id="06b-Y1-Gjz"/>
+                            <constraint firstItem="kO7-2s-gQE" firstAttribute="width" secondItem="rUr-UH-uKV" secondAttribute="width" multiplier="0.9" id="1mY-fY-9oM"/>
+                            <constraint firstItem="UjR-HB-kJm" firstAttribute="top" secondItem="GA6-kh-EL8" secondAttribute="top" constant="20" id="44W-aD-kj3"/>
+                            <constraint firstItem="kO7-2s-gQE" firstAttribute="height" secondItem="rUr-UH-uKV" secondAttribute="height" multiplier="0.6" id="58S-qW-4R8"/>
+                            <constraint firstItem="GA6-kh-EL8" firstAttribute="trailing" secondItem="UjR-HB-kJm" secondAttribute="trailing" constant="20" id="beY-cA-kda"/>
+                            <constraint firstItem="kO7-2s-gQE" firstAttribute="centerY" secondItem="rUr-UH-uKV" secondAttribute="centerY" id="gyl-ez-7jY"/>
+                            <constraint firstItem="kO7-2s-gQE" firstAttribute="centerX" secondItem="rUr-UH-uKV" secondAttribute="centerX" id="pSZ-vg-NE6"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Get Boozy" image="brain.head.profile" catalog="system" selectedImage="brain.head.profile" id="9xV-XE-jgr" userLabel="Get Boozy">
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="Pff-pf-WOh"/>
+                    <connections>
+                        <outlet property="alcyholImage" destination="kO7-2s-gQE" id="Rg8-dg-XS0"/>
+                        <outlet property="alycholLabel" destination="UjR-HB-kJm" id="iDQ-qP-MfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mm-ut-gIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-156"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProtocolNetworking" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +81,7 @@
                             <constraint firstItem="Ib9-dW-XVX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xyA-3Y-pOl"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="FdF-rW-OKA"/>
                     <connections>
                         <outlet property="topAlbumArt" destination="Ib9-dW-XVX" id="C3a-UG-TwH"/>
                         <outlet property="topAlbumLabel" destination="aKi-hV-NIj" id="VY0-Er-S9Z"/>
@@ -45,12 +89,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="42"/>
+            <point key="canvasLocation" x="1048" y="552"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="y57-ng-hLQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vto-Eb-ejA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8ge-Ib-GSe">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2ls-1e-vnR"/>
+                        <segue destination="EkA-hc-3ot" kind="relationship" relationship="viewControllers" id="fU3-QP-JS3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5x-1n-ifH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="41.517857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="brain.head.profile" catalog="system" width="114" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
