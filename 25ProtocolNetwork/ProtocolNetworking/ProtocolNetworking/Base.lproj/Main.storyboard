@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="weO-Vg-SCE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProtocolNetworking" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +38,7 @@
                             <constraint firstItem="Ib9-dW-XVX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xyA-3Y-pOl"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="oval.portrait.lefthalf.filled" catalog="system" selectedImage="oval.portrait.lefthalf.filled" id="PL9-Va-Zhk"/>
                     <connections>
                         <outlet property="topAlbumArt" destination="Ib9-dW-XVX" id="C3a-UG-TwH"/>
                         <outlet property="topAlbumLabel" destination="aKi-hV-NIj" id="VY0-Er-S9Z"/>
@@ -45,10 +46,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="42"/>
+            <point key="canvasLocation" x="1025" y="-271"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="kb4-2a-b1Q">
+            <objects>
+                <viewController id="MrK-14-TmK" customClass="DrinkViewController" customModule="ProtocolNetworking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="krA-we-fBy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KtM-eq-x5r">
+                                <rect key="frame" x="43.5" y="125" width="327" height="354"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="6Mz-q7-kVv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DrinkName" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55K-Mz-8yV">
+                                <rect key="frame" x="86" y="542.5" width="242" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oqk-TU-Q38"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KtM-eq-x5r" firstAttribute="width" secondItem="krA-we-fBy" secondAttribute="width" multiplier="0.789855" id="3tt-Xf-nwd"/>
+                            <constraint firstItem="KtM-eq-x5r" firstAttribute="centerX" secondItem="krA-we-fBy" secondAttribute="centerX" id="MYc-Y0-BK4"/>
+                            <constraint firstItem="Oqk-TU-Q38" firstAttribute="bottom" secondItem="55K-Mz-8yV" secondAttribute="bottom" constant="250" id="g0N-33-wsf"/>
+                            <constraint firstItem="KtM-eq-x5r" firstAttribute="top" secondItem="Oqk-TU-Q38" secondAttribute="top" constant="81" id="itm-NF-M99"/>
+                            <constraint firstItem="KtM-eq-x5r" firstAttribute="height" secondItem="krA-we-fBy" secondAttribute="height" multiplier="0.395089" id="jmN-mm-Z1X"/>
+                            <constraint firstItem="55K-Mz-8yV" firstAttribute="top" secondItem="KtM-eq-x5r" secondAttribute="bottom" constant="63.5" id="le0-9R-tVi"/>
+                            <constraint firstItem="55K-Mz-8yV" firstAttribute="leading" secondItem="Oqk-TU-Q38" secondAttribute="leading" constant="86" id="mGp-OV-LRx"/>
+                            <constraint firstItem="Oqk-TU-Q38" firstAttribute="trailing" secondItem="55K-Mz-8yV" secondAttribute="trailing" constant="86" id="wEY-vu-y9k"/>
+                            <constraint firstItem="KtM-eq-x5r" firstAttribute="leading" secondItem="Oqk-TU-Q38" secondAttribute="leading" constant="43.5" id="yYT-KP-JBZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="oval.portrait.righthalf.filled" catalog="system" selectedImage="oval.portrait.righthalf.filled" id="Ft8-dm-6ew"/>
+                    <navigationItem key="navigationItem" id="Le4-81-EVo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="drinkName" destination="55K-Mz-8yV" id="izn-zu-WOb"/>
+                        <outlet property="img" destination="KtM-eq-x5r" id="StU-md-grx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="umt-Go-yqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.6376811594205" y="376.33928571428572"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5Kr-Ed-vw2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="weO-Vg-SCE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M9t-JV-iah">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Fbs-W3-2uD"/>
+                        <segue destination="MrK-14-TmK" kind="relationship" relationship="viewControllers" id="orc-4O-NM4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKq-Kw-nkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="41.517857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="oval.portrait.lefthalf.filled" catalog="system" width="107" height="128"/>
+        <image name="oval.portrait.righthalf.filled" catalog="system" width="107" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

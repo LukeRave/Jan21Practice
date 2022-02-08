@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var topAlbumLabel: UILabel!
     
     @IBOutlet weak var topAlbumArt: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getTopAlbums()
@@ -21,7 +22,9 @@ class ViewController: UIViewController {
     func getTopAlbums() {
         let topAlbumRequest = TopAlbumRequest()
         topAlbumRequest.getAlbums { result in
-            print(result)
+            print("#", result)
+            
+            
         }
     }
 
