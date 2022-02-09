@@ -30,7 +30,7 @@ enum StringConstants: String{
     case searchErrorMessage = "try using filters instead"
     case searchErrorButton = "understod ^_^b"
     case alertMessage = "item has been added to "
-    case alertTitle = "congratulations"
+    case alertTitle = "GoodJob!"
     case alertConfirm = "go to "
     case alertDismiss = "dismiss"
     case favorites = "favorites"

@@ -7,7 +7,6 @@
 
 import Foundation
 /*
- 1. change the title for the add to favorites and cart  alert modal to read "GoodJob!"
  
  2.when user type clear into the search bar it removes all items in cart and favorites
  3.when user adds items to favorites make sure to remove any duplicates
