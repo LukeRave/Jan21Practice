@@ -12,7 +12,7 @@ class HomeViewModel{
     var favorites: [MakeupModel]?
     var modelToSend: [MakeupModel]?
     
-    func handleSearch(for text: String, handleError: @escaping (()->Void), completion: @escaping () -> Void){
+    func handleSearch(for text: String, handleError: @escaping() -> Void, completion: @escaping() -> Void){
         APIManger.shared.constructUrl(withqueries: text.prepareForSearch(), searchErrorHandeler: handleError)
             APIManger.shared.getData(model: MakeupModel.self, completion: {
                 model in

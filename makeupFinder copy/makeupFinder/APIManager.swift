@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class APIManger{
     static let shared = APIManger()
@@ -23,7 +24,9 @@ final class APIManger{
                 queryItems.append(URLQueryItem(name: StringConstants.tagQuery.rawValue, value: query))
             }
             if queryItems.isEmpty{
-                searchErrorHandeler?()
+                let invalidSearchAlert = UIAlertController.init(1)
+                UIApplication.shared.keyWindow?.rootViewController?.present(invalidSearchAlert, animated: true)
+                return
             }
 
         }

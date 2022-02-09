@@ -35,4 +35,6 @@ enum StringConstants: String{
     case alertDismiss = "dismiss"
     case favorites = "favorites"
     case cart = "cart"
+    case invalidSearch = "Your Search Terms were Invalid"
+    case invalidSearchTitle = "Whatcha doin???"
 }
