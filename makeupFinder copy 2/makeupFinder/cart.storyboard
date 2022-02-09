@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--cart-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="cart" id="Y6W-OH-hqX" customClass="CartViewController" customModule="makeupFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="cart" text="Makeup Finedr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qZ-Do-ptO">
+                                <rect key="frame" x="40" y="83" width="220" height="41"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyebrow" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CON-Yd-Kam">
+                                <rect key="frame" x="292" y="75.5" width="77" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="HTb-Jt-IvB"/>
+                                    <constraint firstAttribute="width" constant="77" id="MS7-1G-6xr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efz-hH-PqG">
+                                <rect key="frame" x="114" y="155" width="96" height="60"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cart">
+                                    <fontDescription key="titleFontDescription" type="italicSystem" pointSize="38"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="52i-ho-VtB">
+                                <rect key="frame" x="204" y="165" width="76" height="40"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="aly-w0-6VS"/>
+                                    <constraint firstAttribute="height" constant="42.5" id="l8P-Sw-q9J"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iUg-vM-q6V">
+                                <rect key="frame" x="0.0" y="245" width="414" height="522"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="522" id="rW6-UD-mSz"/>
+                                </constraints>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gh-hk-B03">
+                                <rect key="frame" x="297" y="170" width="67" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.84267407660000004" green="0.73140917019999996" blue="0.83643472019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="CON-Yd-Kam" firstAttribute="centerY" secondItem="9qZ-Do-ptO" secondAttribute="centerY" id="1ox-en-bRw"/>
+                            <constraint firstItem="Efz-hH-PqG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="114" id="2oi-tA-zKV"/>
+                            <constraint firstItem="52i-ho-VtB" firstAttribute="firstBaseline" secondItem="Efz-hH-PqG" secondAttribute="firstBaseline" id="3dN-WO-rNN"/>
+                            <constraint firstItem="iUg-vM-q6V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5zq-TR-pb6"/>
+                            <constraint firstItem="9qZ-Do-ptO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="39" id="Ajl-iT-tf7"/>
+                            <constraint firstItem="CON-Yd-Kam" firstAttribute="leading" secondItem="9qZ-Do-ptO" secondAttribute="trailing" constant="32" id="Jhc-d4-WFc"/>
+                            <constraint firstItem="7Gh-hk-B03" firstAttribute="centerY" secondItem="52i-ho-VtB" secondAttribute="centerY" id="bfL-bi-NiR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="52i-ho-VtB" secondAttribute="trailing" constant="134" id="eiv-y7-0Bp"/>
+                            <constraint firstItem="Efz-hH-PqG" firstAttribute="top" secondItem="9qZ-Do-ptO" secondAttribute="bottom" constant="31" id="iSC-r3-krB"/>
+                            <constraint firstItem="iUg-vM-q6V" firstAttribute="top" secondItem="Efz-hH-PqG" secondAttribute="bottom" constant="30" id="rtP-Ra-CWR"/>
+                            <constraint firstItem="7Gh-hk-B03" firstAttribute="centerX" secondItem="CON-Yd-Kam" secondAttribute="centerX" id="wrs-3A-7g8"/>
+                            <constraint firstItem="iUg-vM-q6V" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="x6K-4p-VLN"/>
+                            <constraint firstItem="9qZ-Do-ptO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="ykq-Ux-F2k"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="cart" image="cart.fill" catalog="system" id="JtA-iV-BjB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="priceLabel" destination="7Gh-hk-B03" id="j9U-rM-6CG"/>
+                        <outlet property="tableView" destination="iUg-vM-q6V" id="IqR-cN-887"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="54.910714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="eyebrow" catalog="system" width="128" height="106"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
