@@ -10,7 +10,11 @@ import UIKit
 
 extension UIAlertController{
     convenience init(for name: String,  confirmAction: @escaping () -> Void ){
-        self.init(title: StringConstants.alertTitle.rawValue, message: StringConstants.alertMessage.rawValue + name, preferredStyle: .alert)
+        if name == StringConstants.favorites.rawValue || name == StringConstants.cart.rawValue {
+            self.init(title: StringConstants.alternativeAlertTitle.rawValue, message: StringConstants.alertMessage.rawValue + name, preferredStyle: .alert)
+        } else {
+            self.init(title: StringConstants.alertTitle.rawValue, message: StringConstants.alertMessage.rawValue + name, preferredStyle: .alert)
+        }
         let confirm = UIAlertAction(title: StringConstants.alertConfirm.rawValue + name, style: .default, handler: {_ in
             confirmAction()
         })

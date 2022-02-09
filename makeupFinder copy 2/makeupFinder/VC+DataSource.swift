@@ -30,7 +30,7 @@ extension ViewController: UITableViewDataSource{
         switch tableView.tag {
         case 0:
             if let cell = recentTableView.dequeueReusableCell(withIdentifier: StringConstants.productCellID.rawValue) as? ProductCell{
-                cell.viewModel.model = viewModel.favorites?[indexPath.row]
+                cell.viewModel.model = viewModel.cart?[indexPath.row]
                 cell.configureView()
                 cell.addToCartButton.isHidden = true
                 cell.addToFavorites = {
@@ -74,7 +74,8 @@ extension ViewController: UITableViewDataSource{
         self.viewModel.addTo(atIndex: index, withTag: 0)
         
         let alert = UIAlertController(for: StringConstants.favorites.rawValue, confirmAction: {
-            self.presentFavorites()
+            fatalError()
+            //            self.presentFavorites()
         })
         self.present(alert, animated: true, completion: nil)
     }
@@ -83,6 +84,7 @@ extension ViewController: UITableViewDataSource{
         let storyBoard = UIStoryboard(name: StringConstants.cart.rawValue, bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.cart.rawValue) as! ProductsViewController
         vc.titleText = StringConstants.favorites.rawValue
+        vc.isFromHome = false
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.setFavorites()
         self.present(vc, animated: true, completion: nil)

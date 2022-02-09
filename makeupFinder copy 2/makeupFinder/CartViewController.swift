@@ -18,6 +18,12 @@ class CartViewController: UIViewController {
         priceLabel.text = viewModel.getTotal()
         configureTable()
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "loadCart"), object: nil)
+    }
+    
+    @objc func loadList(notification: NSNotification){
+        //load data here
+        self.tableView.reloadData()
     }
     
     func configureTable(){

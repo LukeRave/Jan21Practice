@@ -12,18 +12,27 @@ final class APIManger{
     var url: URL?
     func constructUrl(withqueries querys: [String] = [], searchErrorHandeler: (() -> Void)? = nil){
         var queryItems: [URLQueryItem] = []
+        if querys.count == 1 && querys.first == "clear" {
+            DataManager.shared.clearCartAndFavorites()
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadHome"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadCart"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
+            }
+            return
+        }
+        
         for query in querys{
             if Contstants.shared.brands.contains(query){
                 queryItems.append(URLQueryItem(name: StringConstants.brandQuery.rawValue, value: query))
-            }
-            if Contstants.shared.productTypes.contains(query){
+            } else if Contstants.shared.productTypes.contains(query){
                 queryItems.append(URLQueryItem(name: StringConstants.typeQuery.rawValue, value: query))
-            }
-            if Contstants.shared.tags.contains(query){
+            } else if Contstants.shared.tags.contains(query){
                 queryItems.append(URLQueryItem(name: StringConstants.tagQuery.rawValue, value: query))
-            }
-            if queryItems.isEmpty{
+            } else if queryItems.isEmpty{
                 searchErrorHandeler?()
+            } else {
+                fatalError()
             }
 
         }

@@ -13,10 +13,17 @@ class ProductsViewController: UIViewController {
     
     var viewModel: ProductsViewModel?
     var titleText: String?
+    var isFromHome = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         setTitle()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
+
+    }
+    @objc func loadList(notification: NSNotification){
+        //load data here
+        self.tableView.reloadData()
     }
     func setTitle(){
         if let title = titleText{

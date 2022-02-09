@@ -9,6 +9,8 @@ import UIKit
 
 class FilterViewController: UIViewController {
 
+    static var isFromHome = false
+    
     let viewModel = FilterViewModel()
 
     @IBAction func submitButton(_ sender: Any) {
@@ -71,6 +73,7 @@ class FilterViewController: UIViewController {
     func presentResults(){
         let storyBoard = UIStoryboard(name: StringConstants.recentSBName.rawValue, bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: StringConstants.recentSBID.rawValue) as! ProductsViewController
+        vc.isFromHome = FilterViewController.isFromHome
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.makeupModel = self.viewModel.makeupModel
         vc.titleText = StringConstants.searchResults.rawValue

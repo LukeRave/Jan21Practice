@@ -17,9 +17,25 @@ class DataManager{
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             var usableData = data
             if var currentData = DataManager.shared.getData(for: fileName){
-                currentData.append(contentsOf: data)
+                if fileName == StringConstants.favoritePath.rawValue {
+                    var addModel = true
+                    for makeupModel in data {
+                        for savedModel in currentData {
+                            if makeupModel.name == savedModel.name {
+                                addModel = false
+                            }
+                        }
+                        if addModel {
+                            currentData.append(contentsOf: data)
+                        }
+                    }
+                } else {
+                    currentData.append(contentsOf: data)
+                }
                 usableData = currentData
             }
+            
+            
             
             let jsonString = DataEncoder.encodeData(for: usableData)
             let pathWithFilename = documentDirectory.appendingPathComponent(fileName)
@@ -30,6 +46,11 @@ class DataManager{
                 print(try! String(contentsOf: pathWithFilename))
             } catch {
                 print(error.localizedDescription)
+            }
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadHome"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadCart"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
             }
         }
     }
@@ -47,4 +68,19 @@ class DataManager{
         }
         return  nil
     }
+    
+    func clearCartAndFavorites() {
+        
+        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let favoritePathWithFilename = documentDirectory.appendingPathComponent(StringConstants.favoritePath.rawValue)
+            let cartPathWithFilename = documentDirectory.appendingPathComponent(StringConstants.cartPath.rawValue)
+            do {
+                try FileManager.default.removeItem(at: favoritePathWithFilename)
+                try FileManager.default.removeItem(at: cartPathWithFilename)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
 }

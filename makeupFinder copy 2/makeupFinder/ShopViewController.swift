@@ -10,6 +10,9 @@ import UIKit
 
 class ShopViewController: UIViewController {
 
+    @IBAction func filterClicked(_ sender: Any) {
+        FilterViewController.isFromHome = false
+    }
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
@@ -47,6 +50,7 @@ class ShopViewController: UIViewController {
     func presentResults(){
         let storyBoard = UIStoryboard(name: StringConstants.recentSBName.rawValue, bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: StringConstants.recentSBID.rawValue) as! ProductsViewController
+        vc.isFromHome = false
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.makeupModel = self.viewModel.modelToSend
         vc.titleText = StringConstants.searchResults.rawValue
