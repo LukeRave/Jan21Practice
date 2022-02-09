@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             }
         }
         Table.dataSource = self
-        Table.register(UITableViewCell.self, forCellReuseIdentifier: Const.cellID)
+        Table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: Const.cellID)
     }
 
 
@@ -40,8 +40,14 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellID, for: indexPath)
-        cell.textLabel?.text = Const.list[indexPath.row].rover?.name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellID) as? TableViewCell else {
+            print("oops")
+            return UITableViewCell()
+        }
+        if let id = Const.list[indexPath.row].id {
+            cell.CellBottomLabel.text = "\(id)"
+        }
+        cell.CellTopLabel.text = Const.list[indexPath.row].rover?.name
         return cell
     }
     

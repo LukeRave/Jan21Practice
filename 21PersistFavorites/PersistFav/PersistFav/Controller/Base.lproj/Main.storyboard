@@ -20,14 +20,21 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="FN3-Tc-gmW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="FN3-Tc-gmW" customClass="TableViewCell" customModule="PersistFav" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FN3-Tc-gmW" id="816-j3-dNj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.063808473130000001" green="0.80987197160000002" blue="0.25240573259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="CellView" destination="816-j3-dNj" id="5h4-xE-cix"/>
+                                            <outletCollection property="gestureRecognizers" destination="nfK-E8-7PM" appends="YES" id="Pn4-S1-Yn5"/>
+                                            <outletCollection property="gestureRecognizers" destination="nfK-E8-7PM" appends="YES" id="CSV-hP-GAA"/>
+                                            <outletCollection property="gestureRecognizers" destination="nfK-E8-7PM" appends="YES" id="AAh-wX-tnB"/>
+                                            <segue destination="lK2-GX-vDP" kind="show" id="Tza-5f-5EP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -46,8 +53,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nfK-E8-7PM"/>
             </objects>
             <point key="canvasLocation" x="35" y="98"/>
+        </scene>
+        <!--ImgView-->
+        <scene sceneID="bER-6K-9gB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ImgView" id="lK2-GX-vDP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ghc-lg-2X6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVS-jB-kBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.60869565217399" y="82.366071428571431"/>
         </scene>
     </scenes>
     <resources>
