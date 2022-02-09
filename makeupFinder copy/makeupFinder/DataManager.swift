@@ -12,12 +12,11 @@ class DataManager{
     
     
     func setData(with data: [MakeupModel], for fileName: String){
-        
-        
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             var usableData = data
             if var currentData = DataManager.shared.getData(for: fileName){
                 currentData.append(contentsOf: data)
+                currentData = Array(Set(currentData))
                 usableData = currentData
             }
             
