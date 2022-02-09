@@ -37,16 +37,3 @@ struct PhotoList {
     }
 }
 
-struct NasaResponse: Decodable {
-    let photos: [Photo]
-}
-
-struct Photo: Decodable {
-    let id: Int?
-    let rover: Rover?
-    let img_src: String?
-}
-
-struct Rover: Decodable {
-    let name: String?
-}
