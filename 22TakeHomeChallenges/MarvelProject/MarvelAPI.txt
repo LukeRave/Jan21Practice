@@ -1,0 +1,5 @@
+https://developer.marvel.com/docs
+1. A screen to show all the resources that were downloaded from the primary endpoint for that resource (i.e. the data from GET /v1/public/comics ), as well as a few of the pieces of data contained in each individual response (i.e. title , issueNumber ,
+description , etc.). Also make sure you display a primary image for each resource to make it look shiny.
+2. A resource detail screen that shows additional interesting properties contained in the data from the API that does not fit on the list
+screen. Use your imagination to make it as interesting as possible!
