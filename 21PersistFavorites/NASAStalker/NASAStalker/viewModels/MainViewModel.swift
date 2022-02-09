@@ -6,20 +6,34 @@
 //
 
 import Foundation
+import UIKit
 
 final class MainViewModel {
     static let shared = MainViewModel()
     init() {}
-    func retreiveFeedData(completion: () -> Void) {
+    func retreiveFeedData(completion: @escaping ([RoverImageModel]) -> Void) {
         NetworkManager.shared.makeRequest(completion: { data in
             guard let feed = data.photos else { return }
-            feed.forEach { print($0) }
+            let mappedFeed: [RoverImageModel] = feed.map { roverImage in
+                roverImage.isFavorite = false
+                return roverImage
+            }
+            completion(mappedFeed)
         })
     }
-    func retreiveImage(strURL: String?, completion: (Data) -> Void) {
+    func retreiveImage(strURL: String?, completion: @escaping(Data) -> Void) {
         guard let url = strURL else { return }
-        NetworkManager.shared.makeIMGRequest(strURL: url, completion: {imgData in
+        NetworkManager.shared.makeIMGRequest(strURL: url, completion: { imgData in
             completion(imgData)
         })
+    }
+    func toggleIsFavorite(model: RoverImageModel) -> RoverImageModel {
+        model.isFavorite = !(model.isFavorite ?? false)
+        return model
+    }
+    func createTableViewCell(cell: UITableViewCell, model: RoverImageModel, completion: @escaping(UITableViewCell) -> Void) {
+        
+        
+        
     }
 }

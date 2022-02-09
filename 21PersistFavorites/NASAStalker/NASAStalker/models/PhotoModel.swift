@@ -10,12 +10,13 @@ import Foundation
 struct RoverImageFeed: Decodable {
     let photos: [RoverImageModel]?
 }
-struct RoverImageModel: Decodable {
+class RoverImageModel: Decodable {
     let id: Int?
     let img_src: String?
     let earth_date: String?
     let rover: RoverModel?
     let camera: RoverCamera?
+    var isFavorite: Bool?
 }
 struct RoverModel: Decodable {
     let id: Int?

@@ -9,7 +9,6 @@ import Foundation
 
 final class NetworkManager {
     static let shared = NetworkManager()
-//http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02000/opgs/edr/fcam/FLB_575055503EDR_F0682626FHAZ00337M_.JPG
     private var mainComponents = URLComponents()
     private var imagComponents = URLComponents()
     init() {
@@ -19,7 +18,7 @@ final class NetworkManager {
         imagComponents.host = "mars.jpl.nasa.gov"
         mainComponents.path = "/mars-photos/api/v1/rovers/curiosity/photos"
         mainComponents.queryItems = [
-            URLQueryItem(name: "api_key", value: "DEMO_KEY"),
+            URLQueryItem(name: "api_key", value: "MjrhnmhHqr81gSbovhD3izcv4MIZZycbcteHB9di"),
             URLQueryItem(name: "sol", value: "2000"),
             URLQueryItem(name: "page", value: "1")
         ]
@@ -50,7 +49,7 @@ final class NetworkManager {
         guard let url = imagComponents.url else { return }
         let task = URLSession.shared.dataTask(with: url, completionHandler: {d,r,e in
             if let e = e { print(e.localizedDescription)}
-            if let r = r as? HTTPURLResponse { if !Array(100..<300).contains(r.statusCode) { print(r.statusCode) } }
+            if let r = r as? HTTPURLResponse { if !Array(200..<300).contains(r.statusCode) { print(r.statusCode) } }
             if let d = d { completion(d) }
         })
         task.resume()

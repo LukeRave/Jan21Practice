@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3204EA27B19DC70026DB6F /* NASAimgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3204E827B19DC70026DB6F /* NASAimgTableViewCell.swift */; };
+		2F3204EB27B19DC70026DB6F /* NASAimgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3204E927B19DC70026DB6F /* NASAimgTableViewCell.xib */; };
+		2F3204EF27B40A660026DB6F /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3204EE27B40A660026DB6F /* SingleImageViewController.swift */; };
 		2F830D0727AD847100BA6584 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F830D0627AD847100BA6584 /* AppDelegate.swift */; };
 		2F830D0927AD847100BA6584 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F830D0827AD847100BA6584 /* SceneDelegate.swift */; };
 		2F830D0B27AD847100BA6584 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F830D0A27AD847100BA6584 /* ViewController.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F3204E827B19DC70026DB6F /* NASAimgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAimgTableViewCell.swift; sourceTree = "<group>"; };
+		2F3204E927B19DC70026DB6F /* NASAimgTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NASAimgTableViewCell.xib; sourceTree = "<group>"; };
+		2F3204EE27B40A660026DB6F /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 		2F830D0327AD847100BA6584 /* NASAStalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAStalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F830D0627AD847100BA6584 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F830D0827AD847100BA6584 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 			children = (
 				2F830D1127AD847200BA6584 /* LaunchScreen.storyboard */,
 				2F830D0C27AD847100BA6584 /* Main.storyboard */,
+				2F3204E827B19DC70026DB6F /* NASAimgTableViewCell.swift */,
+				2F3204E927B19DC70026DB6F /* NASAimgTableViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				2F830D0A27AD847100BA6584 /* ViewController.swift */,
+				2F3204EE27B40A660026DB6F /* SingleImageViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3204EB27B19DC70026DB6F /* NASAimgTableViewCell.xib in Resources */,
 				2F830D1327AD847200BA6584 /* LaunchScreen.storyboard in Resources */,
 				2F830D1027AD847200BA6584 /* Assets.xcassets in Resources */,
 				2F830D0E27AD847100BA6584 /* Main.storyboard in Resources */,
@@ -316,10 +326,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F830D3D27AD879700BA6584 /* NetworkManager.swift in Sources */,
+				2F3204EA27B19DC70026DB6F /* NASAimgTableViewCell.swift in Sources */,
 				2F830D0B27AD847100BA6584 /* ViewController.swift in Sources */,
 				2F830D0727AD847100BA6584 /* AppDelegate.swift in Sources */,
 				2F830D3F27AD8EA300BA6584 /* PhotoModel.swift in Sources */,
 				2F830D0927AD847100BA6584 /* SceneDelegate.swift in Sources */,
+				2F3204EF27B40A660026DB6F /* SingleImageViewController.swift in Sources */,
 				2F830D4127B1792100BA6584 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +511,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GCU4XCKGY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NASAStalker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -526,6 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GCU4XCKGY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NASAStalker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
