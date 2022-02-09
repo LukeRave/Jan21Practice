@@ -22,6 +22,7 @@
 		9E3FEDEA27B184C9006CC2E8 /* TopAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3FEDE927B184C9006CC2E8 /* TopAlbums.swift */; };
 		9EFD970327B1E7A8000CB98A /* TopAlbumResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD970227B1E7A8000CB98A /* TopAlbumResource.swift */; };
 		9EFD970727B2AA81000CB98A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD970627B2AA80000CB98A /* NetworkError.swift */; };
+		C966009827B2CF7C0076ACBC /* FeatureTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966009627B2CF7C0076ACBC /* FeatureTwoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		9EFD970227B1E7A8000CB98A /* TopAlbumResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumResource.swift; sourceTree = "<group>"; };
 		9EFD970627B2AA80000CB98A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9EFD970827B2B1A4000CB98A /* Assignment.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Assignment.md; sourceTree = "<group>"; };
+		C966009627B2CF7C0076ACBC /* FeatureTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTwoView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		9E3FEDE627B184A8006CC2E8 /* FeatureTwo */ = {
 			isa = PBXGroup;
 			children = (
+				C966009627B2CF7C0076ACBC /* FeatureTwoView.swift */,
 			);
 			path = FeatureTwo;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				9E3FEDE427B18453006CC2E8 /* AnyResource.swift in Sources */,
 				9E3FEDE027B18453006CC2E8 /* ModelRequest.swift in Sources */,
 				9E3FEDE327B18453006CC2E8 /* NetworkRequest.swift in Sources */,
+				C966009827B2CF7C0076ACBC /* FeatureTwoView.swift in Sources */,
 				9E3FEDC627B18421006CC2E8 /* ViewController.swift in Sources */,
 				9E3FEDDF27B18453006CC2E8 /* TopAlbumRequest.swift in Sources */,
 				9E3FEDC227B18421006CC2E8 /* AppDelegate.swift in Sources */,
