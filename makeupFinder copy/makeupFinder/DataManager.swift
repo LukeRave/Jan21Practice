@@ -46,4 +46,18 @@ class DataManager{
         }
         return  nil
     }
+    func clearData(for path: String) {
+        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let jsonString = DataEncoder.encodeData(for: [])
+            let pathWithFilename = documentDirectory.appendingPathComponent(path)
+            do {
+                try jsonString?.write(to: pathWithFilename,
+                                     atomically: true,
+                                     encoding: .utf8)
+                print(try! String(contentsOf: pathWithFilename))
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

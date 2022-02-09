@@ -8,7 +8,6 @@
 import Foundation
 /*
  
- 2.when user type clear into the search bar it removes all items in cart and favorites
  
  4. when a user adds a product to favorites from the home and then follows clicks view favorites from the alert modal and the app crashes
  

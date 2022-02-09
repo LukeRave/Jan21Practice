@@ -14,6 +14,11 @@ extension String{
             subString in
             textArray.append(String(subString))
         })
-        return textArray
+        if self.lowercased() == "clear" {
+            DataManager.shared.clearData(for: StringConstants.cartPath.rawValue)
+            return []
+        } else {
+            return textArray
+        }
     }
 }
