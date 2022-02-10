@@ -31,9 +31,4 @@ final class MainViewModel {
         model.isFavorite = !(model.isFavorite ?? false)
         return model
     }
-    func createTableViewCell(cell: UITableViewCell, model: RoverImageModel, completion: @escaping(UITableViewCell) -> Void) {
-        
-        
-        
-    }
 }
