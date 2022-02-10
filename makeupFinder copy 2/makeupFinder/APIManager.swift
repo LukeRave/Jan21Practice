@@ -9,11 +9,12 @@ import Foundation
 
 final class APIManger{
     static let shared = APIManger()
+    let dataClearer: DataClearer = DataManager()
     var url: URL?
     func constructUrl(withqueries querys: [String] = [], searchErrorHandeler: (() -> Void)? = nil){
         var queryItems: [URLQueryItem] = []
         if querys.count == 1 && querys.first == "clear" {
-            DataManager.shared.clearCartAndFavorites()
+            dataClearer.clearCartAndFavorites()
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadHome"), object: nil)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadCart"), object: nil)

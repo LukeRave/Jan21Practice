@@ -13,8 +13,11 @@ class CartViewModel{
         getCart()
     }
     
+    let dataGetter: DataGetter = DataManager()
+    let dataSetter: DataSetter = DataManager()
+    
     func getCart(){
-        cart = DataManager.shared.getData(for: StringConstants.cartPath.rawValue)
+        cart = dataGetter.getData(for: StringConstants.cartPath.rawValue)
     }
     
     func getTotal() -> String{
@@ -31,7 +34,7 @@ class CartViewModel{
     
     func addToFavorites(atIndex index: Int){
         if let model = cart?[index] {
-            DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
+            dataSetter.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
 }

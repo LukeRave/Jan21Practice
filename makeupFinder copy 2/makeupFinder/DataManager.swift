@@ -7,16 +7,24 @@
 
 import Foundation
 
-class DataManager{
-    static let shared = DataManager()
-    
+protocol DataSetter {
+    func setData(with data: [MakeupModel], for fileName: String)
+}
+
+protocol DataGetter {
+    func getData(for path: String) -> [MakeupModel]?
+}
+
+protocol DataClearer {
+    func clearCartAndFavorites()
+}
+
+class DataManager: DataSetter, DataGetter, DataClearer {
     
     func setData(with data: [MakeupModel], for fileName: String){
-        
-        
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             var usableData = data
-            if var currentData = DataManager.shared.getData(for: fileName){
+            if var currentData = getData(for: fileName){
                 if fileName == StringConstants.favoritePath.rawValue {
                     var addModel = true
                     for makeupModel in data {

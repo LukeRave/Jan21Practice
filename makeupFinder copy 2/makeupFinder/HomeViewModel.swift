@@ -12,6 +12,10 @@ class HomeViewModel{
     var favorites: [MakeupModel]?
     var modelToSend: [MakeupModel]?
     
+    
+    let dataGetter: DataGetter = DataManager()
+    let dataSetter: DataSetter = DataManager()
+    
     func handleSearch(for text: String, handleError: @escaping (()->Void), completion: @escaping () -> Void){
         APIManger.shared.constructUrl(withqueries: text.prepareForSearch(), searchErrorHandeler: handleError)
             APIManger.shared.getData(model: MakeupModel.self, completion: {
@@ -23,10 +27,10 @@ class HomeViewModel{
             })
         }
     func getFavorites(){
-        favorites = DataManager.shared.getData(for: StringConstants.favoritePath.rawValue)
+        favorites = dataGetter.getData(for: StringConstants.favoritePath.rawValue)
     }
     func getCart(){
-        cart = DataManager.shared.getData(for: StringConstants.cartPath.rawValue)
+        cart = dataGetter.getData(for: StringConstants.cartPath.rawValue)
     }
     
     
@@ -34,11 +38,11 @@ class HomeViewModel{
         switch tag{
         case 0:
             if let model = cart?[index]{
-                DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+                dataSetter.setData(with: [model], for: StringConstants.cartPath.rawValue)
             }
         case 1:
             if let model = favorites?[index]{
-                DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+                dataSetter.setData(with: [model], for: StringConstants.cartPath.rawValue)
             }
         default:
             return

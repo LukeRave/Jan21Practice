@@ -11,6 +11,9 @@ class ShopViewModel{
     init(){
         setRecommended()
     }
+
+    let dataSetter: DataSetter = DataManager()
+    
     var recommendeds: [MakeupModel]?
     var modelToSend: [MakeupModel]?
     func handleSearch(for text: String, handleError: @escaping (()->Void), completion: @escaping () -> Void){
@@ -36,12 +39,12 @@ class ShopViewModel{
     
     func addToFavorites(atIndex index: Int){
         if let model = recommendeds?[index] {
-            DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
+            dataSetter.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
     func addToCart(atIndex index: Int){
         if let model = recommendeds?[index]{
-            DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+            dataSetter.setData(with: [model], for: StringConstants.cartPath.rawValue)
         }
     }
 }
