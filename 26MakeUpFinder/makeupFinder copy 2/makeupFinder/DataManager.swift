@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataManager{
+class DataManager {
     static let shared = DataManager()
     
     
