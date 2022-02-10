@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="addCreditCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKx-ah-Crh">
+                                <rect key="frame" x="20" y="64" width="127.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96K-UY-gp2">
+                                <rect key="frame" x="20" y="114" width="150.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yN4-eu-Ol5" userLabel="Card Name Round Style Text Field">
+                                <rect key="frame" x="190.5" y="62" width="203.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nW0-Ef-1zR" userLabel="Card Number Round Style Text Field">
+                                <rect key="frame" x="190.5" y="112" width="203.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKy-1B-Exe">
+                                <rect key="frame" x="164.5" y="166" width="85" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Card"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nW0-Ef-1zR" secondAttribute="trailing" constant="20" id="8UY-K9-MLB"/>
+                            <constraint firstItem="KKx-ah-Crh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="B7e-28-mgO"/>
+                            <constraint firstItem="yN4-eu-Ol5" firstAttribute="centerY" secondItem="KKx-ah-Crh" secondAttribute="centerY" id="GZZ-P7-pkg"/>
+                            <constraint firstItem="yN4-eu-Ol5" firstAttribute="leading" secondItem="nW0-Ef-1zR" secondAttribute="leading" id="NCb-4k-1IZ"/>
+                            <constraint firstItem="XKy-1B-Exe" firstAttribute="top" secondItem="nW0-Ef-1zR" secondAttribute="bottom" constant="20" id="RM7-Oa-MG9"/>
+                            <constraint firstItem="KKx-ah-Crh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bfy-yD-qjR"/>
+                            <constraint firstItem="nW0-Ef-1zR" firstAttribute="leading" secondItem="96K-UY-gp2" secondAttribute="trailing" constant="20" id="feU-aR-sTJ"/>
+                            <constraint firstItem="96K-UY-gp2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iPb-Me-vRs"/>
+                            <constraint firstItem="96K-UY-gp2" firstAttribute="top" secondItem="KKx-ah-Crh" secondAttribute="bottom" constant="20" id="l9V-Er-TPB"/>
+                            <constraint firstItem="nW0-Ef-1zR" firstAttribute="centerY" secondItem="96K-UY-gp2" secondAttribute="centerY" id="nh4-4k-ood"/>
+                            <constraint firstItem="yN4-eu-Ol5" firstAttribute="trailing" secondItem="nW0-Ef-1zR" secondAttribute="trailing" id="vEF-85-1m3"/>
+                            <constraint firstItem="XKy-1B-Exe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xZS-v7-fet"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardNameTextField" destination="yN4-eu-Ol5" id="Hpb-j5-6RH"/>
+                        <outlet property="cardNumberTextField" destination="nW0-Ef-1zR" id="0We-KJ-RGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="70"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

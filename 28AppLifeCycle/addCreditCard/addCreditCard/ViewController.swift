@@ -8,7 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var cardNameTextField: UITextField!
+    @IBOutlet weak var cardNumberTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
