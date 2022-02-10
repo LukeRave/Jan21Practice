@@ -43,9 +43,7 @@ class ViewController: UIViewController {
         recentTableView.delegate = self
     }
     func handleError(){
-        let alert = UIAlertController(for: StringConstants.searchErrorTitle.rawValue, confirmAction: {
-            
-        })
+        let alert = UIAlertController("")
         self.present(alert, animated: true, completion: nil)
     }
     func presentResults(){

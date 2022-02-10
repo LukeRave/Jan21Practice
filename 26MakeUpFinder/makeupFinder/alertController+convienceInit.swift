@@ -21,7 +21,7 @@ extension UIAlertController{
         self.addAction(confirm)
         self.addAction(dismiss)
     }
-    convenience init(_ for: String = ""){
+    convenience init(_ : String = ""){
         self.init(title: StringConstants.searchErrorTitle.rawValue, message: StringConstants.searchErrorMessage.rawValue, preferredStyle: .alert)
         
         self.addAction(UIAlertAction(title: "understod ^_^b", style: .cancel, handler: {_ in
