@@ -14,6 +14,8 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
     let viewModel = ShopViewModel()
+    let homeView = HomeViewModel()
+    let home = ViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
@@ -34,13 +36,25 @@ class ShopViewController: UIViewController {
             viewModel.handleSearch(for: text, handleError: {
                 self.handleError()
             }, completion: {
+                if text.lowercased() == "clear" {
+                    self.homeView.favorites = []
+                    self.homeView.cart = []
+                    DispatchQueue.main.async {
+                        self.home.recentTableView.reloadData()
+                        self.home.favoritesTableView.reloadData()
+                        return
+                    }
+                }
                 self.presentResults()
             })
         }
     }
     
     func handleError(){
-        let alert = UIAlertController()
+        let alert = UIAlertController(title: "Alert", message: "No Matches", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     

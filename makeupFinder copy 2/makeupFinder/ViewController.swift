@@ -16,7 +16,17 @@ class ViewController: UIViewController {
             viewModel.handleSearch(for: searchText, handleError: {
                 self.handleError()
             }, completion: {
-                self.presentResults()
+                if searchText.lowercased() == "clear" {
+                    self.viewModel.favorites = []
+                    self.viewModel.cart = []
+                    DispatchQueue.main.async {
+                            self.recentTableView.reloadData()
+                            self.favoritesTableView.reloadData()
+                            return
+                    }
+                } else {
+                    self.presentResults()
+                }
             })
         }
     }
@@ -40,7 +50,10 @@ class ViewController: UIViewController {
         recentTableView.delegate = self
     }
     func handleError(){
-        let alert = UIAlertController()
+        let alert = UIAlertController(title: "Alert", message: "No Matches", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     func presentResults(){
