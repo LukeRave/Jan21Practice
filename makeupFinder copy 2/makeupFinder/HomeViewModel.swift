@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel{
+class HomeViewModel: GetAndSetData{
     var cart: [MakeupModel]?
     var favorites: [MakeupModel]?
     var modelToSend: [MakeupModel]?
@@ -22,11 +22,12 @@ class HomeViewModel{
                 }
             })
         }
+ 
     func getFavorites(){
-        favorites = DataManager.shared.getData(for: StringConstants.favoritePath.rawValue)
+        favorites = getData(for: StringConstants.favoritePath.rawValue)
     }
     func getCart(){
-        cart = DataManager.shared.getData(for: StringConstants.cartPath.rawValue)
+        cart = getData(for: StringConstants.cartPath.rawValue)
     }
     
     
@@ -34,11 +35,11 @@ class HomeViewModel{
         switch tag{
         case 0:
             if let model = cart?[index]{
-                DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+                setData(with: [model], for: StringConstants.cartPath.rawValue)
             }
         case 1:
             if let model = favorites?[index]{
-                DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+                setData(with: [model], for: StringConstants.cartPath.rawValue)
             }
         default:
             return

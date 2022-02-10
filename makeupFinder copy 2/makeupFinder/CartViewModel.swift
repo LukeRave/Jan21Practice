@@ -7,14 +7,15 @@
 
 import Foundation
 
-class CartViewModel{
+class CartViewModel: GetAndSetData{
+    let getData = DataManager.getData
     var cart: [MakeupModel]?
     init(){
         getCart()
     }
     
     func getCart(){
-        cart = DataManager.shared.getData(for: StringConstants.cartPath.rawValue)
+        cart = getData(for: StringConstants.cartPath.rawValue)
     }
     
     func getTotal() -> String{
@@ -31,7 +32,7 @@ class CartViewModel{
     
     func addToFavorites(atIndex index: Int){
         if let model = cart?[index] {
-            DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
+            .shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
 }
