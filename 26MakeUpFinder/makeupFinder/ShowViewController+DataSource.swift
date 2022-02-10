@@ -33,7 +33,7 @@ extension ShopViewController: UITableViewDataSource{
     func addToFavorites(index: Int){
         self.viewModel.addToFavorites(atIndex: index)
         let alert = UIAlertController(for: StringConstants.favorites.rawValue, confirmAction: {
-            
+            self.presentFavorites()
         })
         self.present(alert, animated: true, completion: nil)
     }

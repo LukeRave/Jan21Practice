@@ -42,7 +42,7 @@ extension CartViewController: UITableViewDataSource{
     
     func presentFavorites(){
         let storyBoard = UIStoryboard(name: StringConstants.recentSBName.rawValue, bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.recentSBID.rawValue) as! ProductsViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier:"ProductsViewController") as! ProductsViewController
         vc.titleText = StringConstants.favorites.rawValue
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.setFavorites()
