@@ -77,11 +77,12 @@ extension ViewController: UITableViewDataSource{
             self.presentFavorites()
         })
         self.present(alert, animated: true, completion: nil)
+        self.favoritesTableView.reloadData()
     }
     
     func presentFavorites(){
         let storyBoard = UIStoryboard(name: StringConstants.cart.rawValue, bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.cart.rawValue) as! ProductsViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.favorites.rawValue) as! ProductsViewController
         vc.titleText = StringConstants.favorites.rawValue
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.setFavorites()

@@ -13,20 +13,31 @@ class DataManager{
     
     func setData(with data: [MakeupModel], for fileName: String){
         
-        
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             var usableData = data
             if var currentData = DataManager.shared.getData(for: fileName){
-                currentData.append(contentsOf: data)
-                usableData = currentData
+                if fileName == StringConstants.favoritePath.rawValue{
+                    for element in data{
+                        for model in currentData{
+                            if model.name == element.name{
+                                break
+                            }
+                        }
+                        currentData.append(contentsOf: data)
+                    }
+                }else{
+                    currentData.append(contentsOf: data)
+                }
+                let newData = Set(currentData)
+                usableData = Array(newData)
             }
             
             let jsonString = DataEncoder.encodeData(for: usableData)
             let pathWithFilename = documentDirectory.appendingPathComponent(fileName)
             do {
                 try jsonString?.write(to: pathWithFilename,
-                                     atomically: true,
-                                     encoding: .utf8)
+                                      atomically: true,
+                                      encoding: .utf8)
                 print(try! String(contentsOf: pathWithFilename))
             } catch {
                 print(error.localizedDescription)
@@ -39,7 +50,9 @@ class DataManager{
             let pathWithFilename = documentDirectory.appendingPathComponent(path)
             do {
                 let fileContents = try String(contentsOf: pathWithFilename, encoding: .utf8)
-               let model = DataDecoder.decodeData(for: fileContents)
+                let model = DataDecoder.decodeData(for: fileContents)
+                if path == StringConstants.favoritePath.rawValue{
+                }
                 return model
             } catch  {
                 print(error.localizedDescription)

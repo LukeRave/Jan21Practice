@@ -18,8 +18,12 @@ import Foundation
  5.when the user adds and item to favorites from the home screen then tries to navigate to the alert screen from the modal the app crashes and favorites screen is never presented
  
  
+ // MARK - Difficulty rating
  
- 
+ 1. 1.5
+ 2. 8.9
+ 3. 6
+ 4. 
  
  
  

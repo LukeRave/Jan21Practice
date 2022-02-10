@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MakeupModel: Codable{
+struct MakeupModel: Codable, Hashable{
     let brand: String?
     let name: String?
     let price: String?

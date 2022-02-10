@@ -14,7 +14,6 @@ final class Contstants{
     static let scheme = "https"
     static let host = "makeup-api.herokuapp.com"
     static let path = "/api/v1/products.json"
-    
     static let cellSize: CGFloat = 120
     let productTypes = ["none","blush","bronzer","eyebrow", "eyeliner", "eyeshadow", "foudation", "lip liner", "lipstick", "Mascara", "nailpolish" ]
     let tags = ["none",

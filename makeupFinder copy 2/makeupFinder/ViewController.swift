@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var recentTableView: UITableView!
     
     @IBAction func searchButton(_ sender: Any) {
+        
         if let searchText = searchField.text{
             viewModel.handleSearch(for: searchText, handleError: {
                 self.handleError()
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
                 self.presentResults()
             })
         }
+        self.recentTableView.reloadData()
+        self.favoritesTableView.reloadData()
     }
     
     let viewModel = HomeViewModel()

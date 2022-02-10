@@ -40,7 +40,9 @@ class ShopViewController: UIViewController {
     }
     
     func handleError(){
-        let alert = UIAlertController()
+        let alert = UIAlertController(for: StringConstants.searchErrorTitle.rawValue, confirmAction: {
+            
+        })
         self.present(alert, animated: true, completion: nil)
     }
     

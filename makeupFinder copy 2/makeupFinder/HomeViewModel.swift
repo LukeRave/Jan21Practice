@@ -13,7 +13,13 @@ class HomeViewModel{
     var modelToSend: [MakeupModel]?
     
     func handleSearch(for text: String, handleError: @escaping (()->Void), completion: @escaping () -> Void){
-        APIManger.shared.constructUrl(withqueries: text.prepareForSearch(), searchErrorHandeler: handleError)
+        if text == "Clear" || text == "clear" || text == "CLEAR"{
+            let emptyArr: [MakeupModel] = []
+            favorites = emptyArr
+            cart = emptyArr
+        } else{
+            do{
+            APIManger.shared.constructUrl(withqueries: text.prepareForSearch(), searchErrorHandeler: handleError)
             APIManger.shared.getData(model: MakeupModel.self, completion: {
                 model in
                 self.modelToSend = model
@@ -21,9 +27,14 @@ class HomeViewModel{
                     completion()
                 }
             })
+            }catch{
+                print(error)
+            }
         }
+    }
     func getFavorites(){
         favorites = DataManager.shared.getData(for: StringConstants.favoritePath.rawValue)
+        
     }
     func getCart(){
         cart = DataManager.shared.getData(for: StringConstants.cartPath.rawValue)
