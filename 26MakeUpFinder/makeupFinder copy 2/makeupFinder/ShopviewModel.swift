@@ -39,6 +39,7 @@ class ShopViewModel{
             DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
+    
     func addToCart(atIndex index: Int){
         if let model = recommendeds?[index]{
             DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)

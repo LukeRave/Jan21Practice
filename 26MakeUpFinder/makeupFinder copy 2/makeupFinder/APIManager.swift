@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class APIManger{
     static let shared = APIManger()
