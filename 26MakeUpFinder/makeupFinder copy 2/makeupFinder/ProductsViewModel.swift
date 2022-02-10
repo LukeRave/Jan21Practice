@@ -9,20 +9,20 @@ import Foundation
 
 class ProductsViewModel{
     var makeupModel: [MakeupModel]?
-    
+    var DM: DataManager = DataManager()
     func addToFavorites(atIndex index: Int){
         if let model = makeupModel?[index] {
-            DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
+            DM.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
     
     func addToCart(atIndex index: Int){
         if let model = makeupModel?[index]{
-            DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+            DM.setData(with: [model], for: StringConstants.cartPath.rawValue)
         }
     }
     
     func setFavorites(){
-        self.makeupModel = DataManager.shared.getData(for: StringConstants.favoritePath.rawValue)
+        self.makeupModel = DM.getData(for: StringConstants.favoritePath.rawValue)
     }
 }

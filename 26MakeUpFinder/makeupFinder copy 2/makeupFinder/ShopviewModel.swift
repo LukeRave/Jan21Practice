@@ -8,6 +8,7 @@
 import Foundation
 
 class ShopViewModel{
+    var DM: Settable = DataManager()
     init(){
         setRecommended()
     }
@@ -36,12 +37,12 @@ class ShopViewModel{
     
     func addToFavorites(atIndex index: Int){
         if let model = recommendeds?[index] {
-            DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
+            DM.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
     func addToCart(atIndex index: Int){
         if let model = recommendeds?[index]{
-            DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+            DM.setData(with: [model], for: StringConstants.cartPath.rawValue)
         }
     }
 }

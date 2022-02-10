@@ -7,16 +7,18 @@
 
 import Foundation
 
-class DataManager {
-    static let shared = DataManager()
-    
+protocol Settable {
+    func setData(with data: [MakeupModel], for fileName: String)
+}
+protocol Gettable {
+    func getData(for path: String) -> [MakeupModel]?
+}
+class DataManager: Settable, Gettable {
     
     func setData(with data: [MakeupModel], for fileName: String){
-        
-        
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             var usableData = data
-            if var currentData = DataManager.shared.getData(for: fileName){
+            if var currentData = self.getData(for: fileName){
                 currentData.append(contentsOf: data)
                 usableData = currentData
             }
