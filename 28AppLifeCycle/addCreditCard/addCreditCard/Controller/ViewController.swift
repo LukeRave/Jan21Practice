@@ -10,8 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var cardTableView: UITableView!
-    @IBOutlet weak var cardNameLabel: UITextField!
-    @IBOutlet weak var cardNumLabel: UITextField!
+    @IBOutlet weak var cardNameField: UITextField!
+    @IBOutlet weak var cardNumField: UITextField!
+    @IBOutlet weak var cardCVVField: UITextField!
     
     let defaults = UserDefaults.standard
     private var cards = Array<String>()
@@ -24,8 +25,6 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-//      **for clearing data unless i implement delete later**
-//          defaults.set([], forKey: "cardList")
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(resignActive), name: UIApplication.willResignActiveNotification, object: nil)
@@ -36,26 +35,29 @@ class ViewController: UIViewController {
         cardTableView.dataSource = self
         loadCards()
         
+//      **for clearing data unless i implement delete later**
+//        defaults.set([], forKey: "cardList")
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
-        guard let cardName = cardNameLabel.text, var cardNum = cardNumLabel.text else { return }
+        guard let cardName = cardNameField.text, var cardNum = cardNumField.text, var cardCVV = cardCVVField.text else { return }
         cardNum = cardNum.replacingOccurrences(of: " ", with: "")
-        
+        cardCVV = cardCVV.replacingOccurrences(of: " ", with: "")
         var alertMessage = ""
         
         if !cardNum.isNumeric || cardNum.count != 16 { alertMessage += "Card# can only be numbers and must be 16 digits long." }
-        if cardName.isEmpty { alertMessage += " Card must have a name."}
+        if cardName.isEmpty { alertMessage += "\nCard must have a name."}
+        if !cardCVV.isNumeric || !(3...4).contains(cardCVV.count) { alertMessage += "\nCard CVV must be only nums and 3 or 4 digits."}
         
-        if cardNum.isNumeric && cardNum.count == 16 && cardName != "" && cardNum != "" {
+        if cardNum.isNumeric && cardNum.count == 16 && cardCVV.isNumeric && (3...4).contains(cardCVV.count) && cardName != "" && cardNum != "" {
             
         let spacedNum = addSpaceEvery4Nums(to: cardNum)
-        let newCellText = "\(cardName): \(spacedNum)"
+        let newCellText = "\(cardName): \(spacedNum); \(cardCVV)"
             
         cards.append(newCellText)
         
-        cardNameLabel.text = ""; cardNumLabel.text = ""
+        cardNameField.text = ""; cardNumField.text = ""; cardCVVField.text = ""
         
         defaults.set(cards, forKey: "cardList")
         playSound()
