@@ -13,7 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Tester.shared.maxProfit(array: [7,1,2,3,4,5,6,10, 100])
     }
-
-
+    
 }
 

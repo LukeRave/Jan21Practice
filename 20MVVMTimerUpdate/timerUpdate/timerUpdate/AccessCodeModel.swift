@@ -14,6 +14,12 @@ struct AccessCodeModel {
         self.accessCode = accessCode
     }
     
+    func getCode() -> String?{
+        let pin = generateUserPin()
+        let str = (accessCode ?? "") + pin
+        return str
+    }
+    
     private func generateUserPin() -> String {
         let alpha = "0123456789"
         var pin = ""

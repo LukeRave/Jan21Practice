@@ -1,4 +1,4 @@
-https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=DEMO_KEY&sol=2000&page=1
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=02kwIdJ7fAajmrzsBNfY45De9DiFvoSvU1N9m4on&sol=2000&page=1
 
 Please create an application that contains 2 screens:
 Screen 1

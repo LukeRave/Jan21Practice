@@ -19,7 +19,7 @@ struct ToDoManager {
 
 
 struct ToDoItem {
-    let title: String
+    var title: String
     let status: ItemStatus
     
     enum ItemStatus: String {
