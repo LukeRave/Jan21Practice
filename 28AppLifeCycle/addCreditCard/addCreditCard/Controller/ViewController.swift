@@ -41,10 +41,12 @@ class ViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
-        guard let cardName = cardNameLabel.text, let cardNum = cardNumLabel.text else { return }
+        guard let cardName = cardNameLabel.text, var cardNum = cardNumLabel.text else { return }
+        cardNum = cardNum.replacingOccurrences(of: " ", with: "")
         
-        let newCellText = "\(cardName): \(cardNum)"
-        if newCellText != ": " {
+        if cardNum.isNumeric && cardName != "" && cardNum != "" {
+        let spacedNum = addSpaceEvery4Nums(to: cardNum)
+        let newCellText = "\(cardName): \(spacedNum)"
         cards.append(newCellText)
         
         cardNameLabel.text = ""; cardNumLabel.text = ""
@@ -52,6 +54,7 @@ class ViewController: UIViewController {
         defaults.set(cards, forKey: "cardList")
         
         cardTableView.reloadData()
+        
         }
     }
     
@@ -60,6 +63,18 @@ class ViewController: UIViewController {
         isAppNotInForeground ? (cards = []) : (cards = defaults.stringArray(forKey: "cardList") ?? [])
         cards = defaults.stringArray(forKey: "cardList") ?? []
         cardTableView.reloadData()
+    }
+    
+    func addSpaceEvery4Nums(to string: String) -> String{
+        
+        var copy = string;
+        for i in 0..<copy.count {
+            print("iterating")
+            if ((i + 1) % 5) == 0 {
+                copy.insert(" ", at: copy.index(copy.startIndex, offsetBy: i))
+            }
+        }
+        return copy
     }
     
     @objc func resignActive(){
@@ -144,6 +159,14 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.text = cards[indexPath.row]
         
         return cell;
+    }
+}
+
+extension String {
+    var isNumeric: Bool {
+        guard self.count > 0 else { return false }
+        let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        return Set(self).isSubset(of: nums)
     }
 }
 
