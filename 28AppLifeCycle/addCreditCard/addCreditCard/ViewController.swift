@@ -9,8 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var cardTableView: UITableView!
     @IBOutlet weak var cardNameLabel: UITextField!
     @IBOutlet weak var cardNumLabel: UITextField!
@@ -23,14 +21,18 @@ class ViewController: UIViewController {
     private var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+//      **for clearing data unless i implement delete later**
+//          defaults.set([], forKey: "cardList")
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(resignActive), name: UIApplication.willResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(handleAppWillBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(handleAppEnterBG), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         isAppNotInForeground = false;
-//        defaults.set([], forKey: "cardList")
         cardTableView.dataSource = self
         loadCards()
         
@@ -38,36 +40,58 @@ class ViewController: UIViewController {
     
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
+        
         guard let cardName = cardNameLabel.text, let cardNum = cardNumLabel.text else { return }
+        
         let newCellText = "\(cardName): \(cardNum)"
         cards.append(newCellText)
+        
         cardNameLabel.text = ""; cardNumLabel.text = ""
+        
         defaults.set(cards, forKey: "cardList")
+        
         cardTableView.reloadData()
     }
     
     func loadCards(){
+        
         isAppNotInForeground ? (cards = []) : (cards = defaults.stringArray(forKey: "cardList") ?? [])
         cards = defaults.stringArray(forKey: "cardList") ?? []
         cardTableView.reloadData()
     }
     
     @objc func resignActive(){
+        
         print("app resign active")
+        
         loadCards()
+        
         self.backgroundTaskIdentifier =  UIApplication.shared.beginBackgroundTask(expirationHandler: {
             if let identifier = self.backgroundTaskIdentifier {
                 UIApplication.shared.endBackgroundTask(identifier)
             }
         })
         
+        //         *Doesn't work because it doesn't return before the app resigns???
+        //
+        //        DispatchQueue.main.async {
+        //            {
+        //                if let identifier = self.backgroundTaskIdentifier
+        //                {
+        //                    UIApplication.shared.endBackgroundTask(identifier)
+        //                }
+        //            }
+        //            isAppNotInForeground = true;
+        //
+        //        }
+        
         DispatchQueue.main.asyncAfter(deadline:.now() + 30)
+        {
+            if let identifier = self.backgroundTaskIdentifier
             {
-                if let identifier = self.backgroundTaskIdentifier
-                {
-                    UIApplication.shared.endBackgroundTask(identifier)
-                }
+                UIApplication.shared.endBackgroundTask(identifier)
             }
+        }
         isAppNotInForeground = true;
     }
     
@@ -80,29 +104,32 @@ class ViewController: UIViewController {
         print("func \(#function) called")
         
     }
+    
     @objc func handleAppEnterBG(){
         
         print("func \(#function) called")
     }
+    
     @objc func fireTimer() {
+        
         let timeRemainingToRunInBG = UIApplication.shared.backgroundTimeRemaining
+        
         if self.backgroundTaskIdentifier != nil && timeRemainingToRunInBG <= 30 { print("\(floor(timeRemainingToRunInBG)) seconds remaining in bg")}
         
         if isAppNotInForeground {
             print("app is in background \(timeSinceBecameActive)")
         } else {
-        print("app is in foreground \(timeSinceBecameActive)")
+            print("app is in foreground \(timeSinceBecameActive)")
         }
+        
         timeSinceBecameActive += 1
-    }
-    @objc func screenshot(){
-        print("Screenshot detected")
     }
 }
 
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return cards.count
     }
     
@@ -116,6 +143,5 @@ extension ViewController: UITableViewDataSource {
         
         return cell;
     }
-    
 }
 
