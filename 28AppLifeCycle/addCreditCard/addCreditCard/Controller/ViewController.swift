@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         cardNameLabel.text = ""; cardNumLabel.text = ""
         
         defaults.set(cards, forKey: "cardList")
-        
+        playSound()
         cardTableView.reloadData()
         } else {
             let alert = UIAlertController(title: alertMessage, message: "", preferredStyle: .alert)
@@ -80,7 +80,6 @@ class ViewController: UIViewController {
         
         var copy = string;
         for i in 0..<copy.count {
-            print("iterating")
             if ((i + 1) % 5) == 0 {
                 copy.insert(" ", at: copy.index(copy.startIndex, offsetBy: i))
             }
@@ -152,7 +151,22 @@ class ViewController: UIViewController {
         
         timeSinceBecameActive += 1
     }
-}
+    var audioPlayer = AVAudioPlayer()
+    func playSound(){
+            
+            let path = Bundle.main.path(forResource: "bleepbleep.m4a", ofType: nil)!
+            let url = URL(fileURLWithPath: path)
+            print("url is \(url)")
+            do {
+                //create your audioPlayer in your parent class as a property
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.play()
+            } catch {
+                print("couldn't load the file")
+            }
+        }
+    }
+
 
 extension ViewController: UITableViewDataSource {
     
@@ -180,4 +194,4 @@ extension String {
         return Set(self).isSubset(of: nums)
     }
 }
-
+import AVFoundation
