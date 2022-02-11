@@ -65,12 +65,9 @@
 		9EE761C427B56C7B0022B935 /* addCreditCard */ = {
 			isa = PBXGroup;
 			children = (
-				9EE761C527B56C7B0022B935 /* AppDelegate.swift */,
-				9EE761C727B56C7B0022B935 /* SceneDelegate.swift */,
-				9EE761C927B56C7B0022B935 /* ViewController.swift */,
-				9EE761CB27B56C7B0022B935 /* Main.storyboard */,
-				9EE761CE27B56C7D0022B935 /* Assets.xcassets */,
-				9EE761D027B56C7D0022B935 /* LaunchScreen.storyboard */,
+				F956F74127B5FEF6007AA7FC /* Supporting Files */,
+				F956F74027B5FEE7007AA7FC /* Controller */,
+				F956F73F27B5FED6007AA7FC /* View */,
 				9EE761D327B56C7D0022B935 /* Info.plist */,
 			);
 			path = addCreditCard;
@@ -84,6 +81,33 @@
 				9EE761E227B56E850022B935 /* TransitionPrintStatments.png */,
 			);
 			path = ScreenShots;
+			sourceTree = "<group>";
+		};
+		F956F73F27B5FED6007AA7FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EE761CB27B56C7B0022B935 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F956F74027B5FEE7007AA7FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9EE761C927B56C7B0022B935 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F956F74127B5FEF6007AA7FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9EE761C527B56C7B0022B935 /* AppDelegate.swift */,
+				9EE761C727B56C7B0022B935 /* SceneDelegate.swift */,
+				9EE761CE27B56C7D0022B935 /* Assets.xcassets */,
+				9EE761D027B56C7D0022B935 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

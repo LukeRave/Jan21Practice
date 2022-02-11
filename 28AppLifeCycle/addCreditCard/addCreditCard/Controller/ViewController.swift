@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         guard let cardName = cardNameLabel.text, let cardNum = cardNumLabel.text else { return }
         
         let newCellText = "\(cardName): \(cardNum)"
+        if newCellText != ": " {
         cards.append(newCellText)
         
         cardNameLabel.text = ""; cardNumLabel.text = ""
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
         defaults.set(cards, forKey: "cardList")
         
         cardTableView.reloadData()
+        }
     }
     
     func loadCards(){

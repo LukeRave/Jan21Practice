@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="KZx-Vg-xKV">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KZx-Vg-xKV">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GAf-6k-JL0">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZX-tx-SX7">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -32,7 +32,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNa-fM-FS2">
-                                                <rect key="frame" x="100" y="0.0" width="294" height="40"/>
+                                                <rect key="frame" x="100" y="0.0" width="274" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ZbT-vc-NHL"/>
                                                 </constraints>
@@ -45,7 +45,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-oz-YXX">
-                                        <rect key="frame" x="0.0" y="80" width="394" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="374" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card #:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-Au-JVe">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -57,7 +57,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-b6-YsB">
-                                                <rect key="frame" x="100" y="0.0" width="294" height="40"/>
+                                                <rect key="frame" x="100" y="0.0" width="274" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="3i2-rd-d5m"/>
                                                 </constraints>
@@ -69,28 +69,40 @@
                                             <constraint firstAttribute="height" constant="40" id="Scm-EX-0Rv"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-ki-vXu" userLabel="Add Card">
-                                        <rect key="frame" x="0.0" y="160" width="394" height="40"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqj-Cs-ChJ">
+                                        <rect key="frame" x="0.0" y="120" width="374" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-ki-vXu" userLabel="Add Card">
+                                                <rect key="frame" x="60" y="0.0" width="254" height="40"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add Card">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpu-YQ-v4U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="8Kd-xH-hNb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zwl-ki-vXu" secondAttribute="trailing" constant="60" id="IjH-y7-aYw"/>
+                                            <constraint firstItem="Zwl-ki-vXu" firstAttribute="leading" secondItem="nqj-Cs-ChJ" secondAttribute="leading" constant="60" id="LGV-E3-6XT"/>
+                                            <constraint firstAttribute="height" constant="40" id="YFK-R1-sn0"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zwl-ki-vXu" secondAttribute="bottom" id="mdD-6j-EQn"/>
+                                            <constraint firstItem="Zwl-ki-vXu" firstAttribute="top" secondItem="nqj-Cs-ChJ" secondAttribute="top" id="rKr-lt-jbw"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Add Card">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpu-YQ-v4U"/>
-                                        </connections>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v82-TH-UAp">
-                                        <rect key="frame" x="0.0" y="240" width="394" height="558"/>
+                                    </view>
+                                    <tableView clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v82-TH-UAp">
+                                        <rect key="frame" x="0.0" y="180" width="374" height="598"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="separatorColor" systemColor="systemGray2Color"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="yRL-03-3e3">
-                                                <rect key="frame" x="0.0" y="44.5" width="394" height="43.5"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="50" id="yRL-03-3e3">
+                                                <rect key="frame" x="0.0" y="44.5" width="374" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yRL-03-3e3" id="jzb-Vu-TMU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
@@ -110,12 +122,12 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KZx-Vg-xKV" secondAttribute="bottom" constant="10" id="LvG-LW-6l1"/>
-                            <constraint firstItem="KZx-Vg-xKV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="StR-XN-vHS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZx-Vg-xKV" secondAttribute="trailing" constant="10" id="ViI-Ip-oVh"/>
-                            <constraint firstItem="KZx-Vg-xKV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Zp5-tt-Kl1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KZx-Vg-xKV" secondAttribute="bottom" constant="20" id="LvG-LW-6l1"/>
+                            <constraint firstItem="KZx-Vg-xKV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="StR-XN-vHS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZx-Vg-xKV" secondAttribute="trailing" constant="20" id="ViI-Ip-oVh"/>
+                            <constraint firstItem="KZx-Vg-xKV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zp5-tt-Kl1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -130,8 +142,17 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
