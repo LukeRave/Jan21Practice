@@ -7,8 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD:26MakeUpFinder/makeupFinder copy 2/makeupFinder/DataManager.swift
 class DataManager {
     static let shared = DataManager()
+=======
+extension GetAndSetData: GetData, SetData {
+    //static let shared = DataManager()
+>>>>>>> 08a636c (Worked on Injection):makeupFinder copy 2/makeupFinder/DataManager.swift
     
     
     func setData(with data: [MakeupModel], for fileName: String){
@@ -16,7 +21,7 @@ class DataManager {
         
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             var usableData = data
-            if var currentData = DataManager.shared.getData(for: fileName){
+            if var currentData = getData(for: fileName){
                 currentData.append(contentsOf: data)
                 usableData = currentData
             }
@@ -47,4 +52,12 @@ class DataManager {
         }
         return  nil
     }
+}
+
+protocol GetData {
+    func getData(for:String)->[MakeupModel]?
+}
+
+protocol SetData {
+    func setData(with: [MakeupModel], for:String)
 }

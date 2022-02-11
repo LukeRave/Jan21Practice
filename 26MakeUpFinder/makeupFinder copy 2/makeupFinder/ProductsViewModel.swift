@@ -12,17 +12,17 @@ class ProductsViewModel{
     
     func addToFavorites(atIndex index: Int){
         if let model = makeupModel?[index] {
-            DataManager.shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
+            .shared.setData(with: [model], for: StringConstants.favoritePath.rawValue)
         }
     }
     
     func addToCart(atIndex index: Int){
         if let model = makeupModel?[index]{
-            DataManager.shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
+            .shared.setData(with: [model], for: StringConstants.cartPath.rawValue)
         }
     }
     
     func setFavorites(){
-        self.makeupModel = DataManager.shared.getData(for: StringConstants.favoritePath.rawValue)
+        self.makeupModel = .shared.getData(for: StringConstants.favoritePath.rawValue)
     }
 }
