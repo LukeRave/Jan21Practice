@@ -11,9 +11,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var recentTableView: UITableView!
     
-    @IBAction func filterClicked(_ sender: Any) {
-        FilterViewController.isFromHome = true
-    }
     @IBAction func searchButton(_ sender: Any) {
         if let searchText = searchField.text{
             viewModel.handleSearch(for: searchText, handleError: {
@@ -53,13 +50,12 @@ class ViewController: UIViewController {
         recentTableView.delegate = self
     }
     func handleError(){
-        let alert = UIAlertController()
+        let alert = UIAlertController("searchError")
         self.present(alert, animated: true, completion: nil)
     }
     func presentResults(){
         let storyBoard = UIStoryboard(name: StringConstants.recentSBName.rawValue, bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: StringConstants.recentSBID.rawValue) as! ProductsViewController
-        vc.isFromHome = true
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.makeupModel = self.viewModel.modelToSend
         vc.titleText = StringConstants.searchResults.rawValue

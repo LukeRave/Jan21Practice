@@ -74,17 +74,15 @@ extension ViewController: UITableViewDataSource{
         self.viewModel.addTo(atIndex: index, withTag: 0)
         
         let alert = UIAlertController(for: StringConstants.favorites.rawValue, confirmAction: {
-            fatalError()
-            //            self.presentFavorites()
+            self.presentFavorites()
         })
         self.present(alert, animated: true, completion: nil)
     }
     
     func presentFavorites(){
-        let storyBoard = UIStoryboard(name: StringConstants.cart.rawValue, bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.cart.rawValue) as! ProductsViewController
+        let storyBoard = UIStoryboard(name: StringConstants.recentSBName.rawValue, bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.recentSBID.rawValue) as! ProductsViewController
         vc.titleText = StringConstants.favorites.rawValue
-        vc.isFromHome = false
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.setFavorites()
         self.present(vc, animated: true, completion: nil)

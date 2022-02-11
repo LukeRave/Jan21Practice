@@ -26,14 +26,15 @@ final class APIManger{
         for query in querys{
             if Contstants.shared.brands.contains(query){
                 queryItems.append(URLQueryItem(name: StringConstants.brandQuery.rawValue, value: query))
-            } else if Contstants.shared.productTypes.contains(query){
+            }
+            if Contstants.shared.productTypes.contains(query){
                 queryItems.append(URLQueryItem(name: StringConstants.typeQuery.rawValue, value: query))
-            } else if Contstants.shared.tags.contains(query){
+            }
+            if Contstants.shared.tags.contains(query){
                 queryItems.append(URLQueryItem(name: StringConstants.tagQuery.rawValue, value: query))
-            } else if queryItems.isEmpty{
+            }
+            if queryItems.isEmpty{
                 searchErrorHandeler?()
-            } else {
-                fatalError()
             }
 
         }

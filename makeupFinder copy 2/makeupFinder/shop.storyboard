@@ -55,7 +55,6 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="filterClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Oad-Pe-QFF"/>
                                     <segue destination="mX3-PN-w9I" kind="show" id="YQA-gZ-JXS"/>
                                 </connections>
                             </button>

@@ -16,9 +16,9 @@ import Foundation
  3.when user types clear in to any search bar remove all data from the cart and favorites
     Difficulty = 5
  4.when user types invalid search the alertmodal doesnt appear and the app crashes
-    Difficulty = 1
+    Difficulty = 4
  5.when the user adds and item to favorites from the home screen then tries to navigate to the alert screen from the modal the app crashes and favorites screen is never presented
-    Difficulty = 5
+    Difficulty = 3
  
  
  

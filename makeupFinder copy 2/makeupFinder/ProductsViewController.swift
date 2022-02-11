@@ -13,7 +13,6 @@ class ProductsViewController: UIViewController {
     
     var viewModel: ProductsViewModel?
     var titleText: String?
-    var isFromHome = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()

@@ -41,7 +41,6 @@ extension ShopViewController: UITableViewDataSource{
         let storyBoard = UIStoryboard(name: StringConstants.recentSBName.rawValue, bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier:StringConstants.recentSBID.rawValue) as! ProductsViewController
         vc.titleText = StringConstants.favorites.rawValue
-        vc.isFromHome = false
         vc.viewModel = ProductsViewModel()
         vc.viewModel?.setFavorites()
         self.present(vc, animated: true, completion: nil)
