@@ -44,11 +44,15 @@ class ViewController: UIViewController {
         cardNum = cardNum.replacingOccurrences(of: " ", with: "")
         
         var alertMessage = ""
+        
         if !cardNum.isNumeric || cardNum.count != 16 { alertMessage += "Card# can only be numbers and must be 16 digits long." }
         if cardName.isEmpty { alertMessage += " Card must have a name."}
+        
         if cardNum.isNumeric && cardNum.count == 16 && cardName != "" && cardNum != "" {
+            
         let spacedNum = addSpaceEvery4Nums(to: cardNum)
         let newCellText = "\(cardName): \(spacedNum)"
+            
         cards.append(newCellText)
         
         cardNameLabel.text = ""; cardNumLabel.text = ""
