@@ -65,9 +65,7 @@ class ViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             labelThree.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
-            labelThree.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             labelThree.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 100),
-            labelThree.heightAnchor.constraint(equalTo: labelTwo)
             
         ])
     }
