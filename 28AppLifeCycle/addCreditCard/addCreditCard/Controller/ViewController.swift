@@ -38,13 +38,15 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
         guard let cardName = cardNameLabel.text, var cardNum = cardNumLabel.text else { return }
         cardNum = cardNum.replacingOccurrences(of: " ", with: "")
         
-        if cardNum.isNumeric && cardName != "" && cardNum != "" {
+        var alertMessage = ""
+        if !cardNum.isNumeric || cardNum.count != 16 { alertMessage += "Card# can only be numbers and must be 16 digits long." }
+        if cardName.isEmpty { alertMessage += " Card must have a name."}
+        if cardNum.isNumeric && cardNum.count == 16 && cardName != "" && cardNum != "" {
         let spacedNum = addSpaceEvery4Nums(to: cardNum)
         let newCellText = "\(cardName): \(spacedNum)"
         cards.append(newCellText)
@@ -54,7 +56,12 @@ class ViewController: UIViewController {
         defaults.set(cards, forKey: "cardList")
         
         cardTableView.reloadData()
-        
+        } else {
+            let alert = UIAlertController(title: alertMessage, message: "", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default) { action in
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
         }
     }
     
