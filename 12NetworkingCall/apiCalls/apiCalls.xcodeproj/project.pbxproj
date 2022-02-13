@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FEEBBAE27B871A400F5124C /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEEBBAD27B871A300F5124C /* JokeModel.swift */; };
+		3FEEBBB027B871BF00F5124C /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEEBBAF27B871BF00F5124C /* DrinkModel.swift */; };
+		3FEEBBB227B871D500F5124C /* TVShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEEBBB127B871D500F5124C /* TVShowModel.swift */; };
+		3FEEBBB427B871F100F5124C /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEEBBB327B871F100F5124C /* MusicModel.swift */; };
 		9EA4CAE326C5473D008D2A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA4CAE226C5473D008D2A3D /* AppDelegate.swift */; };
 		9EA4CAE526C5473D008D2A3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA4CAE426C5473D008D2A3D /* SceneDelegate.swift */; };
 		9EA4CAE726C5473D008D2A3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA4CAE626C5473D008D2A3D /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FEEBBAD27B871A300F5124C /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		3FEEBBAF27B871BF00F5124C /* DrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
+		3FEEBBB127B871D500F5124C /* TVShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowModel.swift; sourceTree = "<group>"; };
+		3FEEBBB327B871F100F5124C /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		9EA4CADF26C5473D008D2A3D /* apiCalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apiCalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA4CAE226C5473D008D2A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA4CAE426C5473D008D2A3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FEEBBB527B871FF00F5124C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FEEBBB127B871D500F5124C /* TVShowModel.swift */,
+				3FEEBBB327B871F100F5124C /* MusicModel.swift */,
+				3FEEBBAD27B871A300F5124C /* JokeModel.swift */,
+				3FEEBBAF27B871BF00F5124C /* DrinkModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9EA4CAD626C5473D008D2A3D = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +98,7 @@
 		9EA4CAE126C5473D008D2A3D /* apiCalls */ = {
 			isa = PBXGroup;
 			children = (
+				3FEEBBB527B871FF00F5124C /* Models */,
 				9EA4CAE626C5473D008D2A3D /* ViewController.swift */,
 				9EA4CAE826C5473D008D2A3D /* Main.storyboard */,
 				9EA4CB1226C54748008D2A3D /* Supporting */,
@@ -207,8 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEEBBAE27B871A400F5124C /* JokeModel.swift in Sources */,
+				3FEEBBB427B871F100F5124C /* MusicModel.swift in Sources */,
 				9EA4CAE726C5473D008D2A3D /* ViewController.swift in Sources */,
 				9EA4CAE326C5473D008D2A3D /* AppDelegate.swift in Sources */,
+				3FEEBBB027B871BF00F5124C /* DrinkModel.swift in Sources */,
+				3FEEBBB227B871D500F5124C /* TVShowModel.swift in Sources */,
 				9EA4CAE526C5473D008D2A3D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
