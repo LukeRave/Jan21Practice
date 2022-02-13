@@ -63,18 +63,10 @@ class ViewController: UIViewController {
     func setupLabelThreeConstraints() {
         labelThree.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-<<<<<<< HEAD
-            labelThree.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
-            labelThree.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            labelThree.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 100),
-            labelThree.heightAnchor.constraint(equalTo: labelTwo.bottomAnchor)
-            
-=======
             labelThree.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             labelThree.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 100),
             labelThree.widthAnchor.constraint(equalToConstant: 300),
             labelThree.heightAnchor.constraint(equalToConstant: 100)
->>>>>>> bdc26fb78f4dc81032ee7bda06e851c9aa6ca776
         ])
     }
     func setupLabelFourConstraints() {

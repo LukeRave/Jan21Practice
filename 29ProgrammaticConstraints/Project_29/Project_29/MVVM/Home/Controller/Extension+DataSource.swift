@@ -19,6 +19,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
             
             cell.albumName.text = model?.name
             cell.artistName.text = model?.artistName
+            if let imgUrl = model?.imgUrl, let url = URL(string: imgUrl){
+                URLSession.shared.dataTask(with: url){ data, response, error in
+                    guard let data = data else{
+                        return
+                    }
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        cell.albumCover.image = image
+                    }
+                }.resume()
+            }
             return cell
         }else{
             return UITableViewCell()
@@ -30,6 +41,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         let vc = sb.instantiateViewController(withIdentifier: DetailsViewController.identifier) as? DetailsViewController
         let model = viewModel.list?[indexPath.row]
         
+        vc?.artistName.text = model?.artistName
+        vc?.albumName.text = model?.name
+        let genreObj = model?.genres.first
+        vc?.genreName.text = genreObj?.name
+        vc?.releaseDate.text = model?.releaseDate
         if let imgUrl = model?.imgUrl, let url = URL(string: imgUrl){
             URLSession.shared.dataTask(with: url){ data, response, error in
                 guard let data = data else{
