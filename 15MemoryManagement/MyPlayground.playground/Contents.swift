@@ -77,6 +77,9 @@ class Person {
 
 class CreditCard {
     var owner: Person
+    func swiped()  {
+        print("You swiped the card!")
+    }
 }
 
 

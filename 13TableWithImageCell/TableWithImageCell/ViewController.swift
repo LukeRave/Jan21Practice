@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     let musicStr = "https://rss.applemarketingtools.com/api/v2/us/music/most-played/10/albums.json"
     @IBOutlet weak var tableView: UITableView!
-    
+
     var feed: FeedResponse? {
         didSet {
             DispatchQueue.main.async {
@@ -37,19 +37,18 @@ class ViewController: UIViewController {
         if let url = URL(string: musicStr) {
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data else {
-                    // handle error
+                    print(data!)
                     return
                 }
                 
                 guard let urlResponse = response as? HTTPURLResponse, urlResponse.statusCode == 200 else {
-                    // status code error
+                    print(error!)
                     return
                 }
                 do {
                     let feedResponse = try JSONDecoder().decode(FeedResponse.self, from: data)
                     self.feed = feedResponse
                 } catch {
-                    // Decoding error
                     print(error)
                 }
             }
