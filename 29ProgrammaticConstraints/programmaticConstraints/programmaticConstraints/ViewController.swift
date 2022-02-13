@@ -28,20 +28,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         labelOne.text = "Label one"
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        labelThree.translatesAutoresizingMaskIntoConstraints = false
+        labelThree.text = "Label three"
+        labelFour.text = "Label four"
+
         view.addSubview(labelOne)
         view.addSubview(labelTwo)
         view.addSubview(scrollView)
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
+
         scrollView.addSubview(labelThree)
         scrollView.addSubview(labelFour)
-        labelThree.text = "Label three"
-        labelFour.text = "Label four"
+        
         labelThree.backgroundColor = .systemTeal
         labelFour.backgroundColor = .yellow
-        
         scrollView.backgroundColor = .magenta
+        
         setupConstraints()
     }
     
@@ -53,8 +53,7 @@ class ViewController: UIViewController {
     }
     
     func setupScrollViewConstraints() {
-
-        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.topAnchor.constraint(equalTo: labelTwo.bottomAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -62,20 +61,30 @@ class ViewController: UIViewController {
         
     }
     func setupLabelThreeConstraints() {
-
+        labelThree.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+<<<<<<< HEAD
             labelThree.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             labelThree.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             labelThree.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 100),
             labelThree.heightAnchor.constraint(equalTo: labelTwo.bottomAnchor)
             
+=======
+            labelThree.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            labelThree.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 100),
+            labelThree.widthAnchor.constraint(equalToConstant: 300),
+            labelThree.heightAnchor.constraint(equalToConstant: 100)
+>>>>>>> bdc26fb78f4dc81032ee7bda06e851c9aa6ca776
         ])
     }
     func setupLabelFourConstraints() {
         labelFour.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelFour.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            labelFour.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             labelFour.topAnchor.constraint(equalTo: labelThree.bottomAnchor, constant: 400),
+            labelFour.widthAnchor.constraint(equalToConstant: 300),
+            labelFour.heightAnchor.constraint(equalToConstant: 100),
+            labelFour.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
         ])
     }
 }
