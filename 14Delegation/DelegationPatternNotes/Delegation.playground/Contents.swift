@@ -77,4 +77,4 @@ bookView.bookDelegate = bookDelegate
 bookView.printPage(at: 2)
 
 /// Passing data by using delegation pattern to separate reponsibilities
-/// Example: The BookView is concerned only with visuals and does not manages the data
+/// Example: The BookView is concerned only with visuals and does not manage the data

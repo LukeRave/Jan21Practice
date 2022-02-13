@@ -8,16 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController, UpdateTextProtocol {
-    @IBOutlet weak var yourDataHereLabel: UILabel!
     
     @IBOutlet var mainView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navForward()
     }
 
-    func update(text: String, color: UIColor) {
-        yourDataHereLabel.text = text
+    func update(color: UIColor) {
         self.view.backgroundColor = color
     }
 
@@ -36,5 +35,5 @@ class ViewController: UIViewController, UpdateTextProtocol {
 }
 
 protocol UpdateTextProtocol {
-    func update(text: String, color: UIColor)
+    func update(color: UIColor)
 }
