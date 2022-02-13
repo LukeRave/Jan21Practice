@@ -19,12 +19,14 @@ class ViewController: UIViewController{
         viewModel.getList()
         configureTable()
         self.tableView.reloadData()
+        
     }
         
     func configureTable(){
         let nib = UINib(nibName: MusicCell.identifier, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: MusicCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
 }

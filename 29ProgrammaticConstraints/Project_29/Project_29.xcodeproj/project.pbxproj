@@ -25,6 +25,8 @@
 		C900C91627B952AB007EA823 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900C91527B952AB007EA823 /* DataManager.swift */; };
 		C900C91A27B9555D007EA823 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900C91927B9555D007EA823 /* DataDecoder.swift */; };
 		C900C91C27B95A04007EA823 /* Extension+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900C91B27B95A04007EA823 /* Extension+DataSource.swift */; };
+		C900C92127B96D1C007EA823 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C900C92027B96D1C007EA823 /* Details.storyboard */; };
+		C900C92427B96D57007EA823 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900C92327B96D57007EA823 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		C900C91527B952AB007EA823 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C900C91927B9555D007EA823 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		C900C91B27B95A04007EA823 /* Extension+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DataSource.swift"; sourceTree = "<group>"; };
+		C900C92027B96D1C007EA823 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		C900C92327B96D57007EA823 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,7 @@
 		C900C91D27B9613F007EA823 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				C900C91F27B96CFB007EA823 /* Details */,
 				C900C91E27B961CC007EA823 /* Home */,
 				C900C91427B95298007EA823 /* DataManager */,
 				C900C90327B70CA0007EA823 /* NetworkManager */,
@@ -224,6 +229,15 @@
 				C900C90427B70D2F007EA823 /* Controller */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C900C91F27B96CFB007EA823 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C900C92027B96D1C007EA823 /* Details.storyboard */,
+				C900C92327B96D57007EA823 /* DetailsViewController.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C900C92127B96D1C007EA823 /* Details.storyboard in Resources */,
 				C900C8DA27B70A61007EA823 /* LaunchScreen.storyboard in Resources */,
 				C900C8D727B70A61007EA823 /* Assets.xcassets in Resources */,
 				C900C8D527B70A61007EA823 /* Main.storyboard in Resources */,
@@ -369,6 +384,7 @@
 				C900C91327B71BA1007EA823 /* ViewModal.swift in Sources */,
 				C900C91627B952AB007EA823 /* DataManager.swift in Sources */,
 				C900C8D027B70A61007EA823 /* SceneDelegate.swift in Sources */,
+				C900C92427B96D57007EA823 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
