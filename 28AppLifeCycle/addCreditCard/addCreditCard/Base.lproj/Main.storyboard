@@ -43,6 +43,13 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Card"/>
                             </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Content hidden to protect your privacy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y5P-7U-NNV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,13 +57,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nW0-Ef-1zR" secondAttribute="trailing" constant="20" id="8UY-K9-MLB"/>
                             <constraint firstItem="KKx-ah-Crh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="B7e-28-mgO"/>
                             <constraint firstItem="yN4-eu-Ol5" firstAttribute="centerY" secondItem="KKx-ah-Crh" secondAttribute="centerY" id="GZZ-P7-pkg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y5P-7U-NNV" secondAttribute="bottom" id="HpY-0h-w0M"/>
                             <constraint firstItem="yN4-eu-Ol5" firstAttribute="leading" secondItem="nW0-Ef-1zR" secondAttribute="leading" id="NCb-4k-1IZ"/>
                             <constraint firstItem="XKy-1B-Exe" firstAttribute="top" secondItem="nW0-Ef-1zR" secondAttribute="bottom" constant="20" id="RM7-Oa-MG9"/>
+                            <constraint firstItem="y5P-7U-NNV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="awv-3A-lMs"/>
                             <constraint firstItem="KKx-ah-Crh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bfy-yD-qjR"/>
+                            <constraint firstItem="y5P-7U-NNV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fU0-dh-laA"/>
                             <constraint firstItem="nW0-Ef-1zR" firstAttribute="leading" secondItem="96K-UY-gp2" secondAttribute="trailing" constant="20" id="feU-aR-sTJ"/>
                             <constraint firstItem="96K-UY-gp2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iPb-Me-vRs"/>
                             <constraint firstItem="96K-UY-gp2" firstAttribute="top" secondItem="KKx-ah-Crh" secondAttribute="bottom" constant="20" id="l9V-Er-TPB"/>
                             <constraint firstItem="nW0-Ef-1zR" firstAttribute="centerY" secondItem="96K-UY-gp2" secondAttribute="centerY" id="nh4-4k-ood"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y5P-7U-NNV" secondAttribute="trailing" id="tJC-Sp-adI"/>
                             <constraint firstItem="yN4-eu-Ol5" firstAttribute="trailing" secondItem="nW0-Ef-1zR" secondAttribute="trailing" id="vEF-85-1m3"/>
                             <constraint firstItem="XKy-1B-Exe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xZS-v7-fet"/>
                         </constraints>
@@ -64,6 +75,7 @@
                     <connections>
                         <outlet property="cardNameTextField" destination="yN4-eu-Ol5" id="Hpb-j5-6RH"/>
                         <outlet property="cardNumberTextField" destination="nW0-Ef-1zR" id="0We-KJ-RGx"/>
+                        <outlet property="privacyTextView" destination="y5P-7U-NNV" id="IlW-sr-dba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,8 +84,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
