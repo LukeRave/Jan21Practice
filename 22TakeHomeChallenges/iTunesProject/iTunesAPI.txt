@@ -1,0 +1,7 @@
+https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/albums.json
+The app should: 
+•	use Auto Layout
+•	Not use storyboards or nibs
+•	Not use any third party libraries
+•	DO NOT force unwrap your code or show signs of forced unwrapping your code
+•	Provide production level code with unit testing completed
