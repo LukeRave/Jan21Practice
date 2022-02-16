@@ -13,5 +13,7 @@ class AccessCodeViewModel {
     private var accessCodeModel: AccessCodeModel?
     private var accessCodeNetwork = NetworkManager()
     
+    var pinNumber = NetworkManager().
+    
     
 }
