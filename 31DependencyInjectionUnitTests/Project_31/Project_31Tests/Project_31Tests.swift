@@ -1,33 +1,30 @@
 //
-//  Project_29Tests.swift
-//  Project_29Tests
+//  Project_31Tests.swift
+//  Project_31Tests
 //
-//  Created by Rave Bizz on 2/11/22.
+//  Created by Rave Bizz on 2/15/22.
 //
 
 import XCTest
-@testable import Project_29
+@testable import Project_31
 
-class Project_29Tests: XCTestCase {
-
+class Project_31Tests: XCTestCase {
+    
     var validation: ValidationService?
     
     override func setUpWithError() throws {
-        try super.setUpWithError()
         validation = ValidationService()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        try super.tearDownWithError()
         validation = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    func test_is_valid_response() throws {
-        XCTAssertNil(try validation?.inputCheck(response: UserDefaults.standard.data(forKey: "musicResponse")))
-    }
 
+    func test_is_valid_username() throws {
+       XCTAssertNotNil(try validation?.checkUserName(username: "Darrion"))
+    }
 //    func testExample() throws {
 //        // This is an example of a functional test case.
 //        // Use XCTAssert and related functions to verify your tests produce the correct results.
