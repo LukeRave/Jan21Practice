@@ -1,0 +1,8 @@
+Project tasks:
+Today
+1) Break down video into Jira tickets with estimates
+Tomorrow
+2) Firebase services: Database, Remote config, FirebaseAuth
+3) Git repo with commits from both members, use feature branch and do pull requests
+4) Guest User experience and Signed In experience 
+5) FirebaseAuth: Create User, Sign In, Sign Out
