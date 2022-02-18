@@ -1,7 +1,7 @@
 Group Project tasks:
 1) Break down video into Jira tickets with estimates
 2) Utilize Firebase services: Database, Remote config, FirebaseAuth
-3) Create your own Git repo with commits from both members, use feature branch and do pull requests
+3) Create your own Git repo with commits from both members, protected main branch, use feature branch and do pull requests
 4) App should have Guest User experience and Signed In experience 
 5) FirebaseAuth: Create User, Sign In, Sign Out
 6) Remote Database with CRUD
