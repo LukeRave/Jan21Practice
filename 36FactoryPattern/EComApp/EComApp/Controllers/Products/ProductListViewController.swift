@@ -40,7 +40,8 @@ extension ProductListViewController: UITableViewDataSource {
 extension ProductListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        /// Note: Create controller instances based on availability
+        /// Note: Method 1
+        /// Create controller instances based on availability
         if #available(iOS 15, *) {
             /// Apple BottomSheet
             let vc = AppleSheetViewController()
@@ -56,8 +57,9 @@ extension ProductListViewController: UITableViewDelegate {
         }
         
         
-        /// Note: Abstract Factory to create controller based on availability
-        let vc = BottomSheetFactory.createBottomSheetController()
-        present(vc, animated: vc.shouldAnimate)
+        /// Note: Method 2 -  Comment out Method 1
+        /// Abstract Factory to create controller based on availability
+//        let vc = BottomSheetFactory.createBottomSheetController()
+//        present(vc, animated: vc.shouldAnimate)
     }
 }
