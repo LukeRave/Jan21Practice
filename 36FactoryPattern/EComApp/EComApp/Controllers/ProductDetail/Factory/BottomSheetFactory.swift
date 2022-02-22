@@ -50,7 +50,7 @@ struct AppleSheetFactory: FactoryType {
         
         let vc = AppleSheetViewController()
         if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium()]
+            sheet.detents = [.medium(), .large()]
         }
         return vc
     }
